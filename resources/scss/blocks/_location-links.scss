@@ -1,0 +1,44 @@
+@import '../site/base';
+
+.location-links {
+
+	margin-top: 22px;
+
+	&__list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		margin-bottom: 14px;
+
+		li {
+			margin-bottom: 8px;
+		}
+	}
+
+	&__title {
+		font-size: 16px;
+		padding-bottom: 6px;
+		margin-bottom: 8px;
+	    border-bottom: 1px solid #cacaca;
+	}
+
+	@include breakpoint(medium) {
+
+		margin-top: 30px;
+
+		&__list {
+			column-count: 2;
+			margin-bottom: 22px;
+
+			li {
+				margin-bottom: 6px;
+			}
+		}
+
+		&__title {
+			font-size: 21px;
+			padding-bottom: 8px;
+			margin-bottom: 18px;
+		}
+	}
+}

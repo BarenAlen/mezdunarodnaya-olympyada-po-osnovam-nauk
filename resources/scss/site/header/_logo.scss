@@ -1,0 +1,15 @@
+&__logo {
+	@include breakpoint(small only) {
+		display: none;
+	}
+
+	@include breakpoint(medium) {
+		@include flex-grid-column(1 of 16, 0);
+
+		display: initial;
+	}
+
+	img {
+		width: 100%; // because IE, that's why!
+	}
+}

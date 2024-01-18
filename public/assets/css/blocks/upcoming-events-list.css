@@ -1,0 +1,435 @@
+.upcoming-events-list {
+    background: #00baa2 50% 50% no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+.upcoming-events-list__container {
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+}
+@media screen and (max-width: 47.9375em) {
+    .upcoming-events-list__container {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+    }
+}
+@media screen and (min-width: 48em) and (max-width: 63.9375em) {
+    .upcoming-events-list__container {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+    }
+}
+@media screen and (min-width: 64em) and (max-width: 79.9375em) {
+    .upcoming-events-list__container {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+    }
+}
+@media screen and (min-width: 80em) {
+    .upcoming-events-list__container {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+    }
+}
+@media screen and (max-width: 47.9375em) {
+    .upcoming-events-list__container {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+@media screen and (min-width: 48em) and (max-width: 63.9375em) {
+    .upcoming-events-list__container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+@media screen and (min-width: 64em) and (max-width: 79.9375em) {
+    .upcoming-events-list__container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+@media screen and (min-width: 80em) {
+    .upcoming-events-list__container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+.upcoming-events-list__title {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    padding-left: 0.375rem;
+    padding-right: 0.375rem;
+    max-width: 100%;
+    margin: 16px 0;
+    font-size: 18px;
+    line-height: 1;
+    text-align: center;
+    font-family: MuseoRegular, sans-serif;
+}
+@media screen and (min-width: 48em) {
+    .upcoming-events-list__title {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        margin: 18px 0;
+        font-size: 24px;
+    }
+}
+@media screen and (min-width: 64em) {
+    .upcoming-events-list__title {
+        margin: 32px 0;
+        font-size: 42px;
+    }
+}
+.upcoming-events-list__item {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    padding-left: 0.375rem;
+    padding-right: 0.375rem;
+    max-width: 50%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+}
+@media screen and (min-width: 48em) {
+    .upcoming-events-list__item {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        -ms-flex: 0 0 33.3333333333%;
+        flex: 0 0 33.3333333333%;
+        padding-left: 0.375rem;
+        padding-right: 0.375rem;
+        max-width: 33.3333333333%;
+        margin-bottom: 32px;
+    }
+}
+@media screen and (min-width: 48em) and (min-width: 48em) {
+    .upcoming-events-list__item {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+}
+@media screen and (min-width: 64em) {
+    .upcoming-events-list__item {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        padding-left: 0.375rem;
+        padding-right: 0.375rem;
+        max-width: 25%;
+    }
+}
+@media screen and (min-width: 64em) and (min-width: 48em) {
+    .upcoming-events-list__item {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+}
+@media screen and (min-width: 80em) {
+    .upcoming-events-list__item {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        padding-left: 0.375rem;
+        padding-right: 0.375rem;
+        max-width: 25%;
+    }
+}
+@media screen and (min-width: 80em) and (min-width: 48em) {
+    .upcoming-events-list__item {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+}
+.upcoming-events-list__item > * {
+    max-width: 100%;
+}
+.upcoming-events-list--promo .upcoming-events-list__container {
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+@media screen and (min-width: 64em) {
+    .upcoming-events-list--promo .upcoming-events-list__container {
+        padding-top: 72px;
+        padding-bottom: 72px;
+    }
+}
+.upcoming-events-list--promo .upcoming-events-list__title {
+    margin-top: 0;
+}
+@media screen and (min-width: 48em) {
+    .upcoming-events-list--promo .upcoming-events-list__title {
+        margin-top: 0;
+    }
+}
+.upcoming-events-list--promo .upcoming-events-list__item {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    padding-left: 0.375rem;
+    padding-right: 0.375rem;
+    max-width: 100%;
+}
+@media screen and (min-width: 48em) {
+    .upcoming-events-list--promo .upcoming-events-list__item {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        padding-left: 0.375rem;
+        padding-right: 0.375rem;
+        max-width: 100%;
+    }
+}
+@media screen and (min-width: 48em) and (min-width: 48em) {
+    .upcoming-events-list--promo .upcoming-events-list__item {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+}
+@media screen and (min-width: 64em) {
+    .upcoming-events-list--promo .upcoming-events-list__item {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        padding-left: 0.375rem;
+        padding-right: 0.375rem;
+        max-width: 100%;
+    }
+}
+@media screen and (min-width: 64em) and (min-width: 48em) {
+    .upcoming-events-list--promo .upcoming-events-list__item {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+}
+@media screen and (min-width: 80em) {
+    .upcoming-events-list--promo .upcoming-events-list__item {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        padding-left: 0.375rem;
+        padding-right: 0.375rem;
+        max-width: 100%;
+    }
+}
+@media screen and (min-width: 80em) and (min-width: 48em) {
+    .upcoming-events-list--promo .upcoming-events-list__item {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+}
+@media screen and (min-width: 48em) {
+    .upcoming-events-list {
+        background-image: url(assets/img/start/map.png);
+    }
+}
+.upcoming-events-list__title {
+    color: #fefefe;
+}
+.upcoming-events-list__title:focus,
+.upcoming-events-list__title:hover {
+    color: #a8e7df;
+}
+.upcoming-events-list__list {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    padding-left: 0.375rem;
+    padding-right: 0.375rem;
+    max-width: 100%;
+    position: relative;
+    min-height: 300px;
+}
+@media screen and (min-width: 48em) {
+    .upcoming-events-list__list {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        -ms-flex: 0 0 62.5%;
+        flex: 0 0 62.5%;
+        padding-left: 0.375rem;
+        padding-right: 0.375rem;
+        max-width: 62.5%;
+    }
+}
+@media screen and (min-width: 48em) and (min-width: 48em) {
+    .upcoming-events-list__list {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+}
+@media screen and (min-width: 64em) {
+    .upcoming-events-list__list {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        padding-left: 0.375rem;
+        padding-right: 0.375rem;
+        max-width: 50%;
+    }
+}
+@media screen and (min-width: 64em) and (min-width: 48em) {
+    .upcoming-events-list__list {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+}
+@media screen and (min-width: 64em) {
+    mc .upcoming-events-list__list:after {
+        content: "";
+        position: absolute;
+        left: 100%;
+        top: 50%;
+        width: 385px;
+        height: 301px;
+        margin-top: -150px;
+        background: transparent
+            url(assets/img/site/upcoming-events/trophies.svg) 100% no-repeat;
+    }
+}
+.upcoming-events-list__item {
+    display: block;
+    margin-bottom: 16px;
+}
+@media screen and (min-width: 48em) {
+    .upcoming-events-list__item {
+        margin-bottom: 32px;
+    }
+}
+.upcoming-events-list__item:last-child {
+    margin-bottom: 0;
+}
+.upcoming-events-list__calendar {
+    margin-bottom: 12px;
+    padding: 32px;
+    font-size: 16px;
+    line-height: 1;
+    border-radius: 4px;
+    background: #fefefe;
+    color: #333;
+}
+@media screen and (max-width: 47.9375em) {
+    .upcoming-events-list__calendar {
+        display: none !important;
+    }
+}
+@media screen and (min-width: 48em) {
+    .upcoming-events-list__calendar {
+        -ms-flex: 0 0 37.5%;
+        flex: 0 0 37.5%;
+        padding-left: 0.375rem;
+        padding-right: 0.375rem;
+        max-width: 37.5%;
+    }
+}
+@media screen and (min-width: 48em) and (min-width: 48em) {
+    .upcoming-events-list__calendar {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+}
+@media screen and (min-width: 64em) {
+    .upcoming-events-list__calendar {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        padding-left: 0.375rem;
+        padding-right: 0.375rem;
+        max-width: 25%;
+    }
+}
+@media screen and (min-width: 64em) and (min-width: 48em) {
+    .upcoming-events-list__calendar {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+}
+.upcoming-events-list__calendar__month {
+    font-size: 21px;
+    text-align: center;
+}
+.upcoming-events-list__calendar__weekdays {
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+}
+.upcoming-events-list__calendar__weekday {
+    -ms-flex: 0 0 14.2857142857%;
+    flex: 0 0 14.2857142857%;
+    max-width: 14.2857142857%;
+    line-height: 32px;
+    text-align: center;
+}
+.upcoming-events-list__calendar__dates {
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+}
+.upcoming-events-list__calendar__date {
+    -ms-flex: 0 0 14.2857142857%;
+    flex: 0 0 14.2857142857%;
+    max-width: 14.2857142857%;
+    position: relative;
+    margin-bottom: 8px;
+    line-height: 26px;
+    text-align: center;
+    cursor: default;
+    z-index: 1;
+}
+.upcoming-events-list__calendar__date:before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    right: 2px;
+    top: 2px;
+    bottom: 2px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    z-index: -1;
+}
+.upcoming-events-list__calendar__date--current:before {
+    border-color: #fbb932;
+    background: #fefefe;
+}
+.upcoming-events-list__calendar__date--has-upcoming-event:before {
+    border-color: #fbb932;
+    background: #fbb932;
+}
+.upcoming-events-list__calendar__date--has-previous-event:before {
+    border-color: #eef1f5;
+    background: #eef1f5;
+}
+.upcoming-events-list__calendar__date:nth-child(7n),
+.upcoming-events-list__calendar__date:nth-child(7n - 1) {
+    color: #e96100;
+}
+/*# sourceMappingURL=upcoming-events-list.css.map */

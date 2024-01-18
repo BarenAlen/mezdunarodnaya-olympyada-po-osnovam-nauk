@@ -1,0 +1,215 @@
+$main-menu-height-small: 40px;
+$main-menu-height-medium: 50px;
+$main-menu-background-primary: map-get($foundation-palette, primary);
+$main-menu-background-accent: map-get($foundation-palette, accent);
+
+.main-menu {
+	// background: $main-menu-background-primary linear-gradient(to right, transparent 70%, $main-menu-background-accent 70%, $main-menu-background-accent 100%);
+	background: $main-menu-background-primary;
+
+	&__container {
+		@include container;
+		@include flex-align($x: justify, $y: middle);
+
+		position: relative;
+		height: $main-menu-height-small;
+		min-height: $main-menu-height-small;
+		max-height: $main-menu-height-small;
+		line-height: $main-menu-height-small;
+
+		@include breakpoint(medium) {
+			height: $main-menu-height-medium;
+			min-height: $main-menu-height-medium;
+			max-height: $main-menu-height-medium;
+			line-height: $main-menu-height-medium;
+		}
+	}
+
+	&__item {
+		display: block;
+		height: $main-menu-height-small;
+		min-height: $main-menu-height-small;
+		max-height: $main-menu-height-small;
+		padding: {
+			left: 6px;
+			right: 6px;
+		}
+		background: $main-menu-background-primary;
+		color: $white;
+		line-height: $main-menu-height-small;
+		white-space: nowrap;
+		transition: all 0.3s ease;
+		text-decoration: none;
+
+		@include breakpoint(medium) {
+			height: $main-menu-height-medium;
+			min-height: $main-menu-height-medium;
+			max-height: $main-menu-height-medium;
+			line-height: $main-menu-height-medium;
+			padding: {
+				left: 12px;
+				right: 12px;
+			}
+		}
+
+		&--current {
+			cursor: default;
+		}
+
+		&--hide-on-mobile {
+			@include breakpoint(small only) {
+				display: none;
+			}
+		}
+
+		&:hover,
+		&:focus,
+		&--current {
+			color: $white;
+			background: smart-scale($main-menu-background-primary);
+			outline: none;
+		}
+
+		&__icon {
+			line-height: $main-menu-height-small;
+
+			@include breakpoint(medium) {
+				line-height: $main-menu-height-medium;
+			}
+		}
+	}
+
+	&__home-link,
+	&__login-link,
+	&__registration-link,
+	&__logout-link,
+	&__cabinet-link {
+		@include flex-grid-column(shrink, 0);
+
+		background: $main-menu-background-accent;
+
+		&:hover,
+		&:focus {
+			color: $white;
+			// background: smart-scale($main-menu-background-accent, 10%);
+		}
+	}
+
+	&__home-link,
+	&__hidden-items-toggler {
+		font-size: 150%;
+	}
+	&__pers-info  {
+		font-size: 130%;
+		padding-left: 10px;
+		padding-right: 10px;
+		@include breakpoint(medium) {
+			display: none;
+		}
+	}
+
+	&__visible-items,
+	&__hidden-items {
+		height: $main-menu-height-small;
+		min-height: $main-menu-height-small;
+		max-height: $main-menu-height-small;
+		line-height: $main-menu-height-small;
+		margin: 0;
+		background: $main-menu-background-primary;
+
+		@include breakpoint(medium) {
+			height: $main-menu-height-medium;
+			min-height: $main-menu-height-medium;
+			max-height: $main-menu-height-medium;
+			line-height: $main-menu-height-medium;
+		}
+	}
+
+	&__visible-items {
+		@include flex-grid-column(null, 0);
+		@include flex-grid-row();
+		@include flex-align($x: spaced, $y: middle);
+
+		overflow: hidden;
+
+		@include breakpoint(small only) {
+			display: none;
+		}
+
+		.main-menu__item {
+			@include flex-grid-column(shrink, 0);
+
+			display: inline-block;
+			padding: {
+				left: 8px;
+				right: 8px;
+			}
+		}
+	}
+
+	&__hidden-items {
+		@include flex-grid-column(null, 0);
+
+		cursor: pointer;
+
+		@include breakpoint(medium) {
+			@include flex-grid-column(shrink, 0);
+
+			position: relative;
+			padding: {
+				left: 8px;
+				right: 8px;
+			}
+		}
+
+		&__toggler {
+			margin: 0 auto;
+			background: none;
+
+			&:hover,
+			&:focus {
+				background: smart-scale($main-menu-background-primary);
+
+				@include breakpoint(small only) {
+					& + .main-menu__hidden-items__dropdown {
+							max-height: 1000px;
+					}
+				}
+			}
+
+			&--right {
+				margin: 0 0 0 auto;
+			}
+		}
+
+		&__dropdown {
+			position: absolute;
+			top: 100%;
+			left: 0;
+			right: 0;
+			max-height: 0;
+			z-index: 1000;
+			overflow: hidden;
+			transition: all 1s ease;
+
+			@include breakpoint(medium) {
+				left: auto;
+				right: -32px;
+			}
+
+			.main-menu__item {
+				border-top: 1px solid darken($main-menu-background-primary, 3%);
+			}
+		}
+
+		&:hover,
+		&:focus {
+			.main-menu__hidden-items__toggler {
+				background: smart-scale($main-menu-background-primary);
+			}
+			.main-menu__hidden-items__dropdown {
+				max-height: 1000px;
+			}
+		}
+	}
+}

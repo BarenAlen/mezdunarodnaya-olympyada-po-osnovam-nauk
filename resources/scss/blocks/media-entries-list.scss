@@ -1,0 +1,10 @@
+@import '../site/base';
+
+.media-entries-list {
+	@include items-list($itemWidth: (
+		small: 1 of 2,
+		medium: 1 of 2,
+		large: 1 of 3,
+		xlarge: 1 of 4,
+	));
+}

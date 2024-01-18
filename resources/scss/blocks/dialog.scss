@@ -1,0 +1,276 @@
+@import '../site/base';
+
+.dialog {
+	margin-bottom: 40px;
+
+	&__btn-create {
+		@include btn(80px, $color: green);
+		display: block;
+		width: 86%;
+		margin: 0 auto;
+		margin-bottom: 25px;
+
+		&--red {
+			@include btn(60px, $color: red);
+			display: block;
+		}
+
+		@include breakpoint(medium) {
+			margin-left: 0;
+			margin-right: 0;
+			width: auto;
+			display: inline-block;
+		}
+	}
+
+	&__row {
+		@include flex-grid-row();
+		align-items: baseline;
+		justify-content: space-between;
+	}
+
+	.filter {
+		margin-right: -8px;
+		margin-left: -8px;
+
+		&__toggle {
+			margin-left: 20px;
+		}
+
+		@include breakpoint(medium) {
+			margin: 0;
+			&__toggle {
+				display: none;
+			}
+		}
+	}
+
+	&__filter {
+		padding: 30px;
+		padding-top: 0;
+		&-btn {
+			button {
+				@include btn();
+			}
+		}
+
+		&-date {
+			display: inline-block;
+			width: 49.4%;
+		}
+
+		&-btn,
+		&-viewed {
+			width: 49.4%;
+		}
+
+		@include breakpoint(medium) {
+			@include flex-grid-row();
+			align-items: flex-end;
+			padding-left: 15px;
+			padding-right: 15px;
+			padding-top: 30px;
+
+			&-name,
+			&-date,
+			&-btn {
+				@include flex-grid-column($gutter: 15px, $columns: 25%);
+			}
+			&-subject {
+				@include flex-grid-column($gutter: 15px, $columns: 30%);
+			}
+			&-viewed {
+				@include flex-grid-column($gutter: 15px, $columns: 20%);
+			}
+
+			& > div:first-child,
+				div:nth-child(5n+5) {
+				padding-left: 0;
+			}
+			& > div:nth-child(4n+4) {
+				padding-right: 0;
+			}
+		}
+	}
+
+	&__posts-container {
+		margin-bottom: 25px;
+	}
+
+	&__post {
+		@include flex-grid-row();
+		@include flex-align($x: spaced, $y: top);
+		flex-wrap: nowrap;
+    	padding: 25px 10px 20px 20px;
+		margin-left: -8px;
+    	margin-right: -8px;
+		text-decoration: none;
+		border-bottom: 1px solid #e6e6e6;
+   		transition: .2s;
+
+		&:hover {
+			background: #EDF1F4;
+		}
+
+		&:first-child {
+			border-top: 1px solid #e6e6e6;
+		}
+
+		&--new {
+			background: #F4DAD9;
+		}
+
+		&-main {
+			@include flex-grid-row();
+			flex-wrap: nowrap;
+			margin-left: 0;
+		}
+
+		&-aside {
+			text-align: center;
+		}
+
+		&-body {
+			padding: 0 10px;
+		}
+
+		&-pic {
+			width: 36px;
+			min-width: 36px;
+			height: 31px;
+			background-repeat: no-repeat;
+			background-size: contain;
+
+			&--operator {
+				background-image: url('../../img/site/messages/operator.png');
+			}
+
+			&--student {
+				background-image: url('../../img/site/messages/student.png');
+			}
+
+			&--teacher {
+				background-image: url('../../img/site/messages/teacher.png');
+			}
+		}
+
+		&-subject {
+			margin-bottom: 6px;
+			display: block;
+		}
+
+		&-data {
+			color: #B3B3B3;
+			span {
+				display: block;
+			}
+
+			&--well {
+				line-height: 1;
+				text-align: center;
+				min-width: 30px;
+			    padding: 4px 6px;
+			    padding-top: 6px;
+			    background: #EEF1F6;
+			    color: #B2B4B3;
+			    margin-bottom: 10px;
+			}
+		}
+
+		&-content {
+			margin-top: 9px;
+			p {
+				margin-bottom: 6px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		&-files {
+			margin: 10px 0;
+		}
+
+		@include breakpoint(medium) {
+			padding-left: 15px;
+			padding-right: 15px;
+			margin: 0;
+			&-body {
+				padding: 0 25px;
+			}
+
+			&-pic {
+				width: 46px;
+				min-width: 46px;
+				height: 46px;
+			}
+
+			&-data {
+				span {
+					display: inline-block;
+				}
+
+				&--well {
+					padding: 5px 9px;
+					min-width: 36px
+				}
+			}
+
+			&-msg {
+				margin-top: 3px;
+			}
+		}
+	}
+
+	&__form {
+		max-width: 600px;
+		margin: 0 auto;
+		margin-top: 25px;
+
+		&-fieldset {
+			padding: 0 22px;
+			margin-top: 20px;
+		}
+
+		&-btn {
+			@include btn(40px);
+			width: 100%;
+			margin-bottom: 20px;
+		}
+
+		label i {
+			color: #b3b3b3;
+		}
+
+		@include breakpoint(medium) {
+			&-fieldset {
+				padding: 0;
+			}
+
+			&-select {
+				max-width: 230px;
+			}
+
+			&-btn {
+				width: auto;
+				margin: 0;
+				background: map_get($btn-colors, green);
+
+				&:hover {
+					background: darken(map_get($btn-colors, green), 5%);
+				}
+			}
+		}
+	}
+
+	@include breakpoint(small only) {
+		.msg {
+			margin-left: -8px;
+			margin-right: -8px;
+		}
+	}
+}
+
+.error-field {
+	border: 1px solid #ff0000 !important;
+}

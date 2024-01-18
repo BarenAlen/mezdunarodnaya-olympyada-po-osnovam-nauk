@@ -1,0 +1,1 @@
+{"version":3,"sources":["contest-gallery-page.css"],"names":[],"mappings":"AAMA,sBACE,aAAe,CAAE","file":"contest-gallery-page.css","sourcesContent":["/**\n * Foundation for Sites by ZURB\n * Version 6.2.3\n * foundation.zurb.com\n * Licensed under MIT Open Source\n */\n.contest-gallery-page {\n  margin: 16px 0; }\n"]}

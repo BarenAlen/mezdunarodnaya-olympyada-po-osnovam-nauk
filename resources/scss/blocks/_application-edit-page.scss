@@ -1,0 +1,40 @@
+@import '../site/base';
+.application-edit {
+	margin-bottom: 30px;
+	@include breakpoint(small only) {
+		.confirmation-pane {
+			display: none;
+		}
+	}
+
+	@include breakpoint(medium) {
+		&__pane-grey {
+			padding: 40px 0;
+			background: #EDF1F4;
+		}
+	}
+}
+
+.modal__instruction {
+	top: 5%;
+	background: white;
+	width: 1040px;
+    margin: auto;
+    position: relative;
+
+	h2 {
+		margin: 0;
+	}
+
+	@media (max-width: 768px) {
+		width: 100%;
+	}
+}
+
+.modal__instruction-content {
+	position: relative;
+	width: 1040px;
+	overflow: auto;
+	height: 85%;
+	font-size: 16px;
+}

@@ -1,0 +1,69 @@
+@import '../site/base';
+
+.side-menu {
+	background: #effbff;
+	padding-left: 12px;
+	padding-top: 24px;
+	height: 100%;
+
+	@include breakpoint(small only) {
+		display: none;
+	}
+
+	&__title {
+		text-align: left;
+		font-size: 1.3125rem;
+		margin-bottom: 3px;
+	}
+
+	&__list {
+		margin: 0;
+		padding: 0;
+		margin-bottom: 16px;
+		list-style: none;
+
+		li {
+			margin-bottom: 4px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			&::after {
+				display: table;
+				content: "";
+				clear: both;
+			}
+
+			&.current {
+				a {
+					color: #B3B3B3;	
+				}
+			}
+		}
+
+		a {
+			text-decoration: none;
+		}
+	}
+
+	&__count {
+		min-width: 25px;
+	    float: right;
+		padding: 6px 3px;
+	    line-height: 0.9;
+	    text-align: center;
+	    margin: 0 8px;
+	    background: map-get($foundation-palette, primary);
+	    color: #fff;
+	    border-radius: 3px;
+	}
+
+	&__item-icon {
+		color: #a6a6a6;
+		margin-right: 10px;
+
+		&--online {
+			color: #00ad97;
+		}
+	}
+}

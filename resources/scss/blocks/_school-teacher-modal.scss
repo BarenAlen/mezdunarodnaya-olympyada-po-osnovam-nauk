@@ -1,0 +1,128 @@
+@import '../site/base';
+.school-teachers-modal {
+	background: #fbf9f5;
+	position: relative;
+	margin: 0 auto;
+
+	.msg {
+		padding: 12px 26px;;
+		margin-bottom: 22px;
+		margin-left: -26px;
+        margin-right: -26px;
+		display: none;
+
+        p {
+            font-size: 16px;
+        }
+	}
+
+	&__btn-edit,
+	&__btn-cancel {
+		@include btn();
+
+		padding-top: 12px !important;
+		padding-bottom: 12px !important;
+		font-size: 16px !important;
+	}
+
+	&__btn-cancel {
+		margin-left: 10px;
+		// Костыль для modal__close
+		position: relative !important;
+		right: 0 !important;
+	}
+
+	&__btn-delete {
+		@include btn(null, null, red);
+
+		padding-top: 12px !important;
+		padding-bottom: 12px !important;
+		font-size: 16px !important;
+	}
+
+	&__form {
+		padding: 15px 26px 100px;
+		max-width: 600px;
+		margin: 0 auto;
+		font-size: 12px;
+
+		&-footer {
+			@include flex-grid-row();
+			position: relative;
+			margin-top: 10px;
+
+			> * {
+				width: 30%;
+			}
+		}
+	}
+
+	&__input-group {
+		position: relative;
+		margin-bottom: 2rem;
+		float: left;
+	    padding-right: 16px;
+
+		input {
+			font-size: 16px;
+			margin-bottom: 0;
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+
+		label {
+			font-size: 16px;
+		}
+	}
+
+	&__text {
+		position: relative;
+		margin-bottom: 2rem;
+		font-size: 16px;
+		span {
+			font-size: 14px;
+			color: #999;
+			display: block;
+		}
+	}
+
+	&__input-checkbox-group {
+		margin: 10px 0;
+		min-height: 100px;
+
+		span {
+			font-size: 16px;
+		    margin: 20px 0 10px;
+		    display: block;
+			width: 100%;
+		}
+
+		hr {
+			padding-top: 10px;
+		}
+	}
+
+	.checkbox-double-stack {
+		position: relative;
+		margin-bottom: 0.2rem;
+		width: 33%;
+		float: left;
+	}
+
+	@include breakpoint(medium) {
+		&__form {
+			padding: 40px 45px 45px;
+			max-width: 100%;
+		}
+
+		&--edit {
+			top: 20px;
+			width: 800px;
+		}
+
+		&--delete {
+			top: 200px;
+			width: 500px;
+		}
+	}
+}

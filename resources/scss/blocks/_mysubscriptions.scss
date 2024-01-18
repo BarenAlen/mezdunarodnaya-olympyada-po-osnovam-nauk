@@ -1,0 +1,22 @@
+.subscriptions {
+	&__control-list {
+		margin: 0;
+		padding: 0;
+		margin-bottom: 30px;
+		list-style: none;
+		li {
+			padding: 11px 0;
+			padding-left: 10px;
+			display: block;
+			border-top: 1px solid #E6E6E6;
+			&:last-child {
+				border-bottom: 1px solid #E6E6E6;
+			}
+		}
+	}
+
+	.btn {
+		width: auto;
+		padding: 16px 70px;
+	}
+}

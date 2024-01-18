@@ -1,0 +1,70 @@
+@import '../site/base';
+
+.gallery-item-card {
+	display: block;
+	width: 100%;
+	padding: 16px 8px;
+	text-align: center;
+	box-shadow: 0 0 0 1px $light-gray;
+	border-radius: 2px;
+	line-height: 1;
+	font-size: 12px;
+	text-decoration: none;
+
+	@include breakpoint(medium) {
+		padding: 32px 16px;
+		font-size: 16px;
+	}
+
+	&:hover,
+	&:focus {
+		box-shadow: 0 0 0 1px $light-gray, 2px 2px 0 0 $medium-gray;
+
+		@include breakpoint(large) {
+			box-shadow: 0 0 0 1px $light-gray, 3px 3px 0 0 $medium-gray;
+		}
+	}
+
+	&__cover {
+		@include flex-grid-row();
+		@include flex-align($x: center, $y: middle);
+
+		height: 80px;
+		margin-bottom: 16px;
+
+		@include breakpoint(medium) {
+			height: 150px;
+		}
+
+		&__image {
+			@include flex-grid-column(100%);
+
+			img {
+				width: auto;
+				height: auto;
+				max-height: 80px;
+
+				@include breakpoint(medium) {
+					max-height: 150px;
+				}
+			}
+		}
+	}
+
+	&__title {
+		margin-bottom: 8px;
+
+		@include breakpoint(medium) {
+			margin-bottom: 16px;
+		}
+	}
+
+	&__description {
+		color: $dark-gray;
+	}
+
+	&__title,
+	&__description {
+		word-wrap: break-word;
+	}
+}

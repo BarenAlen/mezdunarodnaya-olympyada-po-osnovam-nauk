@@ -1,0 +1,210 @@
+@import "../site/base";
+
+.expert-card {
+    text-align: center;
+
+    &__photo {
+        position: relative;
+        box-sizing: content-box;
+        display: inline-block;
+        width: 90px;
+        height: 90px;
+        margin: 2px 2px 14px;
+        padding: 2px;
+        border: 8px solid transparent;
+        background: $white;
+        border-radius: 50%;
+        transition: border-color 0.2s linear;
+        overflow: hidden;
+
+        &:hover,
+        &:focus {
+            margin: 0 0 12px;
+            border-width: 10px;
+
+            .expert-card__photo__container {
+                [data-whatinput="mouse"] &,
+                [data-whatinput="keyboard"] & {
+                    opacity: 1;
+                }
+            }
+        }
+
+        @include breakpoint(medium) {
+            width: 170px;
+            height: 170px;
+            border-width: 12px;
+
+            &:hover,
+            &:focus {
+                margin: 0 0 12px;
+                border-width: 14px;
+            }
+        }
+
+        @each $name, $color in $card-themes-palette {
+            .expert-card--theme-#{$name} & {
+                border-color: $color;
+
+                &:hover,
+                &:focus {
+                    border-color: transparentize(smart-scale($color, 10%), 0.5);
+                }
+            }
+        }
+
+        &__container {
+            @include flex;
+            @include flex-align($x: center, $y: middle);
+
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+
+            [data-whatinput="mouse"] &,
+            [data-whatinput="keyboard"] & {
+                opacity: 0.9;
+            }
+        }
+    }
+
+    &__name {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 16px;
+        line-height: 1;
+
+        &--small {
+            font-size: 11px;
+        }
+
+        @include breakpoint(medium) {
+            font-size: 21px;
+
+            &--small {
+                font-size: 16px;
+            }
+        }
+    }
+
+    &__field {
+        margin-bottom: 8px;
+        font-size: 14px;
+        line-height: 1;
+
+        @include breakpoint(medium) {
+            font-size: 16px;
+        }
+    }
+
+    &__summary {
+        display: none;
+        font-size: 14px;
+
+        @include breakpoint(medium) {
+            font-size: 16px;
+        }
+    }
+
+    &--short {
+        margin-bottom: 8px;
+        text-align: left;
+
+        @include breakpoint(medium) {
+            margin-bottom: 16px;
+        }
+    }
+
+    &--short &__photo {
+        display: none;
+    }
+
+    &--short &__name {
+        font-size: 14px;
+
+        @include breakpoint(medium) {
+            font-size: 18px;
+        }
+    }
+
+    &--short &__field {
+        font-size: 12px;
+
+        @include breakpoint(medium) {
+            font-size: 14px;
+        }
+    }
+
+    @include breakpoint(medium) {
+        &--featured {
+            @include flex-grid-row($behavior: collapse);
+        }
+
+        &--featured {
+            text-align: left;
+            margin: {
+                top: 50px;
+                bottom: 50px;
+            }
+            padding-bottom: 50px;
+            border-bottom: 1px solid $light-gray;
+        }
+
+        &--featured &__photo {
+            @include flex-grid-column(shrink);
+
+            width: 280px;
+            height: 280px;
+            margin: 4px;
+            padding: 4px !important; // перебиваем стили колонки
+            border-width: 26px;
+            border-bottom-color: transparent;
+            transform: rotate(-60deg);
+
+            &:hover,
+            &:focus {
+                margin: 0;
+                border-width: 30px;
+                border-bottom-color: transparent;
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: 90px;
+                right: -100px;
+                width: 153px;
+                height: 81px;
+                background: transparent
+                    url("assets/img/site/experts/square-academic-cap.svg") top
+                    right no-repeat;
+                background-size: contain;
+                transform: rotate(72deg);
+            }
+
+            &__container {
+                transform: rotate(60deg);
+            }
+        }
+
+        &--featured &__details {
+            @include flex-grid-column();
+            @include grid-column-offset(1);
+        }
+
+        &--featured &__name {
+            margin-bottom: 12px;
+            font-size: 32px;
+        }
+
+        &--featured &__field {
+            margin-bottom: 12px;
+            font-size: 24px;
+        }
+
+        &--featured &__summary {
+            display: block;
+        }
+    }
+}

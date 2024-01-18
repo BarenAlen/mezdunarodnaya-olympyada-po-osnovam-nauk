@@ -1,0 +1,196 @@
+@import '../site/base';
+@import '../common/helpers';
+@import '../site/languages';
+@import '../site/lang_phrase';
+.cabinet {
+
+	font-size: 12px;
+
+	&__instruction-title {
+	    display: inline-block;
+	    font-size: 18px;
+	}
+
+	p {
+		line-height: 1.3;
+	}
+
+	.pseudolink {
+		text-decoration: none;
+		color: #0468a7;
+		border-bottom: 1px dashed #0468a7;
+		cursor: pointer
+	}
+
+	@include container(false);
+
+	@include breakpoint(medium) {
+		@include flex-grid-row($columns: 12);
+		font-size: 14px;
+	}
+
+	@include breakpoint(large) {
+		font-size: 16px;
+	}
+
+	&__aside {
+		margin-top: 23px;
+		@include breakpoint(medium) {
+			@include flex-grid-column($columns: 3, $gutter: 0);
+		}
+	}
+
+	&__main {
+		@include flex-grid-column($columns: 12, $gutter: 0);
+
+		@include breakpoint(medium) {
+			margin-top: 6px;
+			padding-left: 22px;
+			@include flex-grid-column($columns: 9, $gutter: 0);
+		}
+	}
+
+	&__title {
+		width: 100%;
+	    margin-top: 20px;
+	    margin-bottom: 16px;
+	    margin-left: 0;
+	    margin-right: 0;
+	    font-size: 140%;
+	    line-height: 1;
+	    text-align: center;
+	    position: relative;
+
+	    &-sub {
+	    	margin-top: 17px;
+		    display: block;
+		    font-size: 70%;
+		    font-family: "MuseoSansRegular", sans-serif;
+	    }
+
+	    @include breakpoint(medium) {
+	    	margin-top: 26px;
+	    	margin-bottom: 31px;
+	    	font-size: 250%;
+
+	    	&-sub {
+	    		margin-top: 10px;
+	    		font-size: 54%;
+	    	}
+	    }
+	    .note-btn {
+	    	top: 40%;
+	    	right: 0;
+	    }
+	}
+
+	&__title-note {
+		@include note($right: 18px, $medium: 0);
+	}
+
+	&__block-title {
+		font-size: 1.3em;
+		margin-bottom: 18px;
+		@include breakpoint(medium) {
+			font-size: 2em;
+			margin-bottom: 22px;
+		}
+	}
+
+	&__applications {
+		margin-left: -9px;
+    	margin-right: -9px;
+    	@include breakpoint(medium) {
+    		margin: 0;
+    	}
+	}
+
+	&__msg-container {
+		margin-right: -8px;
+		margin-left: -8px;
+		p {
+			padding-right: 22px;
+			padding-left: 8px;
+		}
+		@include breakpoint(medium) {
+    		margin-bottom: 42px;
+    		margin-right: 0;
+			margin-left: 0;
+			p {
+				padding-left: 16px;
+				padding-right: 30px;
+			}
+    	}
+	}
+
+	&__table-wrap {
+		margin: 0 -8px;
+
+		@include breakpoint(medium) {
+			margin: 0;
+		}
+	}
+
+	&__table {
+		thead {
+			background: #feecc7;
+
+			td, th {
+				font-weight: normal;
+			}
+		}
+
+		tbody {
+			border: 0;
+		}
+
+		&__row, &__row_simple {
+			&, td, th {
+				background: none;
+			}
+
+			td, th {
+				padding: 16px;
+			}
+
+			&--featured {
+				&, td, th {
+					background-color: #feb !important;
+				}
+			}
+
+			td {
+				border: 1px solid map-get($foundation-palette, muted);
+
+				&:first-child {
+					border-left: 0;
+				}
+
+				&:last-child {
+					border-right: 0;
+				}
+			}
+		}
+
+		&__row_simple {
+
+			&:nth-of-type(odd) {
+				&, td, th {
+					background: map-get($foundation-palette, muted);
+				}
+			}
+		}
+
+		&__row {
+
+			&--header {
+				border-top: 1px solid #eee8e7;
+				border-right: 1px solid #eef1f5;
+				border-left: 1px solid #eef1f5;
+				&, td, th {
+					background: map-get($foundation-palette, muted);
+				}
+			}
+		}
+	}
+}

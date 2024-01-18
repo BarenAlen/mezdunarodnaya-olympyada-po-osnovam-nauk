@@ -1,0 +1,10 @@
+@import 'variables';
+@import 'fonts';
+@import 'framework-settings';
+//noinspection CssUnknownTarget
+@import 'foundation';
+
+[data-whatinput='mouse'] a,
+[data-whatinput='keyboard'] a {
+	text-decoration: none;
+}

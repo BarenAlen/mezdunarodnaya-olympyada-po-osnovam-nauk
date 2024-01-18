@@ -1,0 +1,46 @@
+body {
+    background: map-get($foundation-palette, primary);
+
+    @include breakpoint(medium) {
+        background: darken(map-get($foundation-palette, primary), 3%);
+    }
+}
+
+//noinspection CssOptimizeSimilarProperties
+.page {
+    background: url("assets/img/start/map.png") 50% 80%,
+        linear-gradient(
+            to bottom,
+            map-get($foundation-palette, primary-dark),
+            map-get($foundation-palette, primary) 66%
+        ),
+        map-get($foundation-palette, primary);
+    background-repeat: no-repeat, no-repeat, repeat;
+    background-size: 120%, 100%, 100%;
+
+    @include breakpoint(medium) {
+        background: url("assets/img/start/children--left.png") 10% 95%,
+            url("assets/img/start/children--right.png") 90% 95%,
+            linear-gradient(
+                to bottom,
+                transparent 0%,
+                transparent 90%,
+                darken(map-get($foundation-palette, primary), 5) 90%,
+                darken(map-get($foundation-palette, primary), 3%) 100%
+            ),
+            url("assets/img/start/map.png") 50% 80%,
+            linear-gradient(
+                to bottom,
+                map-get($foundation-palette, primary-dark),
+                map-get($foundation-palette, primary) 66%
+            ),
+            map-get($foundation-palette, primary);
+        background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
+            repeat;
+        background-size: 144px, 144px, 100%, 120%, 100%, 100%;
+    }
+
+    @include breakpoint(large) {
+        background-size: auto, auto, 100%, 120%, 100%, 100%;
+    }
+}

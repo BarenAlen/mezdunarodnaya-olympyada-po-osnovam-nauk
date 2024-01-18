@@ -1,0 +1,61 @@
+.lang-phrase {
+	&__wrapper {
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		z-index: 1;
+	}
+	&__show-btn {
+		width: 50px;
+		height: 50px;
+		float: right;
+		position: relative;
+		bottom: 0;
+		right: 100px;
+		cursor: pointer;
+		background-color: gray;
+		.glyphicon {
+			color: #fff;
+			display: block;
+			height: 100%;
+			margin: 13px;
+			font-size: 24px;
+		}
+	}
+	&__result {
+		display: none;
+		width: 100%;
+		max-height: 300px;
+		overflow: scroll;
+		background-color: #fff;
+		border-top: 2px solid gray;
+		&.active {
+			display: block;
+		}
+		.alert {
+			margin: 0;
+		}
+		.table {
+			th {
+				min-width: 80px;
+			}
+			td {
+				padding: 5px;
+				&.phrase_info {
+					text-align: center;
+					.glyphicon {
+						color: #3c763d;
+					}
+				}
+				&:hover {
+					background-color: lighten(#000, 93.5%);
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}
+
+#wrapper.long {
+	padding-bottom: 300px;
+}

@@ -1,0 +1,20 @@
+'use strict';
+$(function() {
+  return $('.js-download_file').on('click', function(e) {
+    var path, token;
+    e.preventDefault();
+    path = $(this).data('download');
+    token = $(this).data('token');
+    return $.post('/ajax/getYandexFile.php', {
+      ajax: 'Y',
+      token: token,
+      downloadPath: path
+    }, function(response) {
+      if (response !== void 0 && response.length > 0) {
+        return window.location.href = response;
+      }
+    });
+  });
+});
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYmxvY2tzL3BlZGFnb2dpY2FsLXdvcmtzaG9wLmpzIiwic291cmNlUm9vdCI6Ii9zb3VyY2UvIiwic291cmNlcyI6WyJibG9ja3MvcGVkYWdvZ2ljYWwtd29ya3Nob3AuY29mZmVlIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0FBRUEsQ0FBQSxDQUFFLFNBQUE7U0FDQSxDQUFBLENBQUUsbUJBQUYsQ0FBc0IsQ0FBQyxFQUF2QixDQUEwQixPQUExQixFQUFtQyxTQUFDLENBQUQ7QUFDakMsUUFBQTtJQUFBLENBQUMsQ0FBQyxjQUFGLENBQUE7SUFFQSxJQUFBLEdBQU8sQ0FBQSxDQUFFLElBQUYsQ0FBTyxDQUFDLElBQVIsQ0FBYSxVQUFiO0lBQ1AsS0FBQSxHQUFRLENBQUEsQ0FBRSxJQUFGLENBQU8sQ0FBQyxJQUFSLENBQWEsT0FBYjtXQUVSLENBQUMsQ0FBQyxJQUFGLENBQ0UseUJBREYsRUFFRTtNQUNFLElBQUEsRUFBTSxHQURSO01BRUUsS0FBQSxFQUFPLEtBRlQ7TUFHRSxZQUFBLEVBQWMsSUFIaEI7S0FGRixFQU9FLFNBQUMsUUFBRDtNQUNFLElBQUcsUUFBQSxLQUFjLE1BQWQsSUFBNEIsUUFBUSxDQUFDLE1BQVQsR0FBa0IsQ0FBakQ7ZUFDRSxNQUFNLENBQUMsUUFBUSxDQUFDLElBQWhCLEdBQXVCLFNBRHpCOztJQURGLENBUEY7RUFOaUMsQ0FBbkM7QUFEQSxDQUFGIiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnXHJcblxyXG4kIC0+XHJcbiAgJCgnLmpzLWRvd25sb2FkX2ZpbGUnKS5vbiAnY2xpY2snLCAoZSkgLT5cclxuICAgIGUucHJldmVudERlZmF1bHQoKVxyXG4gICAgXHJcbiAgICBwYXRoID0gJCh0aGlzKS5kYXRhKCdkb3dubG9hZCcpXHJcbiAgICB0b2tlbiA9ICQodGhpcykuZGF0YSgndG9rZW4nKVxyXG4gICAgXHJcbiAgICAkLnBvc3QoXHJcbiAgICAgICcvYWpheC9nZXRZYW5kZXhGaWxlLnBocCcsXHJcbiAgICAgIHtcclxuICAgICAgICBhamF4OiAnWSdcclxuICAgICAgICB0b2tlbjogdG9rZW5cclxuICAgICAgICBkb3dubG9hZFBhdGg6IHBhdGhcclxuICAgICAgfSxcclxuICAgICAgKHJlc3BvbnNlKSAtPlxyXG4gICAgICAgIGlmIHJlc3BvbnNlIGlzbnQgdW5kZWZpbmVkIGFuZCByZXNwb25zZS5sZW5ndGggPiAwXHJcbiAgICAgICAgICB3aW5kb3cubG9jYXRpb24uaHJlZiA9IHJlc3BvbnNlXHJcbiAgICApXHJcbiJdfQ==

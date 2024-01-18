@@ -1,0 +1,79 @@
+$btn-colors: (
+    green: #00BAA2,
+    orange: #fbb932,
+    grey: #ccc,
+    red: #F26317,
+    blue: #0071BD,
+);
+
+@mixin btn($padding-x: null, $icon: null, $color: orange) {
+	display: inline-block;
+	min-width: 88px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	line-height: 1;
+	font-size: 12px;
+    text-align: center;
+    border-radius: 3px;
+    white-space: nowrap;
+    text-decoration: none;
+    background: map-get($btn-colors, $color);
+    color: #fff;
+
+	@if ($padding-x != null and $icon != null) {
+
+		padding-left: ($padding-x + $padding-x) / 1.5;
+		padding-right: $padding-x / 1.5;
+
+	} @else if ($padding-x != null and $icon == null) {
+
+		padding-right: $padding-x;
+		padding-left: $padding-x;
+
+	} @else if ($padding-x == null and $icon == null) {
+		
+		width: 100%;
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+
+	@if ($icon) {
+		position: relative;
+		&::before {
+			content: $icon;
+			position: absolute;
+			font-size: 16px;
+			line-height: 1;
+			color: #fff;
+			top: 50%;
+			font-family: "FontAwesome";
+			left: $padding-x / 1.5;
+			transform: translateY(-50%);
+		}
+
+		@include breakpoint(medium) {
+			padding-left: $padding-x + $padding-x;
+			padding-right: $padding-x;
+			&::before {
+				font-size: 24px;
+				left: $padding-x;
+			}
+			
+		}
+	}
+
+	&:hover {
+        background: darken(map-get($btn-colors, $color), 5%);
+        color: #fff;
+    }
+
+    &:disabled {
+        @include button-disabled();
+    }
+
+	@include breakpoint(medium) {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 1em;
+    }
+}

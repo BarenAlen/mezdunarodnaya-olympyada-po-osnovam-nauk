@@ -1,0 +1,11 @@
+@import '../site/base';
+
+.contest-news-page {
+	@include container(false);
+
+	margin: 16px 0;
+
+	.contest-news__title {
+		display: none;
+	}
+}

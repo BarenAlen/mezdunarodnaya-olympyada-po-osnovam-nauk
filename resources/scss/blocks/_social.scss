@@ -1,0 +1,127 @@
+@import "../site/base";
+
+//noinspection CssOptimizeSimilarProperties
+.social {
+    position: relative;
+    display: none;
+    padding: 72px 16px;
+    background: no-repeat,
+        // no-op для того, чтобы определения всех фонов были в одную линию
+        url("assets/img/site/social/bushes.svg"),
+        url("assets/img/site/social/clouds.svg"), #d3f4ff;
+    background-position: 0, 50% 120%, 50% 130%;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+
+    @include breakpoint(medium) {
+        display: block;
+    }
+
+    @include breakpoint(xlarge) {
+        &:before {
+            content: "";
+            position: absolute;
+            bottom: 32px;
+            left: 50%;
+            height: 424px;
+            width: 195px;
+            margin-left: -48px;
+            background: transparent url("assets/img/site/social/girl.png")
+                bottom left no-repeat;
+            background-size: contain;
+        }
+    }
+
+    &__header {
+        display: block;
+        line-height: 1.2;
+        text-align: center;
+
+        &--main {
+            font-size: 42px;
+        }
+
+        &--clarification {
+            font-size: 28px;
+        }
+    }
+
+    &__widgets {
+        @include flex-grid-row();
+        @include flex-align($x: spaced, $y: middle);
+    }
+
+    &__widget__wrapper {
+        @include flex-grid-column(shrink, 0);
+    }
+
+    &__widget {
+        position: relative;
+        width: 300px;
+        min-height: 200px;
+        margin: 120px 0 0;
+        padding: 16px;
+        box-sizing: content-box;
+        background: $white;
+        border-radius: 4px;
+        z-index: 1;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: -120px;
+            left: 50%;
+            width: 90px;
+            height: 86px;
+            background: transparent url("assets/img/site/social/arrow.png")
+                bottom center no-repeat;
+            background-size: contain;
+        }
+
+        &--vk {
+            @include breakpoint(large) {
+                width: 400px;
+            }
+
+            &:before {
+                top: -90px;
+                width: (90 / 1.5) + px;
+                height: (86 / 1.5) + px;
+                transform: rotateY(180deg);
+            }
+
+            &:after {
+                position: absolute;
+                content: "";
+                top: -140px;
+                left: 50px;
+                width: 125px;
+                height: 140px;
+                background: transparent
+                    url("assets/img/site/social/waving-boy.png") bottom center
+                    no-repeat;
+                background-size: contain;
+            }
+        }
+
+        &--facebook {
+            &:before {
+                margin-left: (86 / 2 * -1) + px;
+            }
+
+            @include breakpoint(xlarge) {
+                &:after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    right: -140px;
+                    height: 315px;
+                    width: 126px;
+                    background: transparent
+                        url("assets/img/site/social/boy.png") bottom left
+                        no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+    }
+}

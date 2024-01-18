@@ -1,0 +1,52 @@
+@mixin flex-table($breakpoint, $y-align) {
+	
+	input,
+	select {
+		margin: 0;
+	}
+
+	&-container {
+		@include container(false);
+	}
+
+	&-addon {
+		@include flex-grid-row();
+		@include flex-align($y: $y-align);
+		padding: 9px 0;
+		background: #EEF1F6;
+
+		@include breakpoint($breakpoint) {
+			padding: 15px 0;
+		}
+	}
+
+	&-row {
+		@include flex-grid-row();
+		border-bottom: 1px solid #e6e6e6;
+
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+
+	&-header, &-footer {
+		@include flex-grid-row();
+		@include flex-align($y: $y-align);
+		padding: 9px 0;
+		background: #FDDFA1;
+
+		@include breakpoint($breakpoint) {
+			padding: 15px 0;
+		}
+	}
+
+	&-sub-header {
+		@include flex-grid-row();
+		padding: 9px 0;
+		background: #EEF1F6;
+
+		@include breakpoint($breakpoint) {
+			padding: 15px 0;
+		}
+	}
+}

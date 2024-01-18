@@ -1,0 +1,12 @@
+@mixin padding-from-edge {
+	@each $breakpoint in $breakpoint-classes {
+		$padding-from-edge-for-current-breakpoint: map-get($padding-from-edge, $breakpoint);
+
+		@include breakpoint($breakpoint only) {
+			padding: {
+				left: $padding-from-edge-for-current-breakpoint;
+				right: $padding-from-edge-for-current-breakpoint;
+			}
+		}
+	}
+}

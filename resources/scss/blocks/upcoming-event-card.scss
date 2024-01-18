@@ -1,0 +1,29 @@
+@import '../site/base';
+
+.upcoming-event-card {
+	&__datetime {
+		display: block;
+		color: #005d51;
+		font-size: 16px;
+
+		@include breakpoint(medium) {
+			font-size: 18px;
+		}
+	}
+
+	&__title {
+		display: block;
+		font-size: 16px;
+		line-height: 1;
+		color: $white;
+
+		@include breakpoint(medium) {
+			font-size: 18px;
+		}
+
+		&:hover,
+		&:focus {
+			color: #a7e7df;
+		}
+	}
+}

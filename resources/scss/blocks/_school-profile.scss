@@ -1,0 +1,199 @@
+@import '../site/base';
+.school-profile {
+	legend {
+		line-height: 2.8;
+	}
+	&__title {
+		width: 100%;
+	    margin-top: 20px;
+	    margin-bottom: 16px;
+	    margin-left: 0;
+	    margin-right: 0;
+	    font-size: 140%;
+	    line-height: 1;
+	    text-align: center;
+	    position: relative;
+
+	    &-sub {
+	    	margin-top: 17px;
+		    display: block;
+		    font-size: 70%;
+		    font-family: "MuseoSansRegular", sans-serif;
+	    }
+
+	    @include breakpoint(medium) {
+	    	margin-top: 26px;
+	    	margin-bottom: 31px;
+	    	font-size: 250%;
+
+	    	&-sub {
+	    		margin-top: 10px;
+	    		font-size: 54%;
+	    	}
+	    }
+	    .note-btn {
+	    	top: 40%;
+	    	right: 0;
+	    }
+	}
+	&__title-note {
+		@include note($right: 18px, $medium: 0);
+	}
+	&__separator {
+		border-bottom: 1px solid #E6E6E6;
+		margin-bottom: 10px;
+    	padding-bottom: 11px;
+	}
+
+	&__container {
+		width: 86%;
+		margin: 0 auto;
+		@include breakpoint(medium) {
+			width: 542px;
+			margin: 0;
+			&--flex {
+				display: flex;
+				justify-content: flex-end;
+				align-items: baseline;
+			}
+		}
+		@include breakpoint(large) {
+			width: 640px;
+			margin: 0;
+		}
+	}
+
+	&__input-group {
+		margin-bottom: 14px;
+
+		label {
+			line-height: 2.8;
+			i {
+				color: #B3B3B3;
+			}
+		}
+
+		&-wrap {
+			&::after {
+				display: table;
+				clear: both;
+				content: "";
+			}
+		}
+
+		&--small {
+			float: left;
+			width: 49%;
+			&:nth-child(odd) {
+				margin-right: 2%;
+			}
+		}
+
+		@include breakpoint (medium) {
+			text-align: right;
+
+			label {
+				display: inline-block;
+				margin-right: 20px;
+			}
+			.text-input, .select-input{
+				width: 350px;
+				float: right;
+			}
+
+			.select-input {
+				margin: 0;
+			}
+
+			&--small {
+				float: left;
+				width: 46.7%;
+				margin: 0 !important;
+				margin-bottom: 14px !important;
+				&:nth-child(odd) {
+					width: 53.3%;
+				}
+				.text-input, .select-input {
+					width: 100px;
+				}
+			}
+		}
+
+		@include breakpoint(large) {
+			&--small {
+				width: 39%;
+				&:nth-child(odd) {
+					width: 61%;
+				}
+			}
+		}
+	}
+
+	&__note {
+		@include note(-40px);
+	}
+
+	&__checkbox {
+	position: relative;
+	label i {
+			color: #B3B3B3;
+		}
+	}
+
+	&__checkbox-group {
+		position: relative;
+		margin-bottom: 14px;
+		label {
+    		margin-bottom: 12px;
+    		line-height: 1.4;
+		}
+	}
+
+	&__btn {
+		width: 100%;
+	}
+
+	&__form-note {
+		display: block;
+    	margin-bottom: 10px;
+    	margin-top: 10px;
+
+    	i {
+			color: #B3B3B3;
+    	}
+
+		@include breakpoint(medium) {
+			margin: 0;
+			margin-right: 20px;
+		}
+	}
+
+	@include breakpoint(medium) {
+		legend {
+			margin-right: 20px;
+		}
+
+		&__separator {
+			margin-bottom: 30px;
+	    	padding-bottom: 11px;
+		}
+
+		&__btn {
+			width: 350px;
+		}
+
+		&__checkbox {
+			text-align: right;
+			margin-bottom: 14px;
+			label {
+				display: inline-block;
+				width: 350px;
+    			text-align: left;
+			}
+		}
+
+		&__checkbox-group {
+			width: 350px;
+		}
+	}
+}

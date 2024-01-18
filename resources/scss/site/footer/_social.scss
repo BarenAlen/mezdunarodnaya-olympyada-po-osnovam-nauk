@@ -1,0 +1,92 @@
+$footer-social-height-small: 40px;
+$footer-social-height-medium: 70px;
+
+&__social {
+    @include flex-grid-column(100%, 0);
+
+    background-color: map-get($foundation-palette, primary);
+
+    &__container {
+        @include container;
+        @include flex-align($y: middle);
+
+        height: $footer-social-height-small;
+        min-height: $footer-social-height-small;
+        max-height: $footer-social-height-small;
+
+        @include breakpoint(medium) {
+            height: $footer-social-height-medium;
+            min-height: $footer-social-height-medium;
+            max-height: $footer-social-height-medium;
+        }
+    }
+
+    &__call2action {
+        @include flex-grid-column(shrink);
+
+        position: relative;
+        margin: 0 8px 0 70px;
+        line-height: $footer-social-height-small;
+
+        @include breakpoint(medium) {
+            margin-left: 250px;
+            font-size: 175%;
+            line-height: $footer-social-height-medium;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: -70px;
+            width: 78px;
+            height: 95px;
+            background: transparent url("assets/img/site/social/waving-boy.png")
+                no-repeat left bottom;
+            background-size: contain;
+
+            @include breakpoint(medium) {
+                width: 155px;
+                height: 189px;
+                left: -250px;
+            }
+        }
+    }
+
+    &__links {
+        @include flex-grid-column(shrink);
+
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    &__link {
+        display: inline-block;
+
+        i {
+            display: block;
+            width: 28px;
+            height: 28px;
+            padding: 4px;
+            line-height: 20px;
+            text-align: center;
+            background-color: $white;
+            border-radius: 50%;
+
+            & {
+                color: map-get($foundation-palette, primary);
+            }
+
+            &:hover,
+            &:focus,
+            &:active {
+                opacity: 0.7;
+            }
+        }
+
+        & + & {
+            margin-left: 8px;
+        }
+    }
+}

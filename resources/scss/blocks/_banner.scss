@@ -1,0 +1,264 @@
+@import '../site/base';
+
+.banner {
+	width: 100%;
+	background-repeat: no-repeat !important;
+	padding: 0 10px;
+	padding-top: 24px;
+	text-decoration: none;
+	display: flex;
+    align-items: baseline;
+    justify-content: center;
+	background: #0180A0;
+	background-image: url('../../img/site/banners/workshop.png');
+	background-position: bottom center;
+	background-size: contain;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&__title {
+		text-align: center;
+		font-size: 14px;
+		color: #fff;
+		line-height: 1.1;
+		&:hover,
+		&:visited{
+			text-decoration: none;
+			color: #d7d3d7;
+		}
+	}
+
+	&-spo {
+		background-color: #0071bc;
+		background-image: url('../../img/site/banners/spo.jpg');
+		background-position-y: 20px;
+		background-size: cover;
+	}
+
+	&-art {
+		padding-top: 24px;
+		background-color: #d44c33;
+		background-image: url('../../img/site/banners/art.jpg');
+		background-size: cover;
+	}
+
+	@include breakpoint(medium) {
+		padding: 0 30px;
+		padding-top: 30px;
+		background-size: inherit;
+
+		&__title {
+			font-size: 24px;
+		}
+
+		&-spo {
+			background-position-y: 40px;
+		}
+	}
+}
+
+.banner-protocols {
+	display: block;
+	background: #D8F4FF;
+	background-image: url('../../img/site/banners/protocols.png');
+	background-position: center bottom;
+	background-size: 435px;
+
+	&__body {
+		float: right;
+		max-width: 180px;
+		padding: 0 10px;
+		[class^='btn'] {
+			width: 100%;
+			font-size: 11px;
+		}
+	}
+
+	&__link-icon {
+		display: block;
+		position: relative;
+	    padding-left: 44px;
+    	font-size: 0.75rem;
+    	margin: 20px 0;
+
+		i {
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		.square-list::before {
+			width: 26px;
+			height: 28px;
+		}
+	}
+
+	@include breakpoint(medium) {
+		background-size: inherit;
+		&__body {
+			max-width: 282px;
+			padding: 0 20px;
+			padding-top: 40px;
+
+			[class^='btn'] {
+				font-size: 1em;
+			}
+		}
+
+		&__link-icon {
+			display: block;
+			position: relative;
+		    padding-left: 55px;
+	    	font-size: 0.85rem;
+	    	margin: 30px 0;
+
+	    	.square-list::before {
+				width: 34px;
+				height: 37px;
+			}
+		}
+	}
+}
+
+.banner-assistent {
+	background-image: url('../../img/site/banners/assistent.jpg');
+	background-size: cover;
+	text-align: center;
+	padding-top: 14px;
+
+	&__btn {
+		font-family: "MuseoRegular", sans-serif;
+		color: #fff;
+		text-align: center;
+		background: #691770;
+		font-size: 14px;
+		padding: 4px 18px;
+		display: inline-block;
+	}
+
+	@include breakpoint(medium) {
+		padding-top: 20px;
+		&__btn {
+			font-size: 24px;
+			padding: 8px 30px;
+		}
+	}
+}
+
+.banner-demo {
+	display: block;
+	background: #00baa2;
+	padding-top: 14px;
+	margin-bottom: 8px;
+
+	&__body {
+		float: left;
+		max-width: 180px;
+		padding: 0 10px;
+		[class^='btn'] {
+			width: 100%;
+			font-size: 11px;
+		}
+	}
+
+	&__col {
+		
+	}
+
+	&__text {
+		display: none;
+		color: #fff;
+		margin-bottom: 30px;
+	}
+
+	.btn-orange {
+		margin-bottom: 20px;
+	}
+
+	&__link-icon {
+		display: block;
+		position: relative;
+	    padding-left: 44px;
+    	font-size: 0.75rem;
+    	margin: 20px 0;
+    	color: #fff;
+
+		i {
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		.protocol::before {
+			width: 26px;
+			height: 28px;
+		}
+
+		.diploma::before {
+			width: 29px;
+			height: 37px;
+		}
+	}
+
+	@include breakpoint(medium) {
+		background-image: url('../../img/site/banners/demo.jpg');
+	    // background-position: bottom left;
+		background-size: cover;
+		padding-top: 36px;
+
+		&__body {
+			max-width: 100%;
+			padding-top: 0;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			padding-left: 0;
+			padding-right: 0;
+
+			[class^='btn'] {
+				font-size: 1em;
+			}
+		}
+
+		&__col {
+		    flex-basis: 0;
+		    max-width: 260px;
+			min-width: 210px;
+			padding: 0 24px;
+			flex-shrink: 1;
+			flex-grow: 1;
+		}
+
+		&__link-icon {
+			display: block;
+			position: relative;
+		    padding-left: 55px;
+		    padding-top: 10px;
+		    padding-bottom: 10px;
+	    	font-size: 0.85rem;
+	    	margin: 30px 0;
+
+	    	&:first-child {
+	    		margin-top: 0;
+	    	}
+
+	    	.diploma::before {
+				width: 37px;
+				height: 46px;
+			}
+
+			.protocol::before {
+				width: 34px;
+				height: 37px;
+			}
+		}
+	}
+
+	@include breakpoint(large) {
+		// background-position: bottom right;
+	}
+}

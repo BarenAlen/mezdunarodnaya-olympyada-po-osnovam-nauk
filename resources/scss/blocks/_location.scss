@@ -1,0 +1,59 @@
+@import '../site/base';
+
+.location-modal {
+	max-width: 510px;
+	padding: 30px 20px;
+
+	&__title {
+		font-size: 18px;
+		margin-left: -12px;
+		margin-right: -12px;
+	}
+
+	[class*="btn-"] {
+		width: 100%;
+		margin-top: 10px;
+	}
+
+	.close-button {
+		right: 10px;
+		top: 4px;
+		color: #d0d2d3;
+		font-family: "Verdana";
+		font-size: 30px;
+	}
+
+	p {
+		font-size: .9em;
+		text-align: justify;
+	}
+
+	@include breakpoint(medium) {
+
+		padding: 40px 45px;
+
+		&__title {
+			font-size: 26px;
+		}
+
+		[class*="btn-"] {
+			width: 224px;
+			display: block;
+			margin: 0 auto;
+			margin-top: 30px;
+			padding-left: 40px;
+			padding-right: 40px;
+		}
+
+		p {
+			font-size: inherit;
+			text-align: left;
+		}
+	}
+
+	@include breakpoint(large) {
+		&__title {
+			font-size: 30px;
+		}
+	}
+}

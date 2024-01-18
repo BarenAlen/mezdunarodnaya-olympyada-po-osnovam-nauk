@@ -1,0 +1,23 @@
+$bg-color: #fefefe;
+
+body {
+	&.fixed-footer {
+		.control-footer {
+			position: fixed;
+			bottom: 0;
+			width: 920px;
+			z-index: 1;
+			background-color: $bg-color;
+			padding: 10px;
+		}
+	}
+	&.fixed-header {
+		.control-header {
+			position: fixed;
+			top: 0;
+			z-index: 1;
+			background-color: $bg-color;
+			padding: 10px;
+		}
+	}
+}

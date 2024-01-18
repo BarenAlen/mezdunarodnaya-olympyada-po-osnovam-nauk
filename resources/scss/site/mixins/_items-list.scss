@@ -1,0 +1,109 @@
+@mixin items-list($itemWidth, $alignX: left, $alignY: stretch) {
+	&__container {
+		@include container;
+		@include flex-align($x: $alignX, $y: $alignY);
+	}
+
+	&__title {
+		@include flex-grid-column(100%);
+
+		margin: {
+			top: 16px;
+			bottom: 16px;
+			left: 0;
+			right: 0;
+		}
+		font-size: 18px;
+		line-height: 1;
+		text-align: center;
+		font-family: $header-font-family;
+
+		@include breakpoint(medium) {
+			margin: {
+				top: 18px;
+				bottom: 18px;
+				left: 0;
+				right: 0;
+			}
+			font-size: 24px;
+		}
+
+		@include breakpoint(large) {
+			margin: {
+				top: 32px;
+				bottom: 32px;
+				left: 0;
+				right: 0;
+			}
+			font-size: 42px;
+		}
+	}
+
+	&__item {
+		@include flex-grid-column($columns: map_get($itemWidth, small));
+		@include flex();
+		@include flex-align($x: center, $y: stretch);
+
+		margin-bottom: 16px;
+
+		@include breakpoint(medium) {
+			@include flex-grid-column($columns: map_get($itemWidth, medium));
+
+			margin-bottom: 32px;
+		}
+
+		@include breakpoint(large) {
+			@include flex-grid-column($columns: map_get($itemWidth, large));
+		}
+
+		@include breakpoint(xlarge) {
+			@include flex-grid-column($columns: map_get($itemWidth, xlarge));
+		}
+
+		> * {
+			max-width: 100%;
+		}
+	}
+}
+
+@mixin items-list-promo($itemWidth, $alignX: center, $alignY: middle) {
+	&--promo &__container {
+		@include flex-align($x: $alignX, $y: $alignY);
+
+		padding: {
+			top: 32px;
+			bottom: 32px;
+		}
+
+		@include breakpoint(large) {
+			padding: {
+				top: 72px;
+				bottom: 72px;
+			}
+		}
+	}
+
+	&--promo &__title {
+		margin-top: 0;
+
+		@include breakpoint(medium) {
+			margin-top: 0;
+		}
+	}
+
+	&--promo &__item {
+		@include flex-grid-column($columns: map_get($itemWidth, small));
+
+		@include breakpoint(medium) {
+			@include flex-grid-column($columns: map_get($itemWidth, medium));
+		}
+
+		@include breakpoint(large) {
+			@include flex-grid-column($columns: map_get($itemWidth, large));
+		}
+
+		@include breakpoint(xlarge) {
+			@include flex-grid-column($columns: map_get($itemWidth, xlarge));
+		}
+	}
+}

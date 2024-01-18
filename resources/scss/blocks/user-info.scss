@@ -1,0 +1,105 @@
+@import '../site/base';
+.user-info {
+	display: none;
+	padding-top: 15px;
+	padding-bottom: 30px;
+	background: #d7f4ff;
+
+	&--collapse {
+		position: relative;
+		top: -23px;
+		left: 0;
+		right: 0;
+		z-index: 100;
+	}
+	
+	@include breakpoint(medium) {
+		position: static;
+		display: block;
+		padding-bottom: 20px;
+		padding-top: 0;
+	}
+
+	&__table {
+		width: auto;
+		margin-bottom: 8px;
+		font-weight: 300;
+
+		@include breakpoint(medium) {
+			width: 100%;
+			margin-bottom: 5px;
+			tr {
+				vertical-align: top;	
+			}
+		}
+
+		tbody {
+			border: none !important;
+			background-color: #d7f4ff;	
+		}
+		th {
+			padding: 4px 0.8rem;
+			text-align: left;
+			font-weight: 300;
+		}
+
+		td {
+			padding: 4px 0.8rem;
+
+			&:first-child {
+				color: #b3b3b3;
+			}
+			span {
+				color: #a6a6a6;
+			}
+		}
+	}
+
+	&__table-pers-info {
+		thead {
+			display: table-caption;
+			border: 0;
+			background: #D7F4FF;
+			background: linear-gradient(to bottom, #d7f4ff 70%, #ddd 165%);
+			tr:last-child {
+				td {
+					padding-bottom: 20px;
+				} 
+			}
+			tr:first-child {
+				td {
+					padding-top: 19px;
+				} 
+			}
+			td {
+				font-weight: 300;
+			}
+			td:first-child {
+				width: 32%;
+			}
+
+			@include breakpoint(small only) {
+				display: none;
+			}
+		}
+
+		tbody {
+			tr:first-child {
+				td {
+					padding-top: 27px;
+					@include breakpoint(small only) {
+						padding-top: 0;
+					}
+				}
+			}
+		}
+
+		td {
+			padding-right: 1.3rem;
+
+			@include breakpoint(medium) {
+				padding-right: 0.8rem;
+			}
+		}
+	}
+}

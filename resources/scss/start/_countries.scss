@@ -1,0 +1,85 @@
+.countries {
+    margin-top: 20px;
+    font-family: "MuseoSansRegular", sans-serif;
+    font-size: 12px;
+    text-align: center;
+
+    @include breakpoint(large) {
+        margin-top: 50px;
+        font-size: 16px;
+    }
+
+    .country {
+        display: inline-block;
+        min-width: 60px;
+        margin: 16px 8px;
+        padding: 42px 8px 8px;
+        color: $white;
+        text-decoration: underline;
+
+        @include breakpoint(medium) {
+            min-width: 90px;
+            padding-top: 54px;
+        }
+
+        @include breakpoint(large) {
+            min-width: 100px;
+            padding-top: 64px;
+        }
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+
+        @each $country-code in $countries {
+            &--#{$country-code} {
+                background: url("assets/img/start/flags/" + $country-code + ".svg")
+                    center
+                    top
+                    no-repeat;
+                background-size: 50px;
+
+                &:hover,
+                &:focus {
+                    background: url("assets/img/start/flags/" + $country-code + ".svg")
+                            center
+                            top
+                            no-repeat,
+                        linear-gradient(
+                                to bottom,
+                                transparentize(
+                                    map-get($foundation-palette, primary-dark),
+                                    1
+                                ),
+                                map-get($foundation-palette, primary-dark) 66%,
+                                transparentize(
+                                    map-get($foundation-palette, primary-dark),
+                                    1
+                                )
+                            )
+                            no-repeat;
+                    background-size: 50px, auto;
+                }
+
+                @include breakpoint(medium) {
+                    background-size: 60px;
+
+                    &:hover,
+                    &:focus {
+                        background-size: 60px, auto;
+                    }
+                }
+
+                @include breakpoint(large) {
+                    background-size: 70px;
+
+                    &:hover,
+                    &:focus {
+                        background-size: 70px, auto;
+                    }
+                }
+            }
+        }
+    }
+}

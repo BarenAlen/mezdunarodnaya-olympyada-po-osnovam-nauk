@@ -1,0 +1,19 @@
+html {
+	@each $breakpoint, $font-size in $body-font-size {
+		@include breakpoint($breakpoint only) {
+			font-size: $font-size;
+		}
+	}
+}
+
+b, strong {
+	font-family: 'MuseoSansBold', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-align: center;
+
+	b, strong {
+		font-family: 'MuseoBold', 'MuseoSansBold', 'MuseoRegular', serif;
+	}
+}

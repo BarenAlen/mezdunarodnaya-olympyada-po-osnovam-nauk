@@ -1,0 +1,160 @@
+@import '../site/base';
+.contact-us {
+	margin: 0 auto;
+	padding-top: 75px;
+	padding-bottom: 32px;
+	position: relative;
+
+	&::before {
+		content: "";
+		display: block;
+		width: 62px;
+		height: 62px;
+		position: absolute;
+		top: 5px;
+		left: 50%;
+		transform: translateX(-50%);
+		background: url("../../img/site/icon-envelop.png");
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+
+	.msg {
+		padding: 12px 30px 10px;
+		margin: 0 -26px;
+		margin-bottom: 16px;
+
+		p {
+			font-size: 12px;
+		}
+	}
+
+	.modal__close {
+		top: 40px;
+	}
+
+	&__overlay {
+		@include hide-for-only(small);
+		overflow: auto;
+	}
+
+	&__title {
+		font-size: 25px;
+	}
+
+	&__form {
+		&-container {
+			padding: 0 26px;
+			font-size: 12px;
+		}
+
+		&-field {
+
+			input,
+			textarea {
+				margin-bottom: 0;
+			}
+			textarea {
+				min-height: 93px;
+			}
+
+			margin-bottom: 14px;
+		}
+
+		&-captcha {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			&-input,
+			&-img {
+				width: 50%;
+			}
+
+			&-img {
+				text-align: center;
+			    min-height: 35px;
+			    background-repeat: no-repeat;
+			    background-position: center;
+			    background-size: contain;
+				img {
+					display: inline-block;
+				}
+			}
+		}
+
+		&-submit {
+			width: 50%;
+			padding-top: 11px;
+			padding-bottom: 11px;
+		}
+	}
+
+	@include breakpoint(medium) {
+		width: 510px;
+		margin: 40px auto;
+		padding: 0;
+		padding-top: 94px;
+		padding-bottom: 50px;
+		top: calc(50% - 320px);
+		&::before {
+			width: 81px;
+			height: 81px;
+			top: 0;
+		}
+
+		&::after {
+			position: absolute;
+			content: "";
+			display: block;
+			background: #fff;
+			background-image: repeating-linear-gradient(-45deg, 
+				#fff,
+				#fff 8px,
+				#FBB931 8px,
+				#FBB931 16px,
+				#fff  16px,
+				#fff  24px,
+				#01B8A2 24px,
+				#01B8A2 32px,
+				#fff 32px
+				);
+			background-repeat: repeat-y;
+			background-size: 18px 100%;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			top: 40px;
+			z-index: -1;
+		}
+
+		.msg {
+			margin-left: -62px;
+    		margin-right: -80px;
+			padding-left: 62px;
+    		&__close {
+    			top: 3px;
+    		}
+		}
+
+		&__form {
+			&-container {
+				padding-left: 80px;
+				padding-right: 80px;
+			}
+
+			&-field {
+				margin-bottom: 17px;
+			}
+
+			&-msg {
+				margin-right: -80px;
+				margin-left: -62px;
+				p {
+					padding-left: 62px;
+					padding-right: 80px;
+				}
+			}
+		}
+	}
+}

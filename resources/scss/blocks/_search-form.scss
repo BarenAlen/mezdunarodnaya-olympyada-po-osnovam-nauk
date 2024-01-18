@@ -1,0 +1,45 @@
+@import '../site/base';
+.search-form {
+
+	background-color: #feecc7;
+	padding-top: 26px;
+	padding-bottom: 34px;
+	margin-bottom: 30px;
+
+	&__container {
+		@include container(false);
+	}
+
+	&__header {
+		margin-bottom: 12px;
+		&__note {
+			max-width: 390px;
+		    padding-left: 60px;
+		    color: #F7B902;
+		    line-height: 1.3;
+		    background-image: url(../../img/site/arrow-orange.png);
+		    background-repeat: no-repeat;
+		    background-position: 5px 13px;
+		    background-size: auto 39px;
+		    padding-bottom: 14px;
+		}
+	}
+
+	&__search {
+		display: flex;
+		flex-direction: row;
+
+		button[type='submit'] {
+			flex-basis: 160px;
+			flex-shrink: 1;
+			flex-grow: 0;
+		}
+
+		input {
+			flex-basis: 350px;
+			flex-shrink: 1;
+			margin-bottom: 0;
+			margin-right: 20px;
+		}
+	}
+}

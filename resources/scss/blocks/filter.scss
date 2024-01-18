@@ -1,0 +1,68 @@
+@import '../site/base';
+
+.filter {
+	background: #EDF1F4;
+	&__toggle {
+		display: inline-block;
+		position: relative;
+		font-size: 12px;
+		padding: 20px 0;
+		padding-left: 13px;
+		cursor: pointer;
+
+		span {
+			color: #0072B9;
+			border-bottom: 1px dashed #0072B9;
+		}
+
+		&::before {
+			content: "\f105";
+			font-family: "FontAwesome";
+			position: absolute;
+			display: block;
+			font-size: 1.1em;
+			left: 0;
+			color: #B3B3B1;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		&.active {
+			&::before {
+				content: "\f107";
+			}
+			& + .filter__wrapper {
+				max-height: 1000px;
+				opacity: 1;
+    			transition: max-height 1s ease-in-out, opacity .4s linear;
+			}
+		}
+	}
+
+	&__wrapper {
+		max-height: 0;
+		overflow: hidden;
+		opacity: 0;
+		transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+	}
+
+	@include breakpoint(medium) {
+		&__toggle {
+			font-size: 14px;
+			padding-left: 40px
+		}
+
+		&__wrapper {
+			max-height: 100%;
+			opacity: 1;
+		}
+	}
+
+	@include breakpoint(large) {
+		&__toggle {
+			padding-top: 13px;
+			padding-bottom: 13px;
+			font-size: 16px;
+		}
+	}
+}

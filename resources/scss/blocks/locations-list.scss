@@ -1,0 +1,49 @@
+@import '../site/base';
+
+.locations-list {
+
+	@include items-list($itemWidth: (
+		small: 1 of 2,
+		medium: 1 of 3,
+		large: 1 of 3,
+		xlarge: 1 of 3,
+	));
+	@include items-list-promo($itemWidth: (
+		small: 1 of 4,
+		medium: 1 of 5,
+		large: 1 of 5,
+		xlarge: 1 of 5,
+	));
+
+	background: $white;
+	border-top: 1px solid $medium-gray;
+
+	&__container {
+		padding: 0;
+	}
+
+	&__title {
+		width: 100%;
+		font-size: 14px;
+	}
+
+	&__item {
+		min-height: 180px;
+	}
+
+	@include breakpoint(medium) {
+		&__item {
+			min-height: 270px;
+		}
+
+		&__title {
+			font-size: 20px;
+		}
+	}
+
+	@include breakpoint(large) {
+		&__title {
+			font-size: 30px;
+		}
+	}
+}

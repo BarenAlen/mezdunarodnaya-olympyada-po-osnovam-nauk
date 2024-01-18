@@ -1,0 +1,184 @@
+@import '../site/base';
+
+.expert-page {
+	margin-top: 24px;
+
+	&__photo {
+		@include flex-grid-column(shrink, 0);
+
+		display: block;
+		width: 90px;
+		height: 90px;
+		margin: 0 auto 8px;
+		padding: 2px;
+		border: 8px solid transparent;
+		background: $white;
+		border-radius: 50%;
+		overflow: hidden;
+		text-align: center;
+		box-sizing: content-box;
+
+		@include breakpoint(medium) {
+			width: 280px;
+			height: 280px;
+			margin-bottom: 32px;
+			padding: 4px;
+			border-width: 12px;
+		}
+
+		&__container {
+			@include flex;
+			@include flex-align($x: center, $y: middle);
+
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			overflow: hidden;
+		}
+	}
+
+	@each $name, $color in $card-themes-palette {
+		&--theme-#{$name} &__photo {
+			border-color: $color;
+		}
+	}
+
+	&__name {
+		@include flex-grid-column(100%, 0);
+
+		margin: 0 0 8px;
+		font-family: 'MuseoRegular', sans-serif;
+		font-size: font-size-in-percents(18, small);
+		text-align: center;
+
+		@include breakpoint(medium) {
+			margin-bottom: 16px;
+			font-size: font-size-in-percents(32, medium);
+		}
+
+		&__container {
+			@include container(false);
+		}
+	}
+
+	&__field {
+		@include flex-grid-column(100%, 0);
+
+		margin: 0 0 16px;
+		color: $dark-gray;
+		text-align: center;
+
+		@include breakpoint(medium) {
+			margin-bottom: 32px;
+			font-size: font-size-in-percents(21, medium);
+		}
+
+		&__container {
+			@include container(false);
+		}
+	}
+
+	&__summary {
+		@include flex-grid-column(100%, 0);
+
+		margin: 0 0 16px;
+		font-size: font-size-in-percents(16, small);
+		background: #eef1f5;
+
+		@include breakpoint(medium) {
+			margin-bottom: 32px;
+			font-size: font-size-in-percents(18, medium);
+		}
+
+		&__container {
+			@include container(false);
+
+			padding: 16px 0;
+
+			@include breakpoint(medium) {
+				padding-top: 32px;
+				padding-bottom: 32px;
+			}
+
+			& > *:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__bio {
+		@include flex-grid-column(100%, 0);
+
+		margin: 0 0 16px;
+
+		@include breakpoint(medium) {
+			margin-bottom: 32px;
+		}
+
+		&__container {
+			@include container(false);
+
+			@include breakpoint(xlarge) {
+				padding-left: 120px;
+				padding-right: 120px;
+			}
+
+			& > *:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__awards {
+		@include flex-grid-column(100%, 0);
+
+		margin: 0 0 16px;
+
+		@include breakpoint(medium) {
+			margin-bottom: 32px;
+		}
+
+		&__container {
+			@include container(false);
+
+			padding: 16px 0 0;
+			border-top: 1px solid $light-gray;
+
+			@include breakpoint(medium) {
+				padding-top: 32px;
+			}
+
+			@include breakpoint(xlarge) {
+				padding-left: 120px;
+				padding-right: 120px;
+			}
+		}
+	}
+
+	&__links {
+		@include flex-grid-column(100%, 0);
+
+		margin: 0 0 16px;
+		background: #eef1f5;
+
+		@include breakpoint(medium) {
+			margin-bottom: 32px;
+		}
+
+		&__container {
+			@include container(false);
+
+			padding: 16px 0;
+
+			@include breakpoint(medium) {
+				padding-top: 32px;
+				padding-bottom: 32px;
+			}
+
+			@include breakpoint(xlarge) {
+				padding-left: 120px;
+				padding-right: 120px;
+			}
+		}
+	}
+}

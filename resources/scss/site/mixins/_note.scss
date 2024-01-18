@@ -1,0 +1,111 @@
+@mixin note ($right, $top: 50%, $xSmall:0, $medium: center, $small: right) {
+	position: absolute !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	top: $top;
+	right: $right;
+	z-index: 1;
+	line-height: 1;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	@if $top == 50% and $right != 50% {
+		transform: translateY(-50%);
+	} @else if $top == 50% and $right == 50% {
+		transform: translate(50%, -50%);
+	}
+
+	&::after {
+		content: "\f059";
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		font-family: "FontAwesome";
+		font-size: 24px;
+		color: #95E0FF;
+    	line-height: 0.92;
+    	background: #fff;
+    	border-radius: 30px;
+    	height: 22px;
+	}
+
+	&::before {
+		display: none;
+		content: '';
+		position: absolute;
+		z-index: 1001;
+		width: 8px;
+		height: 8px;
+		top: 28px;
+		left: 50%;
+		margin-left: -4px;
+		background: #fff;
+		box-shadow: -1px -1px 4px -1px #999;
+		transform: rotate(45deg);
+	}
+
+	&:hover {
+		z-index: 30;
+		&::after {
+			color: darken(#95E0FF, 5%);
+		}
+	}
+
+	&:hover,
+	&:focus {
+		& > div,
+		& > .popup {
+			display: block;
+		}
+
+		&::before {
+			display: block;
+		}
+	}
+
+	@include breakpoint(small only) {
+		width: 15px;
+   		height: 15px;
+
+		@if $xSmall == 0 {
+			right: 0;
+		} @else {
+			right: $xSmall;
+		}
+
+		&::after {
+			height: 16px;
+			font-size: 20px;
+		}
+
+		&::before {
+			top: 24px;
+		}
+	}
+
+	.popup, & > div {
+		@include note-popup;
+
+		@include breakpoint(small only) {
+			@if $small == right {
+				right: -3px;
+			} @else if $small == center{
+				right: 50%;
+				transform: translateX(50%);
+			}
+			 @else {
+				right: $small;
+			}
+		}
+
+		@include breakpoint(medium) {
+			@if $medium == center {
+				right: 50%;
+				transform: translateX(50%);
+			} @else {
+				right: $medium;
+			}
+		}
+	}
+}

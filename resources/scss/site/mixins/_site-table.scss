@@ -1,0 +1,136 @@
+@mixin site-table($gutter: null, $font-size: (small: 11px, medium: 14px, large: 16px)) {
+	
+	font-size: map_get($font-size, small);
+
+	@if ($gutter) {
+		margin-right: -$gutter;
+		margin-left: -$gutter;
+	}
+	
+	tbody,
+	thead {
+		border: 0;
+	}
+
+	td {
+		padding-top: 9px;
+		padding-bottom: 9px;
+	}
+
+	&__text-muted {
+		color: #B3B3B3;
+	}
+
+	&__icon-link {
+		color: #333;
+		&:hover {
+			color: #4798CD;
+			i {
+				color: #4798CD;
+			}
+		}
+	}
+
+	@include breakpoint(medium) {
+		font-size: map_get($font-size, medium);;
+		margin-left: 0;
+		margin-right: 0;
+		td {
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
+	}
+
+	@include breakpoint(large) {
+		font-size: map_get($font-size, large);;
+	}
+
+	.input-checkbox-custom {
+		& + label {
+			font-size: inherit;
+			margin-bottom: 8px;
+			line-height: 1.4 !important;
+		}
+	}
+}
+
+@mixin table-row($hasPadding: false, $bg-color: null, $bg-alt: false, $v-align: middle) {
+	@include flex-grid-row();
+
+	@if ($bg-alt) {
+		&:nth-child(even) {
+			background: $bg-color;
+		}
+	} @else {
+		background: $bg-color;
+	}
+
+	@include flex-align($y: $v-align);
+
+	@if ($hasPadding) {
+		padding: 9px 8px;
+
+		@include breakpoint(medium) {
+			padding: 15px;
+		}
+	}
+}
+
+
+@mixin table-column($width, $hasGutter: true, $hasPadding: true, $isRow: false) {
+	
+	$padding-x: 30px;
+
+	@if ($hasGutter ) {
+		$padding-x: 30px;
+	} @else {
+		$padding-x: 0;
+	}
+
+	@if ($isRow) {
+		@include flex-grid-row();
+	}
+	
+	@if (map_get($width, small) == auto) {
+		@include flex-grid-column(shrink, $gutter: ceil($padding-x / 2));
+	} @else {
+		@include flex-grid-column($columns: map_get($width, small), $gutter: ceil($padding-x / 2));
+	}
+
+	@if ($hasPadding ) {
+		padding-top: 9px;
+		padding-bottom: 9px;
+	} 
+	
+	@if (map_get($width, medium) == auto) {
+
+		@include breakpoint(medium) {
+			@include flex-grid-column(shrink, $gutter: $padding-x);
+			@if ($hasPadding ) {
+				padding-top: 15px;
+				padding-bottom: 15px;
+			} 
+		}
+	} @else {
+
+		@include breakpoint(medium) {
+			@include flex-grid-column($columns: map_get($width, medium), $gutter: $padding-x);
+			@if ($hasPadding ) {
+				padding-top: 15px;
+				padding-bottom: 15px;
+			} 
+		}
+	}
+
+	@if (map_get($width, large) == auto) {
+
+		@include breakpoint(large) {
+			@include flex-grid-column(shrink, $gutter: $padding-x);
+		}
+	} @else {
+
+		@include breakpoint(large) {
+			@include flex-grid-column($columns: map_get($width, large), $gutter: $padding-x);
+		}
+	}
+}

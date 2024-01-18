@@ -1,0 +1,27 @@
+[class*="pane"] {
+
+	padding: 17px 8px 15px;
+	padding-right: 20px;
+	margin: 16px -8px;
+	font-size: 12px;
+
+	p {
+		margin-bottom: 0.5rem;
+	}
+
+	@include breakpoint(medium) {
+		font-size: inherit;
+		padding: 15px;
+		margin: 20px 0;
+	}
+}
+
+.pane-brown {
+	background: #feecc7;
+	color: #c99428;
+}
+
+.pane-blue {
+	background: #d7f4ff;
+	color: #4698ce;
+}

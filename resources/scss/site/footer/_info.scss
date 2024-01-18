@@ -1,0 +1,33 @@
+&__info {
+	@include flex-grid-column(100%, 0);
+
+	padding: {
+		top: 0;
+		bottom: 16px;
+	}
+
+	@include container(false);
+
+	@include breakpoint(medium) {
+		@include flex-grid-column(1 of 2, 0);
+
+		padding-top: 16px;
+	}
+
+	@include breakpoint(large) {
+		padding: {
+			top: 40px;
+			bottom: 40px;
+		}
+	}
+
+	@include breakpoint(xlarge) {
+		max-width: map-get($container-width, xlarge) / 2;
+		margin: 0;
+		padding-left: 16px;
+	}
+
+	& > *:last-child {
+		margin-bottom: 0;
+	}
+}

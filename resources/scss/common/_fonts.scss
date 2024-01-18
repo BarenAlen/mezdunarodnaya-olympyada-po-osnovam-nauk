@@ -1,0 +1,48 @@
+$fonts-path: "assets/fonts/";
+
+@font-face {
+    // Museo Cyrillic 500
+    font-family: "MuseoRegular";
+    src: url($fonts-path + "MuseoRegular.eot");
+    src: url($fonts-path + "MuseoRegular.eot?#iefix")
+            format("embedded-opentype"),
+        url($fonts-path + "MuseoRegular.woff2") format("woff2"),
+        url($fonts-path + "MuseoRegular.woff") format("woff"),
+        url($fonts-path + "MuseoRegular.ttf") format("truetype"),
+        url($fonts-path + "MuseoRegular.svg#museo_cyrl500") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    // Museo Sans Cyrillic 700
+    font-family: "MuseoBold";
+    src: local("Museo Cyrl 700"),
+        url($fonts-path + "MuseoBold.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    // Museo Sans Cyrillic 500
+    font-family: "MuseoSansRegular";
+    src: url($fonts-path + "MuseoSansRegular.eot");
+    src: url($fonts-path + "MuseoSansRegular.eot?#iefix")
+            format("embedded-opentype"),
+        url($fonts-path + "MuseoSansRegular.woff2") format("woff2"),
+        url($fonts-path + "MuseoSansRegular.woff") format("woff"),
+        url($fonts-path + "MuseoSansRegular.ttf") format("truetype"),
+        url($fonts-path + "MuseoSansRegular.svg#museo_sans_cyrl500")
+            format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    // Museo Sans Cyrillic 700
+    font-family: "MuseoSansBold";
+    src: local("Museo Sans Cyrl 700"),
+        url($fonts-path + "MuseoSansBold.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}

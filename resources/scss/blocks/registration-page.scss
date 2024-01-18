@@ -1,0 +1,372 @@
+@import '../site/base';
+
+.registration {
+
+	#form-msg {
+		display: none;
+	}
+
+	&__wrapper {
+		@include container();
+	}
+
+	&__title {
+		width: 100%;
+		text-align: center;
+		font-size: 140%;
+		padding-bottom: 10px;
+    	margin-top: 10px;
+		margin-bottom: 0;
+	    line-height: 1;
+		border-bottom: 1px solid #e6e6e6;
+	    @include breakpoint(medium) {
+	    	margin-top: 26px;
+	    	padding-bottom: 16px;
+	    	font-size: 250%;
+	    }
+	}
+
+	&__header {
+		margin: auto;
+		min-height: 47px;
+		position: relative;
+		padding: 15px 0;
+		@include breakpoint(medium) {
+			padding: 23px 0;
+			min-height: 69px;
+		}
+	}
+
+	&__help-note {
+		@include note($right: 180px, $medium: center, $xSmall: 50px);
+		font-size: 12px;
+		white-space: nowrap;
+		line-height: 1.6;
+		padding-left: 24px !important;
+		color: #0071BD;
+		text-decoration: underline;
+    	text-decoration-style: dotted;
+    	span {
+    		display: none;
+    		text-decoration: underline;
+    		text-decoration-style: dotted;
+    	}
+		@include breakpoint(medium) {
+			font-size: 16px;
+			padding-left: 30px !important;
+			span {
+				display: inline-block;
+			}
+		}
+	}
+
+	&__forms-tab-control {
+		width: 100%;
+		position: relative;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		font-size: 0;
+		li {
+			display: inline-block;
+			position: relative;
+			margin: 0 50px;
+			& > a {
+				padding: 0;
+				color: #333;
+				text-decoration: none;
+				font-size: 14px;
+			}
+		}
+
+		li.is-active, li:hover {
+			&::after {
+				display: block;
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: 5px;
+				bottom: -16px;
+				left: 0;
+				right: 0;
+				background: #fbb932;
+			}
+			a {
+				border-bottom: 0;
+				background: none;
+			}
+		}
+		@include breakpoint(medium) {
+			li {
+				margin-right: 52px;
+				& > a {
+					font-size: 20px;
+				}
+				&.is-active::after,
+				&:hover::after {
+					bottom: -24px;
+				}
+			}
+		}
+	}
+
+	&__tabs-wrapper {
+		transition: all 0.5s ease;
+		width: 100%;
+		background: #EEF1F6;
+		position: relative;
+		padding-bottom: 90px;
+		border-top: 1px solid #e6e6e6;
+		@include breakpoint(medium) {
+			padding-bottom: 130px;
+		}
+	}
+
+	&__form {
+		padding-top: 23px;
+		@include container(false);
+	}
+
+	&__fieldset {
+		display: flex;
+		flex-direction: column;
+
+		label {
+			i {
+				color: #B3B3B3;
+			}
+		}
+
+		&--hidden-sm {
+			display: none;
+		}
+
+		@include breakpoint(medium) {
+			display: block;
+			&--hidden-sm {
+				display: block;
+			}
+		}
+	}
+
+	&__single-checkbox,
+	&__single-radio {
+		@include breakpoint(medium) {
+			padding-left: calc(22% + 20px);
+			margin-top: 4px;
+		}
+
+		@include breakpoint(878px) {
+			padding-left: calc(32% + 20px);
+		}
+
+		@include breakpoint(large) {
+			padding-left: calc(36% + 20px);
+		}
+	}
+
+	&__input-group {
+		padding: 0 22px;
+		margin-bottom: 10px;
+		input[type=text],
+		input[type=email],
+		input[type=password],
+		select {
+			margin-bottom: 0;
+		}
+
+		&--hidden-sm {
+			display: none;
+		}
+
+		&--last-sm {
+			order: 2;
+			@extend .registration__input-group--separator;
+		}
+
+		&--penult-sm {
+			order: 1;
+		}
+
+		&--separator {
+			border-bottom: 1px solid #e6e6e6;
+			margin-bottom: 15px;
+			padding-bottom: 23px !important;
+
+			@include breakpoint(medium) {
+				margin-bottom: 28px !important;
+				padding-bottom: 26px !important;
+			}
+		}
+
+		&__messages {
+			margin: 0;
+
+			&-block {
+				margin: 0 auto;
+			}
+
+			&-list {
+				list-style-type: none;
+				margin: 0.8rem 1.25rem;
+
+				small {
+					font-size: 13px;
+					color: #b3b3b3;
+					display: block;
+				}
+			}
+		}
+
+		@include breakpoint(medium) {
+			display: flex;
+			align-items: center;
+			padding: 0;
+			margin-bottom: 14px;
+
+			input[type=text],
+			input[type=email],
+			input[type=password],
+			select {
+				width: 320px;
+				margin-left: 20px;
+				margin-right: 20px;
+				max-height: 46px;
+			}
+
+			input[type=radio] + label,
+			input[type=checkbox] + label {
+				font-size: 14px;
+			}
+
+			label {
+				text-align: right;
+				width: 22%;
+				line-height: 1.2;
+				font-size: 14px;
+			}
+		}
+
+		@include breakpoint(878px) {
+			label {
+				width: 32%;
+				font-size: 16px;
+			}
+		}
+
+		@include breakpoint(large) {
+			input[type=radio] + label,
+			input[type=checkbox] + label {
+				font-size: 16px;
+			}
+
+			label {
+				width: 36%;
+			}
+		}
+
+		&-small {
+			padding: 0 22px;
+			margin-bottom: 10px;
+
+			@include breakpoint(medium) {
+				display: flex;
+				align-items: center;
+				padding: 0;
+				margin-bottom: 14px;
+
+				input[type=text],
+				input[type=email],
+				input[type=password] {
+					width: 100px;
+					margin: 0;
+					margin-left: 20px;
+				}
+
+				&:nth-child(2) {
+					width: 220px;
+					label {
+						width: 50%;
+						text-align: right;
+					}
+				}
+
+				&-wrap {
+					width: calc(22% + 320px + 20px);
+					display: flex;
+					justify-content: flex-end;
+				}
+			}
+
+			@include breakpoint(878px) {
+				&-wrap {
+					width: calc(32% + 320px + 20px);
+				}
+			}
+
+			@include breakpoint(large) {
+				&-wrap {
+					width: calc(36% + 320px + 20px);
+				}
+			}
+		}
+	}
+
+	&__inline-radio {
+		margin-left: 20px;
+		label {
+			width: auto;
+		}
+	}
+
+	&__inline-checkbox {
+		label {
+			width: auto;
+		}
+	}
+
+	&__form-submit {
+		padding: 0 22px;
+		button {
+			width: 100%;
+		}
+		&-note {
+			line-height: 1.8;
+			display: block;
+			margin-bottom: 10px;
+
+			i {
+				color: #B3B3B3;
+			}
+		}
+
+		@include breakpoint(medium) {
+			padding: 0;
+			& > div {
+				width: 100%;
+				display: flex;
+			}
+			button {
+				width: 320px;
+				margin-left: 20px;
+			}
+
+			&-note {
+				width: 22%;
+				text-align: right;
+			}
+		}
+
+		@include breakpoint(878px) {
+			&-note {
+				width: 32%;
+			}
+		}
+
+		@include breakpoint(large) {
+			&-note {
+				width: 36%;
+			}
+		}
+	}
+}

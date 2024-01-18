@@ -1,0 +1,142 @@
+$btn-colors: (
+    green: #00BAA2,
+    orange: #fbb932,
+    grey: #ccc,
+    red: #F26317,
+    blue: #0071BD,
+);
+
+
+.btn {
+	display: inline-block;
+    min-width: 88px;
+    padding: 12px 16px;
+    color: #fff;
+    font-size: 12px;
+    background: #fbb932;
+    line-height: 1;
+    text-align: center;
+    border-radius: 3px;
+    white-space: nowrap;
+    text-decoration: none;
+    &:hover {
+        color: #fff;
+    }
+
+    @include breakpoint(medium) {
+        padding: 15px 16px;
+        font-size: 1em;
+    }
+}
+
+@each $name, $color in $btn-colors {
+    .btn-#{$name} {
+        @extend .btn;
+        background: $color;
+
+        &:hover {
+            background: darken($color, 5%);
+        }
+
+        &:disabled {
+            $button-background: $color;
+            @include button-disabled();
+        }
+
+        &--hidden-xs {
+            @include breakpoint(small only) {
+                display: none;
+            }
+        }
+    }
+}
+
+.btn-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: #fff;
+    li {
+        display: inline-block;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        &:last-child {
+            margin-right: 0;
+        }
+
+        .btn {
+            width: auto;
+        }
+    }
+    @include breakpoint(medium) {
+        li {
+            margin-right: 20px;
+            margin-bottom: 15px;
+        }
+    }
+}
+
+.fixed {
+  position: fixed;
+  top: 90vh;
+  width: 100%;
+  height: 10vh;
+}
+
+.button-back,
+.button-further {
+    border: 0;
+    background-color: #fbb932;
+    color: #fff;
+    font-size: 1.125rem;
+    font-weight: 300;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    position: relative;
+
+    &:hover {
+        background-color: #fcc657;
+    }
+
+    &::before {
+        font-family: "FontAwesome";
+        text-align: center;
+        position: absolute;
+        display: block;
+        font-size: 24px;
+        width: 27px;
+        height: 27px;
+        border-radius: 50%;
+        background-color: #e2a72d;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &:disabled {
+        background-color: #b4b4b4 !important;
+
+        &::before {
+            background-color: grey !important;
+        }
+    }
+}
+
+.button-back {
+    padding-left: 54px;
+    padding-right: 42px;
+
+    &::before {
+        content: "\f104";
+        left: 11px;
+    }
+}
+
+.button-further {
+    padding-right: 54px;
+    padding-left: 42px;
+
+    &::before {
+        content: "\f105";
+        right: 11px;
+    }
+}

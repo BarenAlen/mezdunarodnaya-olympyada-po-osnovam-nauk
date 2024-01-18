@@ -1,0 +1,35 @@
+@import '../site/base';
+.breadcrumbs {
+	height: 14px;
+	margin: 12px 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+
+	@include breakpoint(medium) {
+		height: 16px;
+		margin: 16px 0;
+	}
+
+	&__container {
+		@include container(false);
+	}
+
+	&__list {
+		@include breadcrumbs-container;
+		line-height: 1;		
+    	white-space: nowrap;
+    	overflow: hidden;
+    	text-overflow: ellipsis;
+
+		& &__item {
+			float: none;
+			display: inline;
+			font-size: 100%;
+			line-height: 1;
+
+			@include breakpoint(small only) {
+				font-size: 86%;
+			}
+		}
+	}
+}

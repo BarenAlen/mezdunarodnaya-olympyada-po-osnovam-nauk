@@ -1,0 +1,36 @@
+@import '../site/base';
+
+.projects-list {
+	@include items-list($itemWidth: (
+		small: 1 of 2,
+		medium: 1 of 3,
+		large: 1 of 4,
+		xlarge: 1 of 4,
+	));
+	@include items-list-promo($itemWidth: (
+		small: 1 of 4,
+		medium: 1 of 5,
+		large: 1 of 5,
+		xlarge: 1 of 5,
+	));
+
+	&__item {
+		margin-bottom: 11px;
+
+		@include breakpoint(medium) {
+			&:nth-of-type(4n) {
+				display: none;
+			}
+		}
+
+		@include breakpoint(large) {
+			&:nth-of-type(4n) {
+				display: inherit;
+			}
+		}
+
+		@include breakpoint(medium) {
+			margin-bottom: 32px;
+		}
+	}
+}

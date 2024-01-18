@@ -1,0 +1,15 @@
+@mixin container($should-be-row: true) {
+	@each $breakpoint in $breakpoint-classes {
+		@include breakpoint($breakpoint only) {
+			@if $should-be-row {
+				@include flex-grid-row($width: map-get($container-width, $breakpoint));
+			} @else {
+				max-width: map-get($container-width, $breakpoint);
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+	}
+
+	@include padding-from-edge;
+}

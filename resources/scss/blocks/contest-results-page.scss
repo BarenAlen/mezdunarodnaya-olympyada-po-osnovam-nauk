@@ -1,0 +1,151 @@
+@import '../site/base';
+
+.contest-results-page {
+	@include breakpoint(small only) {
+		display: none;
+	}
+
+	&__counters {
+		padding: 32px 0;
+		background: #eef1f5;
+
+		&__container {
+			@include container();
+			@include flex-align($x: justify);
+		}
+	}
+
+	&__counter {
+		@include flex-grid-column(shrink, 0);
+
+		&__value {
+			margin-bottom: 16px;
+			font-size: font-size-in-percents(42, small);
+			line-height: 1;
+			color: $dark-gray;
+			font-family: 'MuseoSansBold', sans-serif;
+
+			@include breakpoint(medium) {
+				font-size: font-size-in-percents(52, medium);
+			}
+		}
+
+		&__description {
+			font-size: font-size-in-percents(18, small);
+			line-height: 1;
+			color: $dark-gray;
+
+			@include breakpoint(medium) {
+				font-size: font-size-in-percents(21, medium);
+			}
+		}
+
+	}
+
+	&__map {
+		position: relative;
+		margin: 0 0 32px;
+
+		&__container {
+			width: 100%;
+			height: 800px;
+		}
+
+		&__balloon {
+			font-size: 16px;
+			line-height: 1.6;
+
+			&__title {
+				font-family: 'MuseoSansBold', sans-serif;
+				font-size: 21px;
+			}
+
+			&__section {
+				margin: 8px 0 0;
+			}
+
+			&__muted-text {
+				color: $dark-gray;
+			}
+		}
+	}
+
+	&__tables {
+		@include container(false);
+	}
+
+	&__table {
+		min-width: 100%;
+		margin-bottom: 32px;
+
+		th, td {
+			padding: 16px 8px !important; // боремся со стандартными стилями таблицы
+			border: 1px solid $light-gray;
+
+			&:first-child {
+				border-left: none;
+			}
+
+			&:last-child {
+				border-right: none;
+			}
+		}
+
+		tr:first-child {
+			th, td {
+				border-top: none;
+			}
+		}
+
+		thead,
+		tfoot {
+			tr {
+				background: #feecc7;
+
+				th, td {
+					text-align: center;
+					font-weight: normal;
+					background: #feecc7;
+				}
+			}
+		}
+
+		thead {
+			tr {
+				th, td {
+					text-align: center;
+				}
+
+				&:first-of-type {
+					background: #fddfa2;
+
+					th, td {
+						background: #fddfa2;
+						text-align: center;
+					}
+				}
+			}
+		}
+
+		tfoot {
+			td {
+				font-weight: normal;
+			}
+		}
+
+		&__row {
+			&--odd {
+				background: $white !important; // боремся со стандартными стилями таблицы
+			}
+
+			&--even {
+				background: #eef1f5 !important; // боремся со стандартными стилями таблицы
+			}
+
+			td {
+				text-align: center;
+			}
+
+		}
+	}
+}

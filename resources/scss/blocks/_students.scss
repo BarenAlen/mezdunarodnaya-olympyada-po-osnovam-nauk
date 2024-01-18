@@ -1,0 +1,313 @@
+@import '../site/base';
+.students {
+
+	&__filter {
+		background: #EEF1F6;
+		padding-left: 30px;
+		padding-right: 30px;
+		padding-bottom: 32px;
+		margin-left: -8px;
+    	margin-right: -8px;
+		.text-input {
+			padding-top: 0.7rem;
+			padding-bottom: 0.7rem;
+		}
+	}
+
+	&__add-btn {
+		padding: 0 30px;
+		text-align: center;
+		margin-bottom: 25px;
+		*[class^="btn"] {
+			padding-left: 42px;
+			padding-right: 42px;
+		}
+	}
+
+	&__toggle-filter {
+		display: block;
+		background: #EEF1F6;
+		padding: 24px 30px 12px;
+		margin-left: -8px;
+    	margin-right: -8px;
+		button {
+			color: #0071bc;
+			font-size: 14px;
+			border-bottom: 1px dashed #0071bc;
+		}
+	}
+
+	&__class-list-filter {
+		margin: 0;
+		padding: 0;
+		margin-bottom: 13px;
+		list-style: none;
+		font-size: 0;
+		text-align: center;
+
+		li {
+			position: relative;
+			display: inline-block;
+			margin-right: 10px;
+			margin-bottom: 8px;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+		li.active {
+			a {
+				background: #FAAF14;
+			}
+			&:hover {
+				a {
+					background: darken(#FAAF14, 4%);
+				}
+			}
+		}
+
+		li:hover {
+			a {
+				background: #D6D9DE;
+			}
+		}
+
+		a {
+			text-align: center;
+			font-size: 16px;
+			display: block;
+			color: #333;
+			text-decoration: none;
+			background: #EDF1F5;
+			width: 93px;
+    		padding: 7px 0;
+		}
+
+		.note-btn {
+			padding: 0;
+			position: relative;
+			top: 4px;
+			right: 0;
+			transform: none;
+			background: none;
+			text-align: left;
+			width: auto;
+		}
+
+		@include breakpoint(small only) {
+			display: none;
+		}
+	}
+
+	&__class-list-filter-note {
+		@include note(-20px);
+	}
+
+	&__filter-last-name {
+		margin-bottom: 15px;
+	}
+
+	&__filter-my-students {
+		position: relative;
+		padding-right: 20px;
+	}
+
+	&__filter-my-students-note {
+		@include note($right:0, $medium:0);
+	}
+
+	&__filter-class {
+		position: relative;
+		display: inline-block;
+		margin-bottom: 15px;
+		select {
+			width: 130px;
+			padding-top: 0.7rem;
+			padding-bottom: 0.7rem;
+		}
+		.note-btn {
+			top: 70%;
+    		right: -30px;
+		}
+	}
+
+	&__filter-class-note {
+		@include note($right:0, $xSmall:-30px, $small: center);
+	} 
+
+	@include breakpoint(medium) {
+		&__filter {
+			display: flex;
+			align-items: center;
+			padding: 10px;
+			margin: 0;
+			.text-input {
+				padding: 13px 15px;
+			}
+		}
+
+		&__add-student-wrap {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 27px;
+			p {
+				margin-bottom: 0;
+				padding-right: 40px;
+				width: 60%;
+				line-height: 1.2;
+			}
+		}
+
+		&__add-btn {
+			padding: 0;
+			margin: 0;
+			text-align: left;
+		}
+
+		&__toggle-filter {
+			display: none;
+		}
+
+		&__filter-last-name {
+			width: 50%;
+			margin: 0;
+			margin-right: 35px;
+		}
+
+		&__filter-my-students {
+			width: 50%;
+		}
+
+		&__filter-class {
+			display: none;
+		}
+	}
+}
+
+.students-table {
+	font-size: 12px;
+
+	tbody {
+		border: 0;
+	}
+
+
+	th {
+		font-weight: normal;
+		position: relative;
+
+		&:first-child {
+			text-align: left;
+		}
+	}
+
+	td {
+		border: 1px solid #e6e6e6;
+		padding-top: 11px;
+		padding-bottom: 11px;
+		position: relative;
+
+		&:first-child {
+			border-left: 0;
+		}
+
+		&:last-child {
+			border-right: 0;
+		}
+	}
+
+	tr {
+		border-bottom: 1px solid #e6e6e6;
+
+		&:nth-child(even) {
+			background: #F7F7F7;
+		}
+	}
+
+	.input-checkbox-custom + label {
+		font-size: 1em;
+		margin-right: 20px;
+	}
+
+	.btn-icon {
+		color: #333;
+		white-space: nowrap;
+		padding: 0 4px 6px;
+		text-decoration: none;
+
+		&::before {
+			font-size: 1.2em;
+		}
+
+		&:hover {
+			color: #4798CD;
+		}
+	}
+
+	&__head {
+		background: #FDDFA1 !important;
+	}
+
+	&__sub-head {
+		background: #EDF1F4 !important;
+	}
+
+	&__foot {
+	    border-top: 3px solid #e6e6e6 !important;
+
+	    td {
+	    	border: 0;
+	    }
+	}
+
+	&__note {
+		@include note(0);
+		position: relative !important;
+		display: inline-block;
+		transform: none;
+		vertical-align: sub;
+
+		&::after {
+			position: static;
+		}
+	}
+
+	@include breakpoint(small only) {
+
+		td {
+			vertical-align: top;
+		}
+
+		.block-sm {
+			display: block;
+			border: 0;
+
+			&:not(:first-child) {
+				float: left;
+				padding-top: 0;
+				padding-bottom: 0;
+			}
+
+			&:nth-child(2) {
+			    margin-left: 35px;
+			}
+		}
+
+		&-wrap {
+			margin: 0 -8px;
+		}
+	}
+
+	@include breakpoint(medium) {
+		font-size: 14px;
+
+		&__sub-head td, th {
+			padding: 14px 8px;
+		}
+	}
+
+	@include breakpoint(large) {
+		font-size: 16px;
+	}
+}

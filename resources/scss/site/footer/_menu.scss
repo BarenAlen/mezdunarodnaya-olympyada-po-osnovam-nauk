@@ -1,0 +1,50 @@
+&__menu {
+	@include flex-grid-column(100%, 0);
+
+	padding: {
+		top: 16px;
+		bottom: 16px;
+	}
+	column-count: 2;
+
+	@include container(false);
+
+	@include breakpoint(medium) {
+		@include flex-grid-column(1 of 2, 0);
+	}
+
+	@include breakpoint(large) {
+		padding: {
+			top: 40px;
+			bottom: 40px;
+		}
+	}
+
+	@include breakpoint(xlarge) {
+		max-width: map-get($container-width, xlarge) / 2;
+		margin: 0;
+		padding-right: 16px;
+		column-count: 3;
+	}
+
+	&__item {
+		display: inline-block;
+		width: 100%;
+		margin: 0 0 12px;
+		padding: 8px 0;
+		line-height: 1;
+		color: $white;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: $anchor-color-hover;
+		}
+
+		&--hide-on-mobile {
+			@include breakpoint(small only) {
+				display: none;
+			}
+		}
+	}
+}

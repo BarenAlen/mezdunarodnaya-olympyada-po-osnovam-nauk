@@ -1,0 +1,170 @@
+@import "../site/base";
+
+.upcoming-events-list {
+    @include items-list(
+        $itemWidth: (
+            small: 1 of 2,
+            medium: 1 of 3,
+            large: 1 of 4,
+            xlarge: 1 of 4,
+        )
+    );
+    @include items-list-promo(
+        $itemWidth: (
+            small: 1 of 1,
+            medium: 1 of 1,
+            large: 1 of 1,
+            xlarge: 1 of 1,
+        ),
+        $alignX: left,
+        $alignY: top
+    );
+
+    background: map-get($foundation-palette, primary) 50% 50% no-repeat;
+    background-size: cover;
+    overflow: hidden;
+
+    @include breakpoint(medium) {
+        background-image: url("assets/img/start/map.png");
+    }
+
+    &__title {
+        color: $white;
+
+        &:hover,
+        &:focus {
+            color: mix($white, map-get($foundation-palette, primary), 66%);
+        }
+    }
+
+    &__list {
+        @include flex-grid-column(100%);
+
+        @include breakpoint(medium) {
+            @include flex-grid-column(10 of 16);
+        }
+
+        @include breakpoint(large) {
+            @include flex-grid-column(1 of 2);
+        }
+
+        position: relative;
+        min-height: 300px;
+        mc &:after {
+            @include breakpoint(large) {
+                content: "";
+                position: absolute;
+                left: 100%;
+                top: 50%;
+                width: 385px;
+                height: 301px;
+                margin-top: -150px;
+                background: transparent
+                    url("assets/img/site/upcoming-events/trophies.svg") center
+                    right no-repeat;
+            }
+        }
+    }
+
+    &__item {
+        display: block;
+        margin-bottom: 16px;
+
+        @include breakpoint(medium) {
+            margin-bottom: 32px;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__calendar {
+        @include hide-for-only(small);
+
+        @include breakpoint(medium) {
+            @include flex-grid-column(6 of 16);
+        }
+
+        @include breakpoint(large) {
+            @include flex-grid-column(1 of 4);
+        }
+
+        margin-bottom: 12px;
+        padding: 32px;
+        font-size: 16px;
+        line-height: 1;
+        border-radius: 4px;
+        background: $white;
+        color: $black;
+
+        &__month {
+            font-size: 21px;
+            text-align: center;
+        }
+
+        &__weekdays {
+            @include flex-grid-row();
+        }
+
+        &__weekday {
+            @include flex-grid-column($columns: 1/7, $gutter: 0);
+
+            line-height: 32px;
+            text-align: center;
+        }
+
+        &__dates {
+            @include flex-grid-row();
+        }
+
+        &__date {
+            @include flex-grid-column($columns: 1/7, $gutter: 0);
+
+            position: relative;
+            margin-bottom: 8px;
+            line-height: 26px;
+            text-align: center;
+            cursor: default;
+            z-index: 1;
+
+            &:before {
+                content: "";
+                position: absolute;
+                left: 2px;
+                right: 2px;
+                top: 2px;
+                bottom: 2px;
+                border: 1px solid transparent;
+                border-radius: 4px;
+                z-index: -1;
+            }
+
+            &--current {
+                &:before {
+                    border-color: #fbb932;
+                    background: $white;
+                }
+            }
+
+            &--has-upcoming-event {
+                &:before {
+                    border-color: #fbb932;
+                    background: #fbb932;
+                }
+            }
+
+            &--has-previous-event {
+                &:before {
+                    border-color: #eef1f5;
+                    background: #eef1f5;
+                }
+            }
+
+            &:nth-child(7n - 1),
+            &:nth-child(7n) {
+                color: #e96100;
+            }
+        }
+    }
+}

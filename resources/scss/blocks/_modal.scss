@@ -1,0 +1,28 @@
+@import '../site/base';
+
+.modal {
+	&__overlay {
+		background-color: rgba(0, 0, 0, .3);
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		margin: 0 auto;
+		z-index: 2;
+		display: none;
+	}
+
+	&__close {
+		position: absolute;
+		top: 0;
+		right: 8px;
+		font-size: 2rem;
+		color: $medium-gray;
+		cursor: pointer;
+
+		&:hover {
+			color: $dark-gray;
+		}
+	}
+}

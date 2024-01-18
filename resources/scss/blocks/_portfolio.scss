@@ -1,0 +1,70 @@
+@import '../site/base';
+
+.portfolio {
+	&__container {
+		@include container();
+		@include flex-align($x: center);
+		flex-wrap: nowrap;
+		padding: 0 !important;
+	}
+
+	&__dropbox-container {
+		max-width: 300px;
+		max-height: 300px;
+		background: #e6e6e6;
+		margin-bottom: 36px;
+		margin-top: 20px;
+		border: 1px solid #e6e6e6;
+		overflow: hidden;
+		text-align: center;
+		&--empty {
+			border: none;
+		}
+	}
+
+	&__form-title {
+		color: #B3B3B3;
+		text-align: center;
+		font-size: 1.3em;
+		width: 100%;
+		background-image: linear-gradient(to top, #E6E6E6, #E6E6E6);
+		background-repeat: no-repeat;
+		background-size: 100% 1px;
+    	background-position: center;
+    	span {
+    		background: #fff;
+    		padding: 0 50px;
+    	}
+	}
+
+	&__fields-wrapper {
+		width: 620px;
+		margin: 10px 0 18px;
+	}
+
+	&__fieldset {
+		&--row {
+			display: flex;
+			@include flex-align($x: spaced, $y: bottom);
+		}
+	}
+
+	&__input-group {
+		padding: 0 10px;
+		label {
+			margin-bottom: 3px;
+			i {
+				color: #B2B2B2;
+			}
+		}
+	}
+
+
+	&__awards-wrapper {
+		max-width: 740px;
+	}
+
+	&__awards-accordeon {
+		margin-bottom: 40px;
+	}
+}

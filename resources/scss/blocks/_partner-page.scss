@@ -1,0 +1,162 @@
+@import '../site/base';
+
+.partner-page {
+	margin-top: 24px;
+
+	&__logo {
+		@include flex-grid-column(100%, 0);
+
+		display: block;
+		margin: 0 0 8px;
+		text-align: center;
+
+		&__container {
+			@include container(false);
+
+			max-height: 100px;
+			overflow: hidden;
+
+			@include breakpoint(medium) {
+				max-height: 200px;
+				margin-bottom: 32px;
+			}
+
+			img {
+				height: 100%;
+			}
+		}
+	}
+
+	&__name {
+		@include flex-grid-column(100%, 0);
+
+		margin: 0 0 8px;
+		font-family: 'MuseoRegular', sans-serif;
+		font-size: font-size-in-percents(18, small);
+		text-align: center;
+
+		@include breakpoint(medium) {
+			margin-bottom: 16px;
+			font-size: font-size-in-percents(32, medium);
+		}
+
+		&__container {
+			@include container(false);
+		}
+	}
+
+	&__summary {
+		@include flex-grid-column(100%, 0);
+
+		margin: 0 0 16px;
+		font-size: font-size-in-percents(16, small);
+		background: #eef1f5;
+
+		@include breakpoint(medium) {
+			margin-bottom: 32px;
+			font-size: font-size-in-percents(18, medium);
+		}
+
+		&__container {
+			@include container(false);
+
+			padding: 16px 0;
+
+			@include breakpoint(medium) {
+				padding-top: 32px;
+				padding-bottom: 32px;
+			}
+
+			& > *:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__description {
+		@include flex-grid-column(100%, 0);
+
+		margin: 0 0 16px;
+
+		@include breakpoint(medium) {
+			margin-bottom: 32px;
+		}
+
+		&__container {
+			@include container(false);
+
+			@include breakpoint(xlarge) {
+				padding-left: 120px;
+				padding-right: 120px;
+			}
+
+			& > *:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__photo_n_address {
+		background: #eef1f5;
+
+		margin: 0 0 16px;
+
+		@include breakpoint(medium) {
+			margin-bottom: 32px;
+		}
+
+		&__container {
+			@include container();
+			@include flex-align($x: justify, $y: stretch);
+
+			padding-top: 32px;
+			padding-bottom: 32px;
+
+			@include breakpoint(xlarge) {
+				padding-left: 120px;
+				padding-right: 120px;
+			}
+		}
+	}
+
+	&__photo {
+		@include flex-grid-column(100%, 0);
+
+		margin: 0 0 12px;
+		overflow: hidden;
+
+		@include breakpoint(medium) {
+			@include flex-grid-column(8 of 16, 0);
+
+			margin-bottom: 0;
+		}
+
+		@include breakpoint(large) {
+			@include flex-grid-column(8 of 16, 0);
+		}
+
+		img {
+			border-radius: 4px;
+		}
+	}
+
+	&__address {
+		@include flex-grid-column(100%, 0);
+
+		padding: 16px;
+		border: 1px solid $light-gray;
+		border-radius: 4px;
+
+		@include breakpoint(medium) {
+			@include flex-grid-column(7 of 16, 0);
+		}
+
+		@include breakpoint(large) {
+			@include flex-grid-column(7 of 16, 0);
+		}
+
+		& > *:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

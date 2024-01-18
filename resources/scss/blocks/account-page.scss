@@ -1,0 +1,298 @@
+@import '../site/base';
+.account {
+	margin-bottom: 30px;
+	&__intro {
+		font-size: 12px;
+		@include breakpoint(medium) {
+			font-size: inherit;
+			margin-bottom: 28px;
+		}
+	}
+
+	&__table-wrap {
+		margin-right: -8px;
+		margin-left: -8px;
+		@include breakpoint(medium) {
+			margin: 0;
+		}
+	}
+
+	&__general-table {
+		font-size: 12px;
+		text-align: center;
+		tbody {
+			border: 0;
+		}
+
+		tr {
+			border-bottom: 1px solid #e6e6e6;
+			&:first-child {
+				background: #fddfa2;
+				th {
+					position: relative;
+				}
+			}
+		}
+
+		th {
+			font-weight: 300;
+			padding-right: 30px;
+		}
+
+		td {
+			&:not(:last-child) {
+				border-right: 1px solid #e6e6e6;
+			}
+			&:first-child {
+				text-align: left;
+			}
+		}
+
+		th, td {
+			vertical-align: middle;
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
+		@include breakpoint(medium) {
+			font-size: inherit;
+		}
+	}
+
+	&__general-table-note {
+		@include note($right:18px, $xSmall:11px, $medium: 0);
+		&_right {
+			@include note($right:18px, $xSmall:11px, $small:center);
+		}
+	}
+
+	&__balance-btn {
+		padding: 0 22px;
+		a {
+			width: 100%;
+		}
+		@include breakpoint(medium) {
+			padding: 0;
+			a {
+				width: auto;
+				background: #00BAA2;
+				padding-left: 42px;
+				padding-right: 42px;
+				margin-bottom: 40px;
+
+			}
+		}
+	}
+
+	&__details-tab {
+		display: none;
+		&.active {
+			display: block;
+		}
+	}
+
+	&__details-tab-controls {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		font-size: 0;
+		border-top: 1px solid #e6e6e6;
+
+		li {
+			display: inline-block;
+			position: relative;
+			margin-right: 80px;
+			padding: 18px 0;
+			font-size: 20px;
+		}
+
+		a {
+			color: #333;
+		}
+
+		li.active {
+			&::after {
+				display: block;
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: 5px;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background: #fbb932;
+			}
+		}
+		@include breakpoint(small only) {
+			display: none;
+		}
+	}
+
+	&__details-tab-note {
+		@include note($right: -33px);
+	}
+
+
+	&__details-table {
+		& > thead {
+			&:not(:first-child) {
+				cursor: pointer;
+				background: #fff;
+				th {
+					padding-top: 20px;
+					padding-bottom: 20px;
+				}
+				th:first-child {
+					position: relative;
+					padding-left: 60px;
+					&:before {
+						content: "\f054";
+						display: block;
+						width: 27px;
+						height: 27px;
+						position: absolute;
+						top: 50%;
+						left: 7px;
+						font-family: "FontAwesome";
+						text-align: center;
+						line-height: 1.7;
+						color: #b3b3b3;
+						background: #eef1f5;
+						border-radius: 50%;
+						transform: translateY(-50%);
+					}
+				}
+				&.active th:first-child {
+					&:before {
+						content: "\f078";
+					}
+				}
+			}
+		}
+		thead + tbody .inner-wrap {
+			display: none;
+		}
+		thead:first-child {
+			tr {
+				border-bottom: 0;
+			}
+			th {
+				padding-top: 15px;
+				padding-bottom: 15px;
+				font-weight: 300;
+				border: 0;
+				&:first-child {
+					width: 20%;
+				}
+			}
+		}
+		tbody, thead {
+			border: 0;
+		}
+		tr {
+			border-bottom: 1px solid #e6e6e6;
+		}
+		tbody tr {
+			border-bottom: 0;
+		}
+		td:nth-last-of-type(-n+2),
+		th:nth-last-of-type(-n+2) {
+			width: 20%;
+		}
+		td:not(:last-child),
+		th:not(:last-child)	{
+			border-right: 1px solid #e6e6e6;
+		}
+
+		@include breakpoint(small only) {
+			display: none;
+		}
+	}
+
+	&__details-table {
+		thead {
+			cursor: pointer;
+			td {
+				font-weight: 300;
+				padding-top: 15px;
+				padding-bottom: 15px;
+			}
+			td:first-child {
+				position: relative;
+				padding-left: 60px;
+				&:before {
+					left: 7px;
+					content: "\f054";
+					display: block;
+					width: 27px;
+					height: 27px;
+					position: absolute;
+					top: 50%;
+					font-family: "FontAwesome";
+					text-align: center;
+					line-height: 1.7;
+					color: #b3b3b3;
+					border-radius: 50%;
+					transform: translateY(-50%);
+				}
+			}
+			&.active {
+				td:first-child:before {
+					content: "\f078";
+				}
+			}
+		}
+		table {
+			margin-bottom: 0;
+		}
+		tr {
+			border-bottom: 0;
+		}
+
+		&-lv-1 {
+			padding: 0;
+			thead {
+				background: #eef1f5;
+				td:first-child {
+					&:before {
+						background: #eef1f5;
+					}
+				}
+			}
+			
+			// если не работает стандартный colspan то  применяем этот 
+
+			td.colspan-2 {
+				width: 40%;
+			}
+		}
+
+		&-lv-1-sub {
+			padding: 0;
+			thead {
+				background: #f3f6fa;
+				td:first-child {
+					&:before {
+						background: #f3f6fa;
+					}
+				}
+			}
+		}
+	}
+
+	&__details-table-lv-2 {
+		padding: 0 !important;
+		tr {
+			vertical-align: top;
+			&:not(:last-child) {
+				border-bottom: 1px solid #e6e6e6;
+			}
+
+			&:nth-child(2) {
+				background: #f7f7f7;
+			}
+		}
+		td:first-child {
+			width: 20%;
+		}
+	}
+}

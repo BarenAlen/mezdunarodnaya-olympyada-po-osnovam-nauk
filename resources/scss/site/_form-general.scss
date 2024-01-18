@@ -1,0 +1,407 @@
+@import '../site/base';
+
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=search],
+select,
+textarea {
+	padding: 9.5px 10px;
+	padding-top: 9.5px;
+	border: 1px solid #e6e6e6;
+	border-radius: 3px;
+	box-shadow: none;
+	cursor: pointer;
+	transition: .2s;
+	&:disabled {
+		background: #EEF1F6;
+	}
+	&:hover,
+	&:active,
+	&:focus {
+		border: 1px solid #E0E0E0;
+		box-shadow: inset 0 0 11px -1px #f0f0f0;
+	}
+	&:active, &:focus {
+		cursor: auto;
+		outline: none;
+	}
+	@include breakpoint(medium) {
+		padding-top: 13px;
+		padding-bottom: 13px;
+		padding-left: 15px;
+	}
+}
+
+.fit {
+	width: 100%;
+}
+
+@include breakpoint(small only) {
+	.fit-sm {
+		width: 100%;
+	} 
+}
+
+select {
+	padding-right: 25px;
+}
+
+.form-label {
+	line-height: 1.8;
+}
+
+.text-input {
+	border: 1px solid #cacaca;
+	box-shadow: none;
+	border-radius: 2px;
+	cursor: pointer;
+	margin: 0;
+	transition: .3s;
+	&:disabled {
+		background: #EEF1F6;
+	}
+
+	&:hover {
+		border: 1px solid #E0E0E0;
+		box-shadow: inset 0 0 11px -1px #e0e0e0;
+	}
+	&:active, &:focus {
+		cursor: auto;
+	}
+}
+
+.input-invalid {
+	input[type=text],
+	input[type=email],
+	input[type=password],
+	select,
+	textarea {
+		border-color: #D97679 !important;
+	}
+
+	label, label i {
+		color: #D97679 !important;
+	}
+
+	&::-webkit-input-placeholder {
+		color: #D97679;
+	}
+	&::-moz-placeholder {
+		color: #D97679;
+	}
+	&:-ms-input-placeholder {
+		color: #D97679;
+	}
+	&:-moz-placeholder {
+		color: #D97679;
+	}
+}
+
+.input-checkbox-custom {
+	vertical-align: top;
+	width: 20px;
+	height: 20px;
+
+	& + label {
+		display: inline-block;
+		margin: 0;
+		cursor: pointer;
+		vertical-align: middle;
+		font-size: 16px;
+		text-align: left !important;
+		width: auto;
+		line-height: 1.8 !important;
+	}
+
+	&--important {
+		& + label {
+			color: #D97679;
+		}
+	}
+
+	@include breakpoint(small only) {
+		& + label {
+			font-size: 14px;
+		}
+	}
+
+	&:not(checked) {
+		position: absolute;
+		opacity: 0;
+		visibility: hidden;
+		& + label {
+			position: relative;
+			padding-left: 34px;
+
+			&::before, &::after {
+				content: "";
+				display: block;
+				position: absolute;
+				border-radius: 2px;
+			}
+
+			&::before {
+				width: 20px;
+				height: 20px;
+				border: 1px solid #B6B4B4;
+				top: 2px;
+				left: 0;
+				background: #fff;
+			}
+
+			&::after {
+				font-family: 'FontAwesome';
+				content: "\f14a";
+				width: 20px;
+				height: 20px;
+				opacity: 0;
+				top: 2px;
+				left: 0;
+				color: #01B8A4;
+			    font-size: 23px;
+			    vertical-align: middle;
+			    line-height: 0.9;
+				background: #fff;
+			}
+			@include breakpoint(small only) {
+				&::before, &::after {
+					top: 0;
+				}
+			}
+		}
+	}
+
+	&:checked + label:after {
+		opacity: 1;
+	}
+}
+
+.input-switch {
+	vertical-align: top;
+	width: 20px;
+	height: 20px;
+
+	& + label {
+		display: block;
+		margin: 0;
+		cursor: pointer;
+		vertical-align: middle;
+		line-height: 1.3;
+		font-size: 16px;
+	}
+
+	&:not(checked) {
+		position: absolute;
+		opacity: 0;
+		visibility: hidden;
+		& + label {
+			display: inline-block;
+			position: relative;
+			padding-left: 79px;
+
+			&::before, &::after {
+				content: "";
+				display: block;
+				position: absolute;
+				border-radius: 2px;
+				top: 50%;
+				transform: translateY(-50%);
+				transition: .4s;
+			}
+
+			&::before {
+				width: 57px;
+			    height: 31px;
+			    background: #afafaf;
+			    border-radius: 15px;
+			    left: 0;
+			    box-shadow: inset 0 0 6px -3px #333;
+			}
+
+			&::after {
+				content: "";
+				width: 24.5px;
+				height: 24.5px;
+			    vertical-align: middle;
+			    line-height: 0.9;
+				background: #EEF2F5;
+				border-radius: 50%;
+				box-shadow: 1px 1px 9px -2px #444;
+				left: 3px;
+			}
+		}
+	}
+
+	&:checked + label {
+		&::before {
+		    background: #FBB931;
+		}
+
+		&::after {
+			background: #EEF2F5;
+			box-shadow: -1px 1px 9px -2px #444;
+   			left: 29px;
+		}
+	}
+
+	@include breakpoint(small only) {
+		& + label {
+			font-size: 14px;
+		}
+		&:not(checked) {
+			& + label {
+				padding-left: 50px;
+				&::before {
+					width: 40px;
+					height: 23px;
+					border-right: 11px;
+				}
+
+				&::after {
+					width: 19px;
+					height: 19px;
+					left: 2px;
+				}
+			}
+		}
+
+		&:checked + label {
+			&::after {
+				left: 18px;
+			}
+		}
+	}
+}
+
+.vk {
+	background: #5A7CA1;
+
+	&:hover {
+		background: #769ac1;
+	}
+}
+
+.fb {
+	background: #3C599F;
+}
+
+.odnk {
+	background: #EE8029;
+}
+
+.note {
+	position: absolute;
+	top: 50%;
+	right: -40px;
+	z-index: 300;
+	transform: translateY(-50%);
+	line-height: 1;
+	i {
+		font-size: 24px;
+		color: #95E0FF;
+		line-height: 0.8;
+		background: #fff;
+		border-radius: 50%;
+	}
+
+	&:hover {
+		background: none !important;
+		i {
+			color: darken(#95E0FF, 5%) !important;
+		}
+	}
+
+	&:hover,
+	&:focus {
+		& > .popup {
+			display: block;
+		}
+	}
+
+	@include breakpoint(small only) {
+		right: 0;
+		i {
+			font-size: 22px;
+		}
+	}
+	&--static {
+		position: static;
+		transform: none;
+	}
+
+	&__container {
+		display: none;
+		min-width: 240px;
+		padding: 8px 9px;
+		position: absolute;
+	    top: calc(100% + 10px);
+		right: 50%;
+	    z-index: 1000;
+    	transform: translateX(50%);
+		background: #fff;
+	    font-size: 12px;
+	    color: #333;
+	    text-align: left;
+		box-shadow: 0 0 4px 0 #999;
+		border-radius: 4px;
+		&:before {
+			content: '';
+			position: absolute;
+			width: 8px;
+			height: 8px;
+			top: -4px;
+			left: 50%;
+			margin-left: -4px;
+			background: #fff;
+			box-shadow: -1px -1px 4px -1px #999;
+			transform: rotate(45deg);
+		}
+		p {
+			margin: 0;
+		}
+	}
+}
+
+.note-btn {
+	position: absolute;
+	top: 50%;
+	right: -40px;
+	z-index: 30;
+	transform: translateY(-50%);
+	line-height: 1;
+	i {
+		font-size: 24px;
+		color: #95E0FF;
+		line-height: 0.8;
+		background: #fff;
+		border-radius: 50%;
+	}
+
+	&:hover {
+		background: none !important;
+		i {
+			color: darken(#95E0FF, 5%) !important;
+		}
+	}
+
+	@include breakpoint(small only) {
+		right: 0;
+		i {
+			font-size: 22px;
+		}
+	}
+	&--static {
+		position: static;
+		transform: none;
+	}
+}
+
+.has-note {
+	position: relative;
+}
+
+.input-note {
+	@include note($right: -20px, $xSmall: -15px);
+	top: calc(50% - 1rem);
+}

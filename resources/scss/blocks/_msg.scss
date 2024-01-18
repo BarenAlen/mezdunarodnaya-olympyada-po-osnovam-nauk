@@ -1,0 +1,75 @@
+@import '../site/base';
+.msg {
+	position: relative;
+	background: #f4dad9;
+	color: #dd898c;
+	padding: 15px;
+	margin-bottom: 0;
+	font-size: 0.75rem;
+	line-height: 1.4;
+
+	&--success {
+		color: darken(#47aa88, 10%);
+		background: #d9f4dd;
+	}
+
+	&--info {
+		color: #4697CC;
+		background: #D8F4FF;
+	}
+
+	&--contest {
+		background: #feecc7;
+		color: #c99428;
+	}
+
+	@include breakpoint(medium) {
+		padding: 24px;
+		margin-left: 0;
+		margin-right: 0;
+		font-size: 1rem;
+	}
+
+	&__wrapper {
+		@include container(false);
+		position: relative;
+		
+		.msg__close {
+			right: -3px;
+			top: -9px;
+			@include breakpoint(medium) {
+	    		top: -15px;
+	    		right: 20px;
+			}
+			@include breakpoint(large) {
+				right: 10px;
+			}
+		}
+		@include breakpoint(small only) {
+			padding: 20px;
+		}
+	}
+
+	&__close {
+		position: absolute;
+		display: inline-block;
+		line-height: 1;
+    	font-size: 24px;
+    	color: #a6a8ab;
+		right: 9px;
+		top: 1px;
+		cursor: pointer;
+		@include breakpoint(medium) {
+			right: 13px;
+    		top: 10px;
+		}
+	}
+	p {
+		font-size: 0.75rem;
+		line-height: 1.4;
+		margin-bottom: 0;
+		@include breakpoint(medium) {
+			font-size: 1rem;
+		}
+	}
+}

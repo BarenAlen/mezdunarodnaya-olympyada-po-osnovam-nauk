@@ -1,0 +1,63 @@
+@import '../site/base';
+.workshop {
+	&__container {
+		@include container(false);
+	}
+
+	&__title {
+		width: 100%;
+	    margin-top: 20px;
+	    margin-bottom: 16px;
+	    margin-left: 0;
+	    margin-right: 0;
+	    font-size: 140%;
+	    line-height: 1; 
+	    text-align: center;
+	    position: relative;
+	    @include breakpoint(medium) {
+	    	margin-top: 32px;
+	    	margin-bottom: 38px;
+	    	font-size: 250%;
+	    	line-height: 1.1;
+	    }
+	}
+
+	&__intro {
+		background: #0180A0;
+		color: #fff;
+		padding-top: 30px;
+		padding-bottom: 24px;
+
+		p {
+			line-height: 1.3;
+			margin-bottom: 10px;
+			max-width: 1040px;
+    		padding-left: 69px;
+		}
+
+		.workshop__container {
+			position: relative;
+		}
+
+		.workshop__container::before {
+			content: "";
+			display: block;
+			position: absolute;
+			left: 8px;
+    		top: -71px;
+			width: 64px;
+			height: 64px;
+			background: url("../../img/site/folder.png");
+			background-repeat: no-repeat;
+		}
+	}
+
+	&__accordeon {
+		margin-top: 20px;
+		margin-bottom: 70px;
+	}
+
+	.partners-list__title {
+		margin-bottom: 54px;
+	}
+}

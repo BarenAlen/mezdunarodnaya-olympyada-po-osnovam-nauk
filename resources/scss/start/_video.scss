@@ -1,0 +1,41 @@
+.video {
+	position: relative;
+	margin: 24px 0 0;
+	text-align: center;
+	font-family: 'MuseoSansRegular', sans-serif;
+	font-size: 16px;
+
+	&__play,
+	&__text {
+		display: block;
+		margin: 0 auto;
+		padding: 8px;
+		border: none;
+		outline: none;
+		color: #fff;
+		text-align: center;
+		background-color: transparent;
+	}
+
+	&__play {
+		width: 40px;
+		box-sizing: content-box;
+
+		@include breakpoint(medium) {
+			width: 60px;
+		}
+
+		@include breakpoint(large) {
+			width: 80px;
+		}
+	}
+
+	@include breakpoint(medium) {
+		margin-top: 48px;
+		font-size: 24px;
+	}
+
+	@include breakpoint(xlarge) {
+		font-size: 32px;
+	}
+}

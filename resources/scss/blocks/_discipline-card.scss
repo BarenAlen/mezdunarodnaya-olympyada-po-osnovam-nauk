@@ -1,0 +1,224 @@
+@import '../site/base';
+
+$discipline-card-icon-font-size: (
+	small: 100%,
+	medium: 100%,
+	large: 112.5%,
+	xlarge: 112.5%,
+);
+
+$discipline-card-icon-height: (
+	small: 70px,
+	medium: 100px,
+	large: 100px,
+	xlarge: 100px,
+);
+
+$discipline-card-padding: (
+	small: 16px,
+	medium: 16px,
+	large: 32px,
+	xlarge: 32px,
+);
+
+.discipline-card {
+	flex: 1 0 calc(50% - 24px);
+	max-width: calc(50% - 24px);
+
+	@include breakpoint(medium) {
+		flex: 1 0 calc(33.33333% - 24px);
+		max-width: calc(33.33333% - 24px);
+	}
+
+	@include breakpoint(large) {
+		flex: 1 0 calc(25% - 24px);
+		max-width: calc(25% - 24px);
+	}
+
+	@include breakpoint(xlarge) {
+		flex: 1 0 calc(20% - 24px);
+		max-width: calc(20% - 24px);
+	}
+
+	border: 1px solid $light-gray;
+	margin: 0 12px 24px;
+
+	@each $breakpoint in $breakpoint-classes {
+		$font-size: map-get($discipline-card-icon-font-size, $breakpoint);
+
+		@include breakpoint($breakpoint only) {
+			font-size: $font-size;
+		}
+	}
+
+	&__title {
+		background-position-x: 50%;
+		background-repeat: no-repeat;
+		text-align: center;
+		line-height: 1.2;
+		color: $white;
+
+		&:hover,
+		&:focus {
+			color: $white;
+		}
+
+		@each $breakpoint in $breakpoint-classes {
+			$height: map-get($discipline-card-icon-height, $breakpoint);
+			$padding: map-get($discipline-card-padding, $breakpoint);
+
+			@include breakpoint($breakpoint only) {
+				padding: {
+					top: ($padding + $height + $padding);
+					bottom: $padding;
+					left: ($padding / 2);
+					right: ($padding / 2);
+				}
+				background-position-y: $padding;
+				background-size: auto $height;
+			}
+		}
+
+		@each $name, $color in $card-themes-palette {
+			.discipline-card--theme-#{$name} & {
+				background-color: rgba($color, .9);
+			}
+
+			.discipline-card--theme-#{$name}:hover &,
+			.discipline-card--theme-#{$name}:focus & {
+				background-color: rgba($color, 1);
+			}
+		}
+	}
+
+	&__expert {
+		@each $breakpoint in $breakpoint-classes {
+			$padding: map-get($discipline-card-padding, $breakpoint);
+
+			@include breakpoint($breakpoint only) {
+				padding: $padding / 2;
+				text-align: center;
+			}
+		}
+
+		line-height: 1.2;
+	}
+}
+
+.discipline-details {
+
+	padding: 0;
+	border-radius: 3px;
+
+	&__wrapper {
+		padding: 27px 18px 20px;
+		border: 1px solid #e6e6e6;
+		border-radius: 3px;
+		border-top: 2px solid #ccc;
+		background: #fff;
+	}
+
+	&__description {
+		font-size: 11px;
+
+		p {
+			margin: 0 0 24px;
+			font-size: font-size-in-percents(28, small);
+			line-height: 1;
+			@include breakpoint(small only) {
+				line-height: 1.3;
+				margin-bottom: 8px;
+			}
+		}
+
+		ul {
+			line-height: 1.3;
+			margin-left: 0;
+			list-style: none;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		li {
+			background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMyINCgkgdmlld0JveD0iMCAwIDE0IDE0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxNCAxNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4NCgkuc3Qwe2ZpbGw6bm9uZTtzdHJva2U6I0ZCQjkzMTtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9DQoJLnN0MXtmaWxsOiNGQkI5MzE7fQ0KPC9zdHlsZT4NCjxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjciIGN5PSI3IiByPSI2LjUiLz4NCjxjaXJjbGUgY2xhc3M9InN0MSIgY3g9IjciIGN5PSI3IiByPSI0LjEiLz4NCjwvc3ZnPg0K")
+						no-repeat 1px 0.3em transparent;
+			background-size: auto 0.85em;
+	        list-style-type: none;
+
+			position: relative;
+			margin: 0 0 8px;
+			padding: 0px 0px 1px 1.7em;
+			word-wrap: break-word;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		@include breakpoint(small only) {
+			.list {
+				margin-bottom: 10px;
+			}
+		}
+	}
+
+	&__expert {
+		line-height: 1.2;
+
+		@include breakpoint(small only) {
+			padding-left: 19px;
+			.expert-card__photo {
+				display: none;
+			}
+			.expert-card__details {
+				text-align: left;
+			}
+		}
+	}
+
+
+	@include breakpoint(medium) {
+
+		&__wrapper {
+			@include flex-grid-row($columns: 3);
+	    	border-top: 5px solid #ccc;
+	    	align-items: flex-start;
+			padding-top: 44px;
+		    padding-left: calc(40px - 0.75rem);
+		    padding-right: 0;
+		    padding-bottom: 48px;
+	    }
+
+	    &__description {
+			@include flex-grid-column($columns: 2);
+			font-size: 14px;
+		}
+
+		&__title {
+			font-size: 26px;
+		}
+
+		&__expert {
+			@include flex-grid-column($columns: 1);
+		}
+	}
+
+	@include breakpoint(large) {
+		@include flex-grid-row($columns: 7);
+
+		&__description {
+			@include flex-grid-column($columns: 5);
+			font-size: 16px;
+		}
+
+		&__title {
+			font-size: 30px;
+		}
+
+		&__expert {
+			@include flex-grid-column($columns: 2);
+		}
+	}
+}

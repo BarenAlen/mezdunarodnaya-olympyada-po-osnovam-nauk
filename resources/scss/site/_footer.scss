@@ -1,0 +1,38 @@
+.footer {
+	@include flex-grid-row($width: 100%);
+	@include flex-align($x: center);
+
+	margin: 60px 0 0;
+	color: $white;
+	background-color: $black;
+	position: relative;
+
+	@include breakpoint(medium) {
+		margin-top: 130px;
+	}
+
+	&--without-social {
+		@include breakpoint(medium) {
+			margin-top: 0;
+
+			.footer__social {
+				display: none;
+			}
+		}
+	}
+
+	&--without-info {
+		.footer__info {
+			display: none;
+		}
+	}
+
+	&--no-margin {
+		margin-top: 0;
+	}
+
+	@import 'footer/social';
+	@import 'footer/menu';
+	@import 'footer/info';
+	@import 'footer/copyright';
+}

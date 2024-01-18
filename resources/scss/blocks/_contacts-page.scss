@@ -1,0 +1,21 @@
+@import '../site/base';
+
+.contacts-page {
+	@include container(false);
+
+	// Headings
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		text-align: center;
+
+		@each $size, $headers in $header-sizes {
+			@include breakpoint($size) {
+				font-size: rem-calc(map-get($headers, h1));
+			}
+		}
+	}
+}

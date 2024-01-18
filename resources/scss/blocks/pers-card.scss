@@ -1,0 +1,56 @@
+@import '../site/base';
+.pers-cards-list {
+	display: none;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.pers-card {
+	margin-bottom: 1rem;
+	&__sub {
+		display: block;
+		font-size: 0.9em;
+	}
+}
+
+.pers-cards-list-title {
+	font-size: 1.225rem;
+	margin-bottom: 1.4rem;
+	width: 100%;
+}
+
+.pers-cards-list-all {
+	width: 100%;
+}
+
+@include breakpoint(540px) {
+
+	.pers-cards-list-all {
+		display: none;
+	}
+	.pers-cards-list {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+
+		li {
+			flex-basis: 50%;
+			padding: 0 15px;
+		}
+	}
+}
+
+@include breakpoint(medium) {
+	.pers-cards-list-title {
+		font-size: 2.3rem;
+		margin-bottom: 2.2rem;
+	}
+
+	.pers-cards-list {
+
+		li {
+			flex-basis: 30%;
+		}
+	}
+}

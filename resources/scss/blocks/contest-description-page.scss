@@ -1,0 +1,17 @@
+@import '../site/base';
+
+.contest-description-page {
+	&__description {
+		margin-top: 25px;
+		@include container(false);
+	}
+
+	&__documents {
+		padding: 16px 0;
+		background: #eef1f5;
+
+		&__container {
+			@include container(false);
+		}
+	}
+}

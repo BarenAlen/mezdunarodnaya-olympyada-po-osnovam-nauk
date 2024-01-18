@@ -1,0 +1,44 @@
+@mixin btn-list($btn-width: auto) {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+        display: inline-block;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    @if ($btn-width != auto) {
+        li {
+            .btn {
+                width: 100%;
+            }  
+        }
+
+        li:not(:last-child) {
+            width: calc(#{$btn-width} - 24px);
+        }
+
+        li:last-child {
+            width: $btn-width;
+        }
+
+    } @else {
+        li {
+            .btn {
+                width: $btn-width;
+            }  
+        }
+    }
+
+    @include breakpoint(medium) {
+        margin-bottom: -15px;
+        li {
+            margin-right: 20px;
+            margin-bottom: 15px;
+        }
+    }
+}

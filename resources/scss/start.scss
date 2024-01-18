@@ -1,0 +1,19 @@
+@import 'start/framework';
+
+@include foundation-everything(true);
+
+@import 'start/background';
+@import 'start/logo';
+@import 'start/title';
+@import 'start/countries';
+@import 'start/video';
+@import 'start/children';
+@import 'start/footer';
+
+.page {
+	padding: 32px 16px 48px;
+
+	@include breakpoint(large) {
+		min-height: 900px;
+	}
+}

@@ -1,0 +1,23 @@
+@import 'site/base';
+
+// TODO: Добавлять только реально используемые модули
+@include foundation-everything(true);
+
+@import 'site/fonts';
+@import 'site/misc';
+@import 'site/typography';
+@import 'site/buttons';
+@import 'site/icons';
+@import 'site/header';
+@import 'site/main-menu';
+@import 'site/content';
+@import 'site/footer';
+@import 'site/go-to-top';
+@import 'site/list';
+@import 'site/hint';
+@import 'site/form-general';
+@import 'site/file-upload';
+@import 'site/panes';
+@import 'site/o-list';
+@import 'site/languages';
+@import 'site/lang_phrase';

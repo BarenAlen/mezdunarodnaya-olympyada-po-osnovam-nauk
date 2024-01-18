@@ -1,0 +1,123 @@
+@import '../site/base';
+
+.rating {
+	&__container {
+		@include container(false);
+	}
+
+	&__title {
+		font-size: 2.6em;
+    	margin-bottom: 25px;
+	}
+
+	&__hide-filter-btn {
+		position: relative;
+		display: inline-block;
+		margin-left: 61px;
+		margin-bottom: 18px;
+		border-bottom: 1px dashed #0071bc;
+
+		&::before {
+			font-family: "FontAwesome";
+			content: "\f105";
+			display: block;
+			padding-left: 2px;
+			width: 27px;
+			height: 27px;
+			position: absolute;
+			top: 50%;
+			left: -54px;
+			text-align: center;
+			font-size: 20px;
+			line-height: 1.3;
+			color: #b3b3b3;
+			background: #eef1f5;
+			border-radius: 50%;
+			transform: translateY(-50%);
+		}
+
+		&.active {
+			&::before {
+				content: "\f107";
+				padding-top: 1px;
+				padding-left: 1px;
+			}
+		}
+	}
+
+	&__filter {
+		margin-bottom: 60px;
+		label {
+			margin-bottom: 3px;
+			i {
+				color: #B4B4B4;
+			}
+		}
+		input, select {
+			margin-bottom: 0;
+		}
+		hr {
+			margin-top: 18px;
+			margin-bottom: 24px;
+			border-bottom-color: #e6e6e6; 
+		}
+
+		&-form {
+			background: #EEF1F6;
+			padding-top: 20px;
+			padding-bottom: 14px;
+		}
+
+		&-wrap {
+			display: flex;
+		}
+
+		&-fieldset {
+			display: flex;
+			flex-wrap: wrap;
+			width: 60%;
+			&-item {
+				margin-right: 70px;
+    			width: calc(50% - 70px);
+				margin-bottom: 10px;
+			}
+
+	   		@include breakpoint(large) {
+	   			width: 75%;
+	   			&-item {
+	   				margin-right: 22px;
+				    width: calc(25% - 22px);
+	   			}
+	   		}
+		}
+
+		&-class {
+			width: 25%;
+
+			@include breakpoint(large) {
+				width: 20%;
+			}
+
+			select {
+				padding: 10px 0;
+				height: calc(100% - 28px - 12px);
+				option {
+					padding: 4px 17px;
+
+					&:checked {
+						box-shadow: 0 0 10px 100px #FBB931 inset;
+					}
+				}
+			}
+		}
+
+
+		&-submit {
+			@include btn($color: orange);
+		}
+
+		&-reset {
+			@include btn($color: red);
+		}
+	}
+}

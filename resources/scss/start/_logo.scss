@@ -1,0 +1,12 @@
+.logo {
+	height: 60px;
+
+	@include breakpoint(medium) {
+		height: 98px;
+	}
+
+	img {
+		max-width: 100%;
+		max-height: 100%;
+	}
+}

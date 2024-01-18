@@ -1,0 +1,95 @@
+@import '../site/base';
+
+$contest-card-icon-font-size: (
+	small: 100%,
+	medium: 100%,
+	large: 112.5%,
+	xlarge: 112.5%,
+);
+
+$contest-card-icon-height: (
+	small: 70px,
+	medium: 100px,
+	large: 100px,
+	xlarge: 100px,
+);
+
+$contest-card-padding: (
+	small: 24px,
+	medium: 24px,
+	large: 48px,
+	xlarge: 48px,
+);
+
+.contest-card {
+
+	&--primary,
+	&--free {
+		width: 100%;
+		background-position-x: 50%;
+		background-repeat: no-repeat;
+		text-align: center;
+		color: $white;
+
+		@each $breakpoint in $breakpoint-classes {
+			$font-size: map-get($contest-card-icon-font-size, $breakpoint);
+			$height: map-get($contest-card-icon-height, $breakpoint);
+			$padding: map-get($contest-card-padding, $breakpoint);
+
+			@include breakpoint($breakpoint only) {
+				padding: {
+					top: ($padding + $height + $padding);
+					bottom: $padding;
+					left: ($padding / 2);
+					right: ($padding / 2);
+				}
+				font-size: $font-size;
+				background-position-y: $padding;
+				background-size: auto $height;
+			}
+		}
+
+		&:hover,
+		&:focus {
+			color: $white;
+		}
+
+		@each $name, $color in $card-themes-palette {
+			&.contest-card--theme-#{$name} {
+				background-color: rgba($color, .9);
+
+				&:hover,
+				&:focus {
+					background-color: rgba($color, 1);
+				}
+			}
+		}
+
+		&.contest-card--disabled {
+			cursor: not-allowed;
+			background-color: $medium-gray;
+
+			&:hover,
+			&:focus {
+				background-color: $medium-gray;
+			}
+		}
+	}
+
+	&--past {
+		background-image: none !important;
+		background-size: 0 0;
+
+		@each $breakpoint in $breakpoint-classes {
+			$font-size: map-get($contest-card-icon-font-size, $breakpoint);
+
+			@include breakpoint($breakpoint only) {
+				font-size: $font-size;
+			}
+		}
+	}
+
+	&--past#{&}--disabled {
+		color: $dark-gray;
+	}
+}

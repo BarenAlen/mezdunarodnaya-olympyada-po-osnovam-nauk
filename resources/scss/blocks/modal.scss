@@ -1,0 +1,72 @@
+@import '../site/base';
+
+.modal {
+	&__overlay {
+		background-color: rgba(0, 0, 0, .3);
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		margin: 0 auto;
+		z-index: 2;
+		display: none;
+	}
+
+	&__close {
+		position: absolute;
+		top: 0;
+		right: 8px;
+		font-size: 2rem;
+		color: $medium-gray;
+		cursor: pointer;
+
+		&:hover {
+			color: $dark-gray;
+		}
+	}
+}
+
+.fixed-overlay {
+	background-color: rgba(0, 0, 0, .3);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 0;
+	display: none;
+
+    &:before {
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+        content: '';
+    }
+}
+
+.modal_wrap {
+	display: inline-block;
+	white-space: normal;
+    vertical-align: middle;
+	text-align: center;
+	background-color: #fff;
+	position: relative;
+}
+
+.modal_container {
+    margin: 30px;
+    padding: 10px;
+    text-align: center;
+    white-space: normal;
+    background-color: #fff;
+    color: #000;
+
+	button, a {
+		margin: 5px 10px;
+		padding: 11px 40px;
+	}
+}

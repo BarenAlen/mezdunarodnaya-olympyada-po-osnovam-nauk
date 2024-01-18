@@ -1,0 +1,18 @@
+.header {
+	background: $white;
+
+	&__container {
+		@include container;
+		@include flex-align($x: justify, $y: middle);
+
+		padding: {
+			top: 16px;
+			bottom: 16px;
+		}
+	}
+
+	@import 'header/logo';
+	@import 'header/title';
+	@import 'header/info';
+	@import 'header/locale';
+}

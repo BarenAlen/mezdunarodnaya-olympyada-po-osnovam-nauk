@@ -1,0 +1,33 @@
+&__title {
+	margin: 0 0 0 rem-calc(8, map-get($body-font-size, small));
+	font-family: 'MuseoRegular', sans-serif;
+	font-size: 100%;
+	line-height: 1;
+
+	@include breakpoint(small only) {
+		display: none;
+
+		.header--without-info & {
+			@include flex-grid-column(null, 0);
+			display: initial;
+			margin-right: rem-calc(8, map-get($body-font-size, small));
+		}
+	}
+
+	@include breakpoint(medium) {
+		@include flex-grid-column(5 of 16, 0);
+
+		.header--without-info & {
+			@include flex-grid-column(null, 0);
+			max-width: initial;
+			margin-right: rem-calc(16, map-get($body-font-size, medium));
+		}
+
+		margin: 0 0 0 rem-calc(16, map-get($body-font-size, medium));
+		font-size: 112.5%;
+	}
+
+	@include breakpoint(xlarge) {
+		font-size: 137.5%;
+	}
+}

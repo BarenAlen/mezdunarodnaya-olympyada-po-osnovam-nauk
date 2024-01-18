@@ -1,0 +1,221 @@
+@import '../site/base';
+
+.container-container {
+	@include container(false);
+}
+
+.students-application-table {
+	font-size: 11px;
+	border-bottom: 3px solid #e6e6e6;
+
+	tbody, thead {
+		border: 0;
+	}
+
+	tr {
+		vertical-align: top;
+	}
+
+	th {
+		font-weight: normal !important;
+	}
+
+	th, td {
+		padding-top: 12px;
+		padding-bottom: 12px;
+	}
+
+	.input-checkbox-custom + label {
+		font-size: 11px;
+		margin-bottom: 13px;
+		line-height: 1.4 !important;
+
+		&::before,
+		&::after {
+			top: 0 !important;
+		}
+	}
+
+	&__head {
+		background: #FDDFA1;
+		text-align: left;
+
+		th {
+			width: 50%;
+		}
+
+		th:first-child {
+			display: none;
+		}
+	}
+
+	&__class {
+		background: #EEF1F6;
+		text-align: left;
+	}
+
+	&__body-row {
+		display: flex;
+		flex-wrap: wrap;
+		width: 200%;
+		border-bottom: 1px solid #e6e6e6;
+
+		td {
+			display: block;
+			width: 50%;
+		}
+
+		td:first-child {
+			width: 100%;
+			border-bottom: 1px solid #e6e6e6;
+		}
+
+		td:nth-child(2) {
+			border-right: 1px solid #e6e6e6;
+		}
+		
+		&:nth-child(even) {
+			background: #F5F5F5;
+		}
+	}
+
+	&__name {
+		display: inline-block;
+		margin-right: 8px;
+	}
+
+	&__col-icon {
+		text-decoration: none;
+		color: #333;
+		font-size: 12px;
+	}
+
+	.paths {
+		display: inline-block;
+		vertical-align: top;
+		position: relative;
+
+		.change-path {
+			color: #B4B4B4;
+			padding: 0 5px;
+
+			& > .popup-change-path {
+				@include note-popup(true, 135px);
+
+				&::before {
+					display: block;
+					content: '';
+					position: absolute;
+					z-index: 1001;
+					width: 8px;
+					height: 8px;
+					top: -4px;
+					right: 22px;
+					margin-left: -4px;
+					background: #fff;
+					box-shadow: -1px -1px 4px -1px #999;
+					transform: rotate(45deg);
+				}
+			}
+
+			.popup-paths {
+				@include note-popup;
+				min-width: 125px;
+
+				&::before {
+					display: block;
+					content: '';
+					position: absolute;
+					z-index: 1001;
+					width: 8px;
+					height: 8px;
+					top: -4px;
+					left: 10px;
+					margin-left: -4px;
+					background: #fff;
+					box-shadow: -1px -1px 4px -1px #999;
+					transform: rotate(45deg);
+				}
+
+				@include path-rounds(22px, 2px, 30px, 0 5px);
+			}
+		}
+	}
+
+	@include path-rounds(14px, 2px, 22px);
+
+	@include breakpoint(medium) {
+		font-size: 12px;
+
+		.input-checkbox-custom + label {
+			font-size: 12px;
+		}
+	}
+
+
+	@include breakpoint(large) {
+		font-size: 14px;
+
+		td, th {
+			padding: 15px;
+		}
+
+		.input-checkbox-custom + label {
+			font-size: 14px;
+		}
+
+		td:not(:last-child) {
+			border-right: 1px solid #e6e6e6;
+		}
+
+		td:first-child {
+			position: relative;
+			padding-right: 0;
+		}
+
+		&__head {
+			th {
+				width: auto;
+			}
+
+			th:first-child {
+				display: table-cell;
+			}
+		}
+
+		&__body-row {
+			display: table-row;
+			width: auto;
+
+			td {
+				width: auto !important;
+				display: table-cell !important;
+				border-bottom: 0 !important;
+			}
+		}
+
+		&__name {
+			width: 80%;
+			float: left;
+			margin: 0;
+		}
+
+		&__col-icon {
+			display: block;
+			padding: 0 16px;
+			float: right;
+			font-size: 15px;
+
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 46px;  // ширина колонки
+				width: 1px;
+				background: #e6e6e6;
+			}
+		}
+	}
+}

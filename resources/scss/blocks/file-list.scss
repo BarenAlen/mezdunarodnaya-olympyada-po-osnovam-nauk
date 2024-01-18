@@ -1,0 +1,43 @@
+@import '../site/base';
+
+.file-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	&__item {
+		display: inline-block;
+		width: 100%;
+	    position: relative;
+		padding-top: 6px;
+		padding-left: 30px;
+		margin-bottom: 4px;
+	    vertical-align: bottom;
+	    line-height: 1;
+	    font-size: 12px;
+
+		&::before {
+			font-family: "FontAwesome";
+			font-size: 16px;
+			content: "\f15b";
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			color: #B3B3B3;
+		}
+
+		&-size {
+			color: #b3b3b3;
+			font-size: 0.8rem;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		@include breakpoint(medium) {
+			font-size: inherit;
+		}
+	}
+}

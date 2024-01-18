@@ -1,0 +1,108 @@
+@import '../site/base';
+
+.application-payment-table {
+	@include site-table($gutter: 8px);
+	margin-bottom: 20px;
+	
+	&__title {
+		@include table-row($bg-color: #FDDFA1, $hasPadding: true);
+		justify-content: space-between;
+	}
+
+	&__head {
+		@include table-row($bg-color: #FEECC6);
+
+		&-student {
+			@include table-column($width: (
+				small: 35%,
+				medium: 30%,
+				large: 30%,
+			));
+		}
+
+		&-application {
+			@include table-column($width: (
+				small: 26%,
+				medium: 17.5%,
+				large: 17.5%,
+			));
+		}
+
+		&-price {
+			@include table-column($width: (
+				small: 39%,
+				medium: 52.5%,
+				large: 52.5%,
+			));
+		}
+	}
+
+	&__class {
+		@include table-row($bg-color: #EEF1F6, $hasPadding: true);
+	}
+
+	&__row {
+		@include table-row($bg-color: #F7F7F7, $bg-alt: true, $v-align: stretch);
+
+		&-col-group {
+			@include table-column($width: (
+				small: 65%,
+				medium: 70%,
+				large: 70%,
+			), $hasGutter: false, $hasPadding: false, $isRow: true);
+		}
+
+		&-student {
+			@include table-column($width: (
+				small: 35%,
+				medium: 30%,
+				large: 30%,
+			));
+			border-right: 1px solid #e6e6e6;
+			border-bottom: 1px solid #e6e6e6;
+		}
+
+		&-application {
+			@include table-column($width: (
+				small: 40%,
+				medium: 25%,
+				large: 25%,
+			));
+			border-right: 1px solid #e6e6e6;
+			border-bottom: 1px solid #e6e6e6;
+		}
+
+		&-price {
+			@include table-column($width: (
+				small: 60%,
+				medium: 75%,
+				large: 75%,
+			));
+			border-bottom: 1px solid #e6e6e6;
+		}
+	}
+
+	&__footer {
+		@include table-row($bg-color:#FEECC6);
+
+		&-total {
+			@include table-column($width: (
+				small: 61%,
+				medium: 47.5%,
+				large: 47.5%
+			));
+		}
+
+		&-price {
+			@include table-column($width: (
+				small: 39%,
+				medium: 52.5%,
+				large: 52.5%
+			));
+		}
+	}
+
+	@include breakpoint(medium) {
+		margin-bottom: 35px;
+	}
+}

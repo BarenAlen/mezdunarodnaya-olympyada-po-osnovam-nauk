@@ -1,0 +1,161 @@
+@import '../site/base';
+.students-add {
+	margin-bottom: 50px;
+	&__note {
+		background: #fddfa2;
+		padding: 10px 30px;
+	    margin-left: -8px;
+	    margin-right: -8px;
+	    p {
+	    	margin-bottom: 0;
+	    }
+
+	    @include breakpoint(medium) {
+	    	display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 0;
+			margin: 0;
+			margin-bottom: 40px;
+			background: none;
+			p {
+				padding-right: 40px;
+				width: 60%;
+				line-height: 1.2;
+			}
+	    }
+	}
+
+	&__btn-wrap {
+		padding: 0 22px;;
+		button[type='submit'],
+		input[type='submit'] {
+			width: 100%;
+		}
+		@include breakpoint(medium) {
+			padding: 0;
+			button[type='submit'],
+			input[type='submit'] {
+				width: auto;
+				padding-left: 76px;
+				padding-right: 76px;
+			}
+		}
+	}
+
+	&__form-header {
+		@include flex-grid-row();
+		align-items: center;
+		padding: 17px 0;
+		background: #fddfa2;
+		span {
+			color: #b3b3b3;
+		}
+		@include breakpoint(small only) {
+			display: none;
+		}
+	}
+
+	&__form-header-item {
+		font-size: 14px;
+		@include flex-grid-column($columns: 21%, $gutter: 16px);
+		&--birth-date {
+			@include flex-grid-column($columns: 15%, $gutter: 16px);
+		}
+		&--class {
+			@include flex-grid-column($columns: 10%, $gutter: 16px);
+		}
+	}
+
+	&__fieldset {
+		border-bottom: 1px solid #e6e6e6;
+		padding: 0 22px;
+		padding-bottom: 23px;
+		padding-top: 20px;
+
+		@include breakpoint(medium) {
+			@include flex-grid-row();
+			padding: 0;
+		}
+	}
+
+	&__fieldset-item {
+		margin-bottom: 10px;
+		input,
+		select,
+		&:last-child {
+			margin-bottom: 0;
+		}
+		select {
+			max-width: 130px;
+		}
+		label {
+			span {
+				color: #b3b3b3;
+			}
+		}
+		@include breakpoint(medium) {
+			@include flex-grid-column($columns: 21%, $gutter: 16px);
+			margin-bottom: 0;
+			padding-top: 15px;
+			padding-bottom: 15px;
+			border-right: 1px solid #e6e6e6;
+			&:last-child {
+				border-right: none;
+			}
+			label {
+				display: none;
+			}
+
+			&--birth-date {
+				@include flex-grid-column($gutter: 16px, $columns: 17%);
+			}
+
+			&--class {
+				@include flex-grid-column($gutter: 16px, $columns: 14%);
+			}
+		}
+
+		@include breakpoint(large) {
+			@include flex-grid-column($columns: 21%, $gutter: 16px);
+
+			&--birth-date {
+				@include flex-grid-column($gutter: 16px, $columns: 15%);
+			}
+
+			&--class {
+				@include flex-grid-column($gutter: 16px, $columns: 10%);
+			}
+		}
+	}
+
+	&__add-fieldset {
+		position: relative;
+    	top: -1px;
+		background: #eef1f5;
+		margin-right: -8px;
+		margin-left: -8px;
+		margin-bottom: 24px;
+		padding: 10px 30px;
+		@include breakpoint(medium) {
+			margin: 0;
+			margin-bottom: 11px;
+			padding-right: 8px;
+			padding-left: 8px;
+		}
+	}
+
+	&__add-fieldset-btn {
+		padding: 15px 7px;
+	    background: #fbb932;
+		line-height: 0;
+		font-family: sans-serif;
+	    font-weight: 400;
+	    font-size: 26px;
+	    border-radius: 3px;
+	    color: #fff;
+	    &:hover {
+	    	background: darken(#fbb932, 5%);
+	    }
+	}
+}

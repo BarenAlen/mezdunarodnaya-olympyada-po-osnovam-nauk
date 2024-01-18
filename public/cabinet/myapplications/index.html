@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="assets/css/site.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/blocks/breadcrumbs.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/blocks/cabinet.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/blocks/user-info.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/blocks/side-menu.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/blocks/my-applications-page.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/blocks/files-accordeon.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/blocks/msg.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/blocks/filter.css">
+
+  <link rel="stylesheet" type="text/css" href="assets/css/blocks/counter.css">
+  <title>Без заголовка
+  </title>
+</head>
+
+<body>
+  <div class="header header--without-info">
+    <div class="header__container">
+      <div class="header__logo"><img src="assets/img/common/logo.svg">
+      </div>
+      <div class="header__title">Международная олимпиада по основам наук</div>
+      <div class="header__info"></div>
+      <div class="header__locale">
+        <div class="header__locale__country">
+          <div class="header__locale__country__flag"><span class="flag-icon flag-icon-ww"></span>
+          </div>
+          <div class="header__locale__country__name">
+            <button class="header__locale__country__current" type="button">Other</button>
+            <ul class="header__locale__country__menu">
+              <li><a class="header__locale__country__menu__item" href="/index.html?c=ru">Россия</a>
+              </li>
+              <li><a class="header__locale__country__menu__item" href="/index.html?c=bg">България</a>
+              </li>
+              <li><a class="header__locale__country__menu__item" href="/index.html?c=by">Беларусь</a>
+              </li>
+              <li><a class="header__locale__country__menu__item" href="/index.html?c=cz">Česko</a>
+              </li>
+              <li><a class="header__locale__country__menu__item" href="/index.html?c=de">Deutschland</a>
+              </li>
+              <li><a class="header__locale__country__menu__item" href="/index.html?c=sk">Slovakia</a>
+              </li>
+              <li><a class="header__locale__country__menu__item" href="/index.html?c=kz">Казахстан</a>
+              </li>
+              <li><a class="header__locale__country__menu__item" href="/index.html?c=tj">Тоҷикистон</a>
+              </li>
+              <li><a class="header__locale__country__menu__item" href="/index.html?c=tr">Türkiye</a>
+              </li>
+              <li><a class="header__locale__country__menu__item" href="/index.html?c=ua">Україна</a>
+              </li>
+              <li><a class="header__locale__country__menu__item" href="/index.html?c=fr">France</a>
+              </li>
+              <li><a class="header__locale__country__menu__item" href="/index.html?c=gr">Ελλάδα</a>
+              </li>
+              <li><a class="header__locale__country__menu__item" href="/index.html?c=kg">Кыргызстан</a>
+              </li>
+              <li><a class="header__locale__country__menu__item" href="/index.html?c=ww">Other</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="header__locale__language">
+          <div class="header__locale__language__flag"><span class="icon-globe"></span>
+          </div>
+          <div class="header__locale__language__name">
+            <button class="header__locale__language__current" type="button">Английский</button>
+            <ul class="header__locale__language__menu">
+              <li><a class="header__locale__language__menu__item" href="/index.html?l=ru">Русский</a>
+              </li>
+              <li><a class="header__locale__language__menu__item" href="/index.html?l=en">Английский</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="main-menu">
+    <div class="main-menu__container">
+      <a href="/index.html" class="main-menu__item main-menu__home-link"><i class="main-menu__item__icon icon-home"></i></a>
+      <a href="#" class="main-menu__item  main-menu__pers-info  main-menu__user-info-toggler"><i class="main-menu__item__icon icon-user"></i></a>
+      <a href="#" class="main-menu__item main-menu__item--hide-on-mobile">Перейти на сайт</a>
+      <div class="main-menu__visible-items"></div>
+      <div class="main-menu__hidden-items invisible">
+        <button class="main-menu__item main-menu__hidden-items__toggler main-menu__hidden-items__toggler--right" tabindex="-1" type="button"><i class="main-menu__item__icon icon-bars"></i>
+        </button>
+        <div class="main-menu__hidden-items__dropdown no-bullet">
+          <a class="main-menu__item" href="#" tabindex="-1">Моя страница</a>
+          <a class="main-menu__item" href="#" tabindex="-1">Мой профиль</a>
+          <a class="main-menu__item" href="#" tabindex="-1">Список учеников</a>
+          <a class="main-menu__item" href="account/index.html" tabindex="-1">Мой счет</a>
+          <a class="main-menu__item" href="#" tabindex="-1">Апелляции</a>
+          <a class="main-menu__item" href="#" tabindex="-1">Мои заявки</a>
+          <a class="main-menu__item" href="#" tabindex="-1">Мои сообщения</a>
+          <a class="main-menu__item" href="#" tabindex="-1">Учителя вашей школы</a>
+        </div>
+      </div>
+      <a class="main-menu__item main-menu__item--hide-on-mobile" href="#"><i class="main-menu__item__icon icon-star"></i> Bitrix</a>
+      <a class="main-menu__item main-menu__item--hide-on-mobile" href="#"><i class="main-menu__item__icon icon-cog"></i> Админка</a>
+      <a class="main-menu__item main-menu__logout-link" href="/logout.html"><i class="main-menu__item__icon icon-sign-in"></i> Выход</a>
+    </div>
+  </nav>
+
+  <div class="cabinet">
+    <div class="cabinet__aside">
+
+      <div class="user-info">
+        <table class="user-info__table user-info__table-pers-info">
+          <tr>
+            <td>Имя</td>
+            <td>Светлана Родионова</td>
+          </tr>
+          <tr>
+            <td>Логин</td>
+            <td><a href="#">0229</a><span> [28]</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Город</td>
+            <td>Миасс</td>
+          </tr>
+          <tr>
+            <td>Школа</td>
+            <td>26</td>
+          </tr>
+        </table>
+
+        <table class="user-info__table">
+          <tr>
+            <th>Баланс</th>
+          </tr>
+          <tr>
+            <td>Начальная школа</td>
+            <td>-7610</td>
+          </tr>
+          <tr>
+            <td>Средняя школа</td>
+            <td>-880</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="side-menu">
+        <h3 class="side-menu__title">Общее</h3>
+        <ul class="side-menu__list">
+          <li><a href="#">Моя страница</a>
+          </li>
+          <li><a href="myprofile/index.html">Мой профиль</a>
+          </li>
+          <li><a href="mysubscriptions/index.html">Мои подписки</a>
+          </li>
+          <li><a href="students/index.html">Список учеников</a>
+          </li>
+          <li><a href="#">Мой счет</a>
+          </li>
+          <li><a href="#">Мои уведомления</a>
+          </li>
+          <li><a href="#">Мои награды</a>
+          </li>
+          <li><a href="#">Мое портфолио</a>
+          </li>
+          <li><a href="#">Награды учеников</a>
+          </li>
+          <li><a href="#">Мои апелляции</a>
+          </li>
+        </ul>
+        <h3 class="side-menu__title">Проекты</h3>
+        <ul class="side-menu__list">
+          <li><a href="#">Мои заявки</a>
+          </li>
+          <li><a href="#">Отчёты</a>
+          </li>
+          <li><a href="#">Загрузка результатов</a>
+          </li>
+          <li><a href="#">Мои сообщения</a>
+          </li>
+        </ul>
+        <h3 class="side-menu__title">Учителя вашей школы</h3>
+        <ul class="side-menu__list">
+          <li><a href="#"><i class="side-menu__item-icon icon-user"></i>Домнина Маргарита</a>
+          </li>
+          <li><a href="#"><i class="side-menu__item-icon side-menu__item-icon--online icon-user"></i>Тепцова Наталья</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cabinet__main">
+
+      <nav class="breadcrumbs">
+        <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__list__item"><a href="/index.html">Главная</a>
+            </li>
+            <li class="breadcrumbs__list__item"><a href="/partners/index.html">Партнеры проекта</a>
+            </li>
+            <li class="breadcrumbs__list__item"><span>Академия последипломного образования (Минск, Республика Беларусь)</span>
+            </li>
+        </ul>
+      </nav>
+      
+      <div class="counters">   
+        
+        <div class="counters__inline">
+          <h2>Статистика<br>заявок и работ</h2>
+          <div class="counters__inline-group">
+            <div class="counter">
+              <div class="counter__content">
+                <div class="counter__count">230 067</div>
+                <div class="counter__label">Выполненных работ</div>
+              </div>
+            </div>
+            <div class="counter">
+              <div class="counter__content">
+                <div class="counter__count">230 067</div>
+                <div class="counter__label">Выполненных работ</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <h3 class="cabinet__title">Мои подписки
+        <div class="cabinet__title-note">
+          <div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae suscipit numquam fugiat commodi! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur similique temporibus placeat pariatur dolores ea, cumque hic odit, est minima neque inventore enim odio. Dolores, ea sequi tenetur numquam optio.</p>
+          </div>
+        </div>
+      </h3>
+
+      <div class="applications">
+          <ul class="files-accordeon">
+            <li class="files-accordeon__item  files-accordeon__item--no-icon">
+              <a href="#">Международная олимпиада по основам наук, 3 этап</a>
+              <div class="files-accordeon__content">
+                <button class="btn  btn-orange">Подать заявку</button>
+              </div>
+            </li>
+            <li class="files-accordeon__item  files-accordeon__item--no-icon">
+              <a class="files-accordeon__margin-after" href="#">Международная олимпиада по основам наук, 2 этап</a>
+              <div class="files-accordeon__content-full-width">
+                <div class="filter">
+                  <div class="filter__toggle"><span>Фильтр</span>
+                  </div>
+                </div>
+                <div class="applications__pane">
+                  <div>
+                    <input class="input-checkbox-custom" type="checkbox" name="send-awards" id="send-awards">
+                    <label for="send-awards">Все мои ученики прошли тестирование в этом этапе. Можно высылать наградные материалы</label>
+                  </div>
+                  <div class="applications__pane-note">
+                    <div class="popup">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint molestiae repellat voluptas!</p>
+                    </div>
+                  </div>
+                  <button class="btn btn-green">Согласен</button>
+                </div>
+
+	              <table border="0" class="my-applications-table table-colspan" data-colspan-mq="medium">
+		              <tr class="my-applications-table__head">
+			              <th class="colspan" data-colspan="4">Предмет</th>
+			              <th class="text-center">Заявок</th>
+			              <th class="text-center">Работ</th>
+			              <th class="show-for-large">Задания</th>
+		              </tr>
+		              <tr class="my-applications-table__sub-head">
+			              <td class="colspan" data-colspan="4">5 класс</td>
+			              <td class="text-center">10</td>
+			              <td class="text-center">8</td>
+			              <td class="show-for-large"><a href="#">Список учеников</a></td>
+		              </tr>
+		              <tr class="discipline_name">
+			              <td class="colspan" data-colspan="3">Математика</td>
+			              <td class="my-applications-table__min-w show-for-medium text-center">
+				              <a class="icon-file btn-icon" href="#"> doc</a>
+				              <a class="icon-file btn-icon" href="#"> pdf</a>
+			              </td>
+			              <td class="text-center">5</td>
+			              <td class="text-center">4</td>
+			              <td class="show-for-large"><a href="#">Список учеников</a></td>
+		              </tr>
+		              <tr>
+			              <td class="block-sm text-center-lg">
+				              <a href="#" class="icon-user btn-icon"></a>
+			              </td>
+			              <td class="block-sm">Буланов Александр Александрович</td>
+			              <td class="block-sm text-center-lg"><span class="text-muted show-for-small-only">Логин </span>s324ds2
+			              </td>
+			              <td class="block-sm text-center-lg">
+				              <span class="text-muted show-for-small-only">Пароль </span>s324ds2
+			              </td>
+			              <td class="text-center">
+				              <div class="text-muted">[1242134]</div>
+				              <a href="#" class="icon-pencil btn-icon"></a>
+				              <a href="#" class="icon-close btn-icon"></a>
+			              </td>
+			              <td class="my-applications-table__min-w text-center">
+				              <div>76б</div>
+				              <a href="#" class="block">Удалить результат</a>
+				              <a href="#" class="block">Полностью уалить</a>
+			              </td>
+			              <td class="show-for-large">
+				              <a class="icon-file btn-icon" href="#"> doc</a>
+				              <a class="icon-file btn-icon" href="#"> pdf</a>
+			              </td>
+		              </tr>
+		              <tr class="green">
+			              <td class="block-sm text-center-lg">
+				              <a href="#" class="icon-user btn-icon"></a>
+			              </td>
+			              <td class="block-sm">Буланов Александр Александрович</td>
+			              <td class="block-sm text-center-lg"><span class="text-muted show-for-small-only">Логин </span>s324ds2
+			              </td>
+			              <td class="block-sm text-center-lg">
+				              <span class="text-muted show-for-small-only">Пароль </span>s324ds2
+			              </td>
+			              <td class="text-center">
+				              <div class="text-muted">[1242134]</div>
+				              <a href="#" class="icon-pencil btn-icon"></a>
+				              <a href="#" class="icon-close btn-icon"></a>
+			              </td>
+			              <td class="my-applications-table__min-w text-center">
+				              <div>76б</div>
+				              <a href="#" class="block">Удалить результат</a>
+				              <a href="#" class="block">Полностью уалить</a>
+			              </td>
+			              <td class="show-for-large">
+				              <a class="icon-file btn-icon" href="#"> doc</a>
+				              <a class="icon-file btn-icon" href="#"> pdf</a>
+			              </td>
+		              </tr>
+		              <tr class="discipline_name">
+			              <td class="colspan" data-colspan="3">Математика</td>
+			              <td class="my-applications-table__min-w show-for-medium text-center">
+				              <a class="icon-file btn-icon" href="#"> doc</a>
+				              <a class="icon-file btn-icon" href="#"> pdf</a>
+			              </td>
+			              <td class="text-center">5</td>
+			              <td class="text-center">4</td>
+			              <td class="show-for-large"><a href="#">Список учеников</a></td>
+		              </tr>
+		              <tr>
+			              <td class="block-sm text-center-lg">
+				              <a href="#" class="icon-user btn-icon"></a>
+			              </td>
+			              <td class="block-sm">Буланов Александр Александрович</td>
+			              <td class="block-sm text-center-lg"><span class="text-muted show-for-small-only">Логин </span>s324ds2
+			              </td>
+			              <td class="block-sm text-center-lg">
+				              <span class="text-muted show-for-small-only">Пароль </span>s324ds2
+			              </td>
+			              <td class="text-center">
+				              <div class="text-muted">[1242134]</div>
+				              <a href="#" class="icon-pencil btn-icon"></a>
+				              <a href="#" class="icon-close btn-icon"></a>
+			              </td>
+			              <td class="my-applications-table__min-w text-center">
+				              <div>76б</div>
+				              <a href="#" class="block">Удалить результат</a>
+				              <a href="#" class="block">Полностью уалить</a>
+			              </td>
+			              <td class="show-for-large">
+				              <a class="icon-file btn-icon" href="#"> doc</a>
+				              <a class="icon-file btn-icon" href="#"> pdf</a>
+			              </td>
+		              </tr>
+		              <tr class="green">
+			              <td class="block-sm text-center-lg">
+				              <a href="#" class="icon-user btn-icon"></a>
+			              </td>
+			              <td class="block-sm">Буланов Александр Александрович</td>
+			              <td class="block-sm text-center-lg"><span class="text-muted show-for-small-only">Логин </span>s324ds2
+			              </td>
+			              <td class="block-sm text-center-lg">
+				              <span class="text-muted show-for-small-only">Пароль </span>s324ds2
+			              </td>
+			              <td class="text-center">
+				              <div class="text-muted">[1242134]</div>
+				              <a href="#" class="icon-pencil btn-icon"></a>
+				              <a href="#" class="icon-close btn-icon"></a>
+			              </td>
+			              <td class="my-applications-table__min-w text-center">
+				              <div>76б</div>
+				              <a href="#" class="block">Удалить результат</a>
+				              <a href="#" class="block">Полностью уалить</a>
+			              </td>
+			              <td class="show-for-large">
+				              <a class="icon-file btn-icon" href="#"> doc</a>
+				              <a class="icon-file btn-icon" href="#"> pdf</a>
+			              </td>
+		              </tr>
+		              <tr class="my-applications-table__foot">
+			              <td class="colspan" data-colspan="4">Ваших заявок (работ)</td>
+			              <td class="text-center">44</td>
+			              <td class="text-center">40</td>
+			              <td class="show-for-large"><a href="#">Скачать одним архивом</a></td>
+		              </tr>
+	              </table>
+
+                <ul class="btn-list">
+                  <li><a class="btn btn-orange" href="#">Редактировать заявку</a>
+                  </li>
+                  <li>
+                    <button class="btn btn-green">Оплатить</button>
+                  </li>
+                  <li>
+                    <button class="btn btn-blue">Скачать список по предметам</button>
+                  </li>
+                  <li>
+                    <button class="btn btn-blue">Скачать список по классам</button>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="files-accordeon__item  files-accordeon__item--no-icon">
+              <a class="files-accordeon__margin-after" href="#">III Всероссийская олимпиада школьников по русскому языку, 1 этап</a>
+              <div class="files-accordeon__content-full-width">
+                <div class="applications__pane">
+                  <p>Подача заявки на этот этап закрыта</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <footer class="footer footer--without-info">
+    <div class="footer__social">
+      <div class="footer__social__container">
+        <div class="footer__social__call2action">Присоединяйся!</div>
+        <ul class="footer__social__links">
+          <li class="footer__social__link footer__social__link--vk"><a href="http://vk.com/moon_ekb" target="_blank"><i class="icon-vk"></i></a>
+          </li>
+          <li class="footer__social__link footer__social__link--facebook"><a href="https://www.facebook.com/Дом-Учителя-Уральского-федерального-округа-1605744526340699/" target="_blank"><i class="icon-facebook"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <nav class="footer__menu"><a class="footer__menu__item" href="/index.html">Главная</a><a class="footer__menu__item" href="/contests/index.html">Олимпиады</a><a class="footer__menu__item" href="/projects/index.html">Проекты</a><a class="footer__menu__item footer__menu__item--hide-on-mobile" href="/pedagogical-workshop.html">Педагогическая мастерская</a><a class="footer__menu__item" href="/contacts.html">Контакты</a><a class="footer__menu__item footer__menu__item--hide-on-mobile" href="/media/index.html">СМИ о нас</a><a class="footer__menu__item" href="/partners/index.html">Партнёры</a><a class="footer__menu__item" href="/gallery/index.html">Фото и видео</a><a class="footer__menu__item footer__menu__item--hide-on-mobile" href="/rating.html">Рейтинг</a><a class="footer__menu__item" href="/experts/index.html">Учёные</a><a class="footer__menu__item" href="/upcoming-events/index.html">События</a><a class="footer__menu__item" href="/registration.html">Регистрация</a>
+      <button class="footer__menu__item footer__menu__item--contact-us" type="button">Свяжитесь с нами</button>
+    </nav>
+    <div class="footer__info"></div>
+    <div class="footer__copyright">
+      <div class="footer__copyright__container">
+        <div class="footer__copyright__text"><a href="/offer.doc" target="_blank">Публичный договор-оферта о предоставлении услуг</a>, urfodu.ru, 2016.
+          <p>Copyright © АНО «Дом Учителя УрФО», 1999-2016. Все права защищены. Материалы сайта АНО «Дом Учителя Уральского Федерального округа» являются общедоступными и открытыми для использования в некоммерческих целях. Их перепечатка и цитирование допускается при условии ссылки на сайт АНО «Дом Учителя УрФО», как источник информации.</p>
+        </div>
+        <div class="footer__copyright__itgro">
+          <p>Создание и продвижение сайтов <a href="http://itgro.ru" target="_blank" title="Создание сайта - «Айтигро»">«Айтигро»</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <button class="go-to-top" type="button"><i class="icon-chevron-up"></i>
+  </button>
+  <script src="assets/js/vendor.js"></script>
+  <script src="assets/js/site.js" defer async></script>
+  <script src="assets/js/blocks/main-menu.js" defer async></script>
+  <script src="assets/js/blocks/go-to-top.js" defer async></script>
+  <script src="assets/js/blocks/cabinet.js" defer async></script>
+  <script src="assets/js/blocks/msg.js" defer async></script>
+  <script src="assets/js/blocks/files-accordeon.js" defer async></script>
+  <script src="assets/js/blocks/colspan.js" defer async></script>
+</body>
+
+</html>

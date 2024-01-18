@@ -1,0 +1,39 @@
+&__copyright {
+	@include flex-grid-column(100%, 0);
+
+	background-color: #1a1a1a;
+	color: $dark-gray;
+
+	&__container {
+		@include container;
+		@include flex-align($x: justify, $y: top);
+
+		padding: {
+			top: 16px;
+			bottom: 16px;
+		}
+
+		@include breakpoint(large) {
+			padding: {
+				top: 32px;
+				bottom: 32px;
+			}
+		}
+	}
+
+	&__text {
+		@include flex-grid-column(100%, 0);
+
+		@include breakpoint(large) {
+			@include flex-grid-column(5 of 8, 0);
+		}
+	}
+
+	&__itgro {
+		@include flex-grid-column(100%, 0);
+
+		@include breakpoint(large) {
+			@include flex-grid-column(2 of 8, 0);
+		}
+	}
+}

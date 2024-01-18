@@ -1,0 +1,42 @@
+@import '../site/base';
+
+.location-card {
+	display: block;
+	text-align: center;
+	border:1px solid $light-gray;
+	border-radius: 2px;
+	padding-bottom: 10px;
+
+	&:hover,
+	&:focus {
+		box-shadow: 0 0 0 1px $light-gray, 2px 2px 0 0 $medium-gray;
+
+		@include breakpoint(large) {
+			box-shadow: 0 0 0 1px $light-gray, 3px 3px 0 0 $medium-gray;
+		}
+	}
+
+	&__pic {
+		display: block;
+		width: 100%;
+		margin-bottom: 16px;
+	}
+
+	&__title {
+		text-align: center;
+	}
+
+	@include breakpoint(medium) {
+		padding-bottom: 16px;
+
+		&__pic {
+			display: block;
+			width: 100%;
+			margin-bottom: 22px;
+		}
+	}
+
+	@include breakpoint(large) {
+		width: 100%;
+	}
+}

@@ -1,0 +1,24 @@
+@mixin pane($btnColor, $bg: #D8F4FF) {
+
+	padding: 17px 8px 15px;
+	padding-right: 20px;
+	margin-left: -8px;
+	margin-right: -8px;
+	background: $bg;
+	font-size: 12px;
+
+	&-body {
+		margin-bottom: 0;
+		margin-top: 0;
+	}
+
+	&-btn {
+		@include btn($padding-x: 40px, $color: $btnColor);
+	}
+
+	@include breakpoint(medium) {
+		font-size: inherit;
+		padding: 15px;
+		margin: 0;
+	}
+}

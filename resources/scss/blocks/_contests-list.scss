@@ -1,0 +1,27 @@
+@import '../site/base';
+
+.contests-list {
+	@include items-list((
+		small: 1 of 1,
+		medium: 1 of 2,
+		large: 1 of 3,
+		xlarge: 1 of 3,
+	));
+
+	background: $white;
+
+	&--free {
+		background: #eef1f5;
+	}
+
+	&--past &__item {
+		@include flex-grid-column(100%);
+		@include flex-align($x: left, $y: top);
+		margin: 0 0 12px;
+	}
+
+	&__btn-expand {
+		margin: 0 auto 1rem;
+		padding: 0.85em 4em;
+	}
+}

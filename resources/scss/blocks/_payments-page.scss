@@ -1,0 +1,79 @@
+@import '../site/base';
+.payments {
+	&__form {
+		margin-bottom: 50px;
+	}
+
+	&__intro {
+		font-size: 12px;
+		@include breakpoint(medium) {
+			font-size: inherit;
+			margin-bottom: 22px;
+		}
+	}
+
+	&__fieldset {
+		padding: 20px 22px 0;
+		margin-bottom: 25px;
+		border-top: 1px solid #e6e6e6;
+		@include breakpoint(medium) {
+			padding-top: 38px;
+			margin-bottom: 15px;
+		}
+	}
+
+	&__fieldset-item {
+		margin-bottom: 10px;
+		input,
+		select,
+		&:last-child {
+			margin-bottom: 0;
+		}
+		label {
+			span {
+				color: #b3b3b3;
+			}
+		}
+
+		@include breakpoint(medium) {
+			display: table;
+			width: 100%;
+			margin-bottom: 15px;
+			label {
+				width: 28%;
+				padding-right: 20px;
+				display: table-cell;
+				vertical-align: middle;
+				text-align: right;
+			}
+
+			input,
+			select {
+				display: table-cell;
+				width: 350px;
+				vertical-align: middle;
+			}
+		}
+	}
+
+	&__btn-wrap {
+		padding: 10px 0;
+		button[type='submit'],
+		input[type='submit'] {
+			width: 100%;
+		}
+
+		@include breakpoint(medium) {
+			width: 350px;
+			display: table-cell;
+			padding: 0 0 0 20px;
+
+    		button[type='submit'],
+			input[type='submit'] {
+				width: auto;
+				padding-left: 41px;
+				padding-right: 41px;
+			}
+		}
+	}
+}

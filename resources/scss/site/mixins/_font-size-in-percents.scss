@@ -1,0 +1,7 @@
+@function font-size-in-percents($size, $breakpoint: small) {
+	@if unitless($size) {
+		$size: 1px * $size;
+	}
+
+	@return percentage($size / map-get($body-font-size, $breakpoint));
+}

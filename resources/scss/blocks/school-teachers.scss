@@ -1,0 +1,278 @@
+@import '../site/base';
+.school-teachers {
+	&__title {
+		margin: 40px 0 10px 0;
+	}
+
+	&__add-btn {
+		padding: 0 30px;
+		text-align: center;
+		margin-bottom: 25px;
+		*[class^="btn"] {
+			padding-left: 42px;
+			padding-right: 42px;
+		}
+	}
+
+	&__list {
+		margin-bottom: 10px;
+		@include breakpoint(medium) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__list-head {
+		@include flex-grid-row($behavior: nest, $gutter: 18px);
+		padding: 7px 8px;
+		background: #FDDFA1;
+		.name {
+			@include flex-grid-column($columns: 40%, $gutter: 0);
+		}
+		.login {
+			text-align: center;
+			@include flex-grid-column($columns: 15%, $gutter: 0);
+		}
+		.disciplines {
+			text-align: center;
+			@include flex-grid-column($columns: 32%, $gutter: 0);
+		}
+
+		.edit {
+			@include flex-grid-column($columns: 8%, $gutter: 0);
+		}
+
+		.delete {
+			@include flex-grid-column($columns: 5%, $gutter: 0);
+			display: none;
+		}
+
+		@include breakpoint(small only) {
+			.name,
+			.login {
+				font-size: 12px;
+			}
+		}
+
+		@include breakpoint(medium) {
+			@include flex-grid-row();
+		}
+
+		@include breakpoint(large) {
+			padding: 15.5px 8px;
+			.name {
+				@include flex-grid-column($columns: 40%, $gutter: 0);
+			}
+			.login {
+				@include flex-grid-column($columns: 15%, $gutter: 0);
+			}
+			.disciplines {
+				@include flex-grid-column($columns: 32%, $gutter: 0);
+			}
+
+			.edit {
+				@include flex-grid-column($columns: 8%, $gutter: 0);
+			}
+			.delete {
+				@include flex-grid-column($columns: 5%, $gutter: 0);
+				text-align: center;
+				display: block;
+				position: relative;
+				z-index: 10;
+			}
+		}
+	}
+
+	&__list-head-note {
+		@include note($right: 50%, $medium: 0);
+	}
+
+	&__list-title {
+		@include flex-grid-row($behavior: nest, $gutter: 18px);
+		padding: 7px 8px;
+		background: #EDF1F4;
+
+		& > * {
+			@include flex-grid-column($columns: 100%, $gutter: 0);
+		}
+
+		@include breakpoint(small only) {
+			font-size: 12px;
+		}
+
+		@include breakpoint(medium) {
+			padding: 15.5px 8px;
+			@include flex-grid-row();
+		}
+	}
+
+	&__list-body {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			@include flex-grid-row($behavior: nest, $gutter: 18px);
+			padding: 10px 8px 26px;
+			position: relative;
+			border-bottom: 1px solid #E6E6E6;
+			&:nth-child(even) {
+				background: #F7F7F7;
+			}
+
+			.name {
+				@include flex-grid-column($columns: 40%, $gutter: 0);
+			}
+			.login {
+				@include flex-grid-column($columns: 15%, $gutter: 0);
+			}
+			.disciplines {
+				@include flex-grid-column($columns: 32%, $gutter: 0);
+			}
+			.edit {
+				@include flex-grid-column($columns: 8%, $gutter: 0);
+			}
+			.delete {
+				@include flex-grid-column($columns: 5%, $gutter: 0);
+			}
+			.login,
+			.disciplines,
+			.edit {
+				text-align: center;
+				&::before {
+					display: block;
+					position: absolute;
+					content: "";
+					background: #E6E6E6;
+					width: 1px;
+					height: 100%;
+					top: 0;
+					bottom: 0;
+				}
+			}
+
+			.edit,
+			.delete {
+				position: absolute;
+				bottom: 2px;
+				color: #333;
+				&:hover {
+					color: #4598CE;
+				}
+			}
+
+			.edit {
+				left: 43px;
+			}
+			.delete {
+				left: 73px;
+			}
+
+			@include breakpoint(small only) {
+				label,
+				.login {
+					font-size: 12px;
+				}
+			}
+
+			@include breakpoint(medium) {
+				@include flex-grid-row();
+			}
+
+			@include breakpoint(large) {
+				padding: 11px 8px;
+				.name {
+					@include flex-grid-column($columns: 40%, $gutter: 0);
+				}
+
+				.login {
+					@include flex-grid-column($columns: 15%, $gutter: 0);
+				}
+
+				.disciplines {
+					@include flex-grid-column($columns: 32%, $gutter: 0);
+				}
+
+				.edit {
+					@include flex-grid-column($columns: 8%, $gutter: 0);
+				}
+
+				.delete {
+					@include flex-grid-column($columns: 5%, $gutter: 0);
+				}
+
+				.login,
+				.disciplines,
+				.edit,
+				.delete {
+					text-align: center;
+					position: static;
+					&::before {
+						display: block;
+						position: absolute;
+						content: "";
+						background: #E6E6E6;
+						width: 1px;
+						height: 100%;
+						top: 0;
+						bottom: 0;
+					}
+				}
+			}
+		}
+	}
+
+	&__list-footer {
+		@include flex-grid-row($width: 100%);
+		@include flex-align($x:justify, $y:middle);
+		border-bottom: 1px solid #E6E6E6;
+		border-top: 2px solid #e6e6e6;
+		padding: 8px 0;
+		.select-all {
+			position: relative;
+			padding-right: 45px;
+		}
+
+		@include breakpoint(small only) {
+			&, label {
+				font-size: 12px;
+			}
+		}
+
+		@include breakpoint(medium) {
+			padding: 11px 8px;
+			.select-all {
+				padding-right: 15px;
+			}
+		}
+	}
+
+	&__select-all-note {
+		@include note($right: -40px, $small: center);
+	}
+
+	&__selected-num {
+		color: #00baa2;
+	}
+
+	@include breakpoint(medium) {
+
+		&__add-student-wrap {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 27px;
+			p {
+				margin-bottom: 0;
+				padding-right: 40px;
+				width: 60%;
+				line-height: 1.2;
+			}
+		}
+
+		&__add-btn {
+			padding: 0;
+			margin: 0;
+			text-align: left;
+		}
+	}
+}

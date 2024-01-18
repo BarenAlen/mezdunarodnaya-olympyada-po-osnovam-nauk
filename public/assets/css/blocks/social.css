@@ -1,0 +1,118 @@
+.social {
+    position: relative;
+    display: none;
+    padding: 72px 16px;
+    background: no-repeat, url(assets/img/site/social/bushes.svg),
+        url(assets/img/site/social/clouds.svg), #d3f4ff;
+    background-position: 0, 50% 120%, 50% 130%;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+}
+@media screen and (min-width: 48em) {
+    .social {
+        display: block;
+    }
+}
+@media screen and (min-width: 80em) {
+    .social:before {
+        content: "";
+        position: absolute;
+        bottom: 32px;
+        left: 50%;
+        height: 424px;
+        width: 195px;
+        margin-left: -48px;
+        background: transparent url(assets/img/site/social/girl.png) 0 100%
+            no-repeat;
+        background-size: contain;
+    }
+}
+.social__header {
+    display: block;
+    line-height: 1.2;
+    text-align: center;
+}
+.social__header--main {
+    font-size: 42px;
+}
+.social__header--clarification {
+    font-size: 28px;
+}
+.social__widgets {
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.social__widget__wrapper {
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+}
+.social__widget {
+    position: relative;
+    width: 300px;
+    min-height: 200px;
+    margin: 120px 0 0;
+    padding: 16px;
+    box-sizing: content-box;
+    background: #fefefe;
+    border-radius: 4px;
+    z-index: 1;
+}
+.social__widget:before {
+    content: "";
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    width: 90px;
+    height: 86px;
+    background: transparent url(assets/img/site/social/arrow.png) bottom
+        no-repeat;
+    background-size: contain;
+}
+@media screen and (min-width: 64em) {
+    .social__widget--vk {
+        width: 400px;
+    }
+}
+.social__widget--vk:before {
+    top: -90px;
+    width: 60px;
+    height: 57.3333333333px;
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+.social__widget--vk:after {
+    position: absolute;
+    content: "";
+    top: -140px;
+    left: 50px;
+    width: 125px;
+    height: 140px;
+    background: transparent url(assets/img/site/social/waving-boy.png) bottom
+        no-repeat;
+    background-size: contain;
+}
+.social__widget--facebook:before {
+    margin-left: -43px;
+}
+@media screen and (min-width: 80em) {
+    .social__widget--facebook:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: -140px;
+        height: 315px;
+        width: 126px;
+        background: transparent url(assets/img/site/social/boy.png) 0 100%
+            no-repeat;
+        background-size: contain;
+    }
+}
+/*# sourceMappingURL=social.css.map */

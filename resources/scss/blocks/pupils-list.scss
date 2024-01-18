@@ -1,0 +1,253 @@
+@import '../site/base';
+
+// .pupils-list {
+// 	&__add-pupil {
+// 	}
+
+// 	&__add-pupil-btn {
+// 		padding: 0 30px;
+// 		text-align: center;
+// 		.btn {
+// 			display: inline-block;
+// 			padding-left: 42px;
+// 			padding-right: 42px;
+// 		}
+// 	}
+
+// 	&__filter {
+// 		background: #EEF1F6;
+// 		padding: 0 30px;
+// 	}
+
+// 	&__toggle-filter {
+// 		color: #0071bc;
+// 		font-size: 14px;
+// 		border-bottom: 1px dashed #0071bc;
+// 	}
+
+// 	&__class-select-wrap {
+// 		position: relative;
+// 		select {
+// 			width: 128px;	
+// 		}
+// 		.note-btn {
+// 			left: 135px;
+// 			top: 55%;
+// 		}
+// 	}
+
+// 	@include breakpoint(medium) {
+// 		&__add-pupil {
+// 			display: flex;
+// 			justify-content: space-between;
+// 			align-items: center;
+// 			p {
+// 				margin-bottom: 0;
+// 				padding-right: 40px;
+// 				width: 65%;
+// 			}
+// 		}
+
+// 		&__add-pupil-btn {
+// 			padding: 0;
+// 			text-align: left;
+// 		}
+
+// 		&__filter {
+// 			display: flex;
+// 			.text-input {
+// 				padding: 13px 15px;
+// 			}
+// 		}
+
+// 		&__toggle-filter {
+// 			display: none;
+// 		}
+
+// 		&__class-select-wrap {
+// 			display: none;
+// 		}
+// 	}
+// }
+
+
+.pupils-list {
+
+	&__filter {
+		background: #EEF1F6;
+		padding-left: 30px;
+		padding-right: 30px;
+		padding-bottom: 32px;
+		margin-left: -8px;
+    	margin-right: -8px;
+		.text-input {
+			padding-top: 0.7rem;
+			padding-bottom: 0.7rem;
+		}
+	}
+
+	&__add-pupil-btn {
+		padding: 0 30px;
+		text-align: center;
+		margin-bottom: 25px;
+		.btn {
+			display: inline-block;
+			padding-left: 42px;
+			padding-right: 42px;
+		}
+	}
+
+	&__toggle-filter {
+		display: block;
+		background: #EEF1F6;
+		padding: 24px 30px 12px;
+		margin-left: -8px;
+    	margin-right: -8px;
+		button {
+			color: #0071bc;
+			font-size: 14px;
+			border-bottom: 1px dashed #0071bc;
+		}
+	}
+
+	&__class-list-filter {
+		margin: 0;
+		padding: 0;
+		margin-bottom: 13px;
+		list-style: none;
+		font-size: 0;
+		text-align: center;
+
+		li {
+			display: inline-block;
+			margin-right: 10px;
+			margin-bottom: 8px;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+		
+		li.active {
+			a {
+				background: #FAAF14;
+			}
+			&:hover {
+				a {
+					background: darken(#FAAF14, 4%);	
+				}
+			}
+		}
+		
+		li:hover {
+			a {
+				background: #D6D9DE;
+			}
+		}
+
+		a {
+			text-align: center;
+			font-size: 16px;
+			display: block;
+			color: #333;
+			text-decoration: none;
+			background: #EDF1F5;
+			width: 93px;
+    		padding: 7px 0;
+		}
+
+		.note-btn {
+			padding: 0;
+			position: relative;
+			top: 4px;
+			right: 0;
+			transform: none;
+			background: none;
+			text-align: left;
+			width: auto;
+		}
+
+		@include breakpoint(small only) {
+			display: none;
+		}
+	}
+
+	&__filter-last-name {
+		margin-bottom: 15px;
+	}
+
+	&__filter-my-students {
+		position: relative;
+		padding-right: 20px;
+		.note-btn {
+    		right: 0;
+		}
+	}
+
+	&__class-filter {
+		position: relative;
+		display: inline-block;
+		margin-bottom: 15px;
+		select {
+			width: 130px;
+			padding-top: 0.7rem;
+			padding-bottom: 0.7rem;
+		}
+		.note-btn {
+			top: 70%;
+    		right: -30px;
+		}
+
+	}
+
+	@include breakpoint(medium) {
+		&__filter {
+			display: flex;
+			align-items: center;
+			padding: 10px;
+			margin: 0;
+			.text-input {
+				padding: 13px 15px;
+			}
+		}
+
+		&__add-pupil {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 27px;
+			p {
+				margin-bottom: 0;
+				padding-right: 40px;
+				width: 60%;
+				line-height: 1.2;
+			}
+		}
+
+		&__add-pupil-btn {
+			padding: 0;
+			margin: 0;
+			text-align: left;
+		}
+
+		&__toggle-filter {
+			display: none;
+		}
+
+		&__filter-last-name {
+			width: 50%;
+			margin: 0;
+			margin-right: 35px;
+		}
+
+		&__filter-my-students {
+			width: 50%;
+			.note-btn {
+				right: 0;
+			}
+		}
+
+		&__class-filter {
+			display: none;
+		}
+	}
+}

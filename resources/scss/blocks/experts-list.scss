@@ -1,0 +1,129 @@
+@import "../site/base";
+
+.experts-list {
+    @include items-list(
+        $itemWidth: (
+            small: 1 of 2,
+            medium: 1 of 3,
+            large: 1 of 4,
+            xlarge: 1 of 4,
+        )
+    );
+    @include items-list-promo(
+        $itemWidth: (
+            small: 1 of 2,
+            medium: 1 of 3,
+            large: 1 of 4,
+            xlarge: 1 of 4,
+        )
+    );
+
+    background: $white -180px 0 no-repeat;
+
+    @include breakpoint(medium) {
+        background-image: url("assets/img/site/experts/bg.gif");
+    }
+
+    &__item {
+        order: 2;
+
+        &--featured {
+            @include breakpoint(medium) {
+                @include flex-grid-column(100%);
+
+                order: 1;
+            }
+
+            @include breakpoint(large) {
+                @include flex-grid-column(100%);
+            }
+
+            @include breakpoint(xlarge) {
+                @include flex-grid-column(100%);
+            }
+        }
+    }
+
+    &--promo &__item {
+        display: none;
+        margin-bottom: 0;
+
+        &:nth-of-type(1),
+        &:nth-of-type(2),
+        &:nth-of-type(3),
+        &:nth-of-type(4) {
+            display: block;
+        }
+
+        @include breakpoint(large) {
+            &:nth-of-type(5) {
+                display: block;
+            }
+        }
+
+        &--featured {
+            @include breakpoint(medium) {
+                @include flex-grid-column(100%);
+            }
+
+            @include breakpoint(large) {
+                @include flex-grid-column(100%);
+            }
+
+            @include breakpoint(xlarge) {
+                @include flex-grid-column(100%);
+            }
+        }
+    }
+
+    &--simple-promo {
+        background-image: none;
+    }
+
+    &--simple-promo &__item {
+        display: none;
+        margin-bottom: 0;
+
+        &:nth-of-type(1),
+        &:nth-of-type(2) {
+            display: block;
+        }
+
+        @include breakpoint(medium) {
+            &:nth-of-type(3) {
+                display: block;
+            }
+        }
+
+        @include breakpoint(large) {
+            &:nth-of-type(4) {
+                display: block;
+            }
+        }
+    }
+
+    &--past {
+        @include breakpoint(small) {
+            background: $white;
+        }
+    }
+
+    &--past &__title {
+        margin: 0;
+        padding: 50px 0;
+        border-top: 1px solid $light-gray;
+    }
+
+    &--past &__item {
+        @include flex-grid-column($columns: 1 of 2);
+        @include flex-align($x: left, $y: top);
+
+        @include breakpoint(small) {
+            margin: 0;
+        }
+
+        @include breakpoint(large) {
+            @include flex-grid-column($columns: 1 of 3);
+        }
+    }
+}

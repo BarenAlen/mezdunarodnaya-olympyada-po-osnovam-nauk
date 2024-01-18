@@ -1,0 +1,159 @@
+@import '../site/base';
+
+.contest-statistic-page {
+	@include breakpoint(small only) {
+		display: none;
+	}
+
+	@include container(false);
+
+	&__map {
+		position: relative;
+		margin: 16px 0;
+
+		&__container {
+			width: 100%;
+			height: 800px;
+		}
+
+		&__balloon {
+			font-size: 16px;
+			line-height: 1.6;
+
+			&__title {
+				font-family: 'MuseoSansBold', sans-serif;
+				font-size: 21px;
+			}
+
+			&__section {
+				margin: 8px 0 0;
+			}
+
+			&__muted-text {
+				color: $dark-gray;
+			}
+		}
+
+		&__return-to-world {
+			position: absolute;
+			top: 8px;
+			right: 8px;
+			z-index: 1;
+			background: $white;
+			padding: 8px;
+			cursor: pointer;
+			border-radius: 4px;
+			color: $medium-gray;
+
+			&:hover,
+			&:focus {
+				background: $light-gray;
+				color: $dark-gray;
+			}
+		}
+	}
+
+	&__title {
+		font-size: font-size-in-percents(32, medium);
+		line-height: 1;
+		text-align: center;
+	}
+
+	&__description {
+		margin: 8px 0;
+		line-height: 1;
+		text-align: center;
+	}
+
+	&__stages-filter {
+		margin: 32px 0;
+
+		&__button {
+			margin: 0 8px;
+			background: $light-gray;
+
+			&--active {
+				background: map-get($foundation-palette, accent);
+			}
+		}
+	}
+
+	&__table {
+		min-width: 100%;
+		margin-bottom: 32px;
+
+		th, td {
+			padding: 16px 8px !important; // боремся со стандартными стилями таблицы
+			border: 1px solid $light-gray;
+
+			&:first-child {
+				border-left: none;
+			}
+
+			&:last-child {
+				border-right: none;
+			}
+		}
+
+		tr:first-child {
+			th, td {
+				border-top: none;
+			}
+		}
+
+		thead,
+		tfoot {
+			tr {
+				background: #feecc7;
+
+				th, td {
+					text-align: center;
+					font-weight: normal;
+					background: #feecc7;
+				}
+			}
+		}
+
+		thead {
+			tr {
+				th, td {
+					text-align: center;
+				}
+
+				&:first-of-type {
+					background: #fddfa2;
+
+					th, td {
+						background: #fddfa2;
+						text-align: center;
+					}
+				}
+			}
+		}
+
+		tfoot {
+			td {
+				font-weight: normal;
+			}
+		}
+
+		&__row {
+			&--odd {
+				background: $white !important; // боремся со стандартными стилями таблицы
+			}
+
+			&--even {
+				background: #eef1f5 !important; // боремся со стандартными стилями таблицы
+			}
+
+			td {
+				text-align: center;
+
+				&[rowspan="2"] { // Dirty hack
+					font-family: 'MuseoSansBold', sans-serif;
+				}
+			}
+
+		}
+	}
+}

@@ -1,0 +1,80 @@
+@import '../site/base';
+
+.partners-list {
+	@include items-list($itemWidth: (
+		small: 1 of 2,
+		medium: 1 of 3,
+		large: 1 of 4,
+		xlarge: 1 of 4,
+	));
+	@include items-list-promo($itemWidth: (
+		small: 1 of 4,
+		medium: 1 of 5,
+		large: 1 of 5,
+		xlarge: 1 of 5,
+	));
+
+	background: $white;
+
+	&__item {
+		@include breakpoint(medium) {
+		    padding-top: 20px;
+		}
+	}
+
+	&--promo &__item {
+		&:nth-of-type(n + 8) {
+			display: none;
+
+			@include breakpoint(medium) {
+				display: block;
+			}
+		}
+	}
+
+	&--simple-promo &__item {
+		display: none;
+		margin-bottom: 0;
+
+		&:nth-of-type(1),
+		&:nth-of-type(2) {
+			display: inherit;
+		}
+
+		@include breakpoint(medium) {
+			&:nth-of-type(3) {
+				display: inherit;
+			}
+		}
+
+		@include breakpoint(large) {
+			&:nth-of-type(4) {
+				display: inherit;
+			}
+		}
+	}
+
+	&__btn-show-all {
+		width: 100%;
+		padding-top: 30px;
+		text-align: center;
+
+		[class^="btn"] {
+			padding: 16px 90px;
+		}
+	}
+
+	&__container--single-row {
+		@include breakpoint(medium) {
+			max-height: 355px;
+		    overflow-y: hidden;
+		    padding-top: 2px;
+		}
+
+		@include breakpoint(large) {
+			max-height: auto;
+			overflow-y: visible;
+			padding-top: 0;
+		}
+	}
+}
